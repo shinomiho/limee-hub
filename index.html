@@ -164,6 +164,7 @@
     <button class="tab-btn active" onclick="switchTab('overview')">📋 全体一覧</button>
     <button class="tab-btn" onclick="switchTab('structure')">🗺️ 構造図</button>
     <button class="tab-btn" onclick="switchTab('clients')">📄 お客様・JV資料</button>
+    <button class="tab-btn" onclick="switchTab('jvops')">⚙️ JV運用設計</button>
     <button class="tab-btn" onclick="switchTab('handover')">📖 引き継ぎガイド</button>
   </div>
 
@@ -352,6 +353,257 @@
             <li><span class="icon">4️⃣</span>契約 → <strong>企業登録フォームURL</strong>を送る（あとは全自動）</li>
             <li><span class="icon">5️⃣</span>翌月以降 → <strong>月次レポート</strong>が自動配信される</li>
           </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== JV運用設計タブ ===== -->
+  <div id="tab-jvops" class="tab-panel">
+    <div class="container">
+
+      <!-- ミッションステートメント -->
+      <div style="background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:16px;padding:28px 32px;margin-bottom:32px;color:white;">
+        <p style="font-size:22px;font-weight:900;margin-bottom:8px;">🎯 最終目標</p>
+        <p style="font-size:16px;font-weight:700;opacity:0.95;line-height:1.7;">営業〜受注〜提供〜請求まで、JV側で回る。<br>四戸（Miho）は<strong style="border-bottom:2px solid rgba(255,255,255,0.6);">設計と品質のみ</strong>に集中。</p>
+        <p style="font-size:13px;opacity:0.75;margin-top:12px;">→ 同じことを3回やったらテンプレ化。重要商談は必ず録画。</p>
+      </div>
+
+      <!-- 全体フロー -->
+      <div class="section">
+        <div class="section-title">🗺️ 全体フロー（誰がやるか明確版）</div>
+        <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:24px;overflow-x:auto;">
+          <div style="min-width:700px;">
+            <!-- フローヘッダー -->
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:8px;">
+              <div style="text-align:center;font-size:11px;font-weight:800;color:var(--text-sub);padding:4px;">【集客】</div>
+              <div style="text-align:center;font-size:11px;font-weight:800;color:var(--text-sub);padding:4px;">【営業】</div>
+              <div style="text-align:center;font-size:11px;font-weight:800;color:var(--text-sub);padding:4px;">【契約・請求】</div>
+              <div style="text-align:center;font-size:11px;font-weight:800;color:var(--text-sub);padding:4px;">【提供】</div>
+              <div style="text-align:center;font-size:11px;font-weight:800;color:var(--text-sub);padding:4px;">【継続】</div>
+            </div>
+            <!-- 担当者バー -->
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px;">
+              <div style="background:#FEF3C7;border:2px solid #F59E0B;border-radius:8px;text-align:center;padding:10px 6px;">
+                <div style="font-size:11px;font-weight:800;color:#92400E;">オルタナ</div>
+                <div style="font-size:10px;color:#B45309;margin-top:2px;">メルマガ/セミナー</div>
+              </div>
+              <div style="background:#FEF3C7;border:2px solid #F59E0B;border-radius:8px;text-align:center;padding:10px 6px;">
+                <div style="font-size:11px;font-weight:800;color:#92400E;">オルタナ</div>
+                <div style="font-size:10px;color:#B45309;margin-top:2px;">面談/クロージング</div>
+              </div>
+              <div style="background:#FEF3C7;border:2px solid #F59E0B;border-radius:8px;text-align:center;padding:10px 6px;">
+                <div style="font-size:11px;font-weight:800;color:#92400E;">オルタナ</div>
+                <div style="font-size:10px;color:#B45309;margin-top:2px;">契約/請求</div>
+              </div>
+              <div style="background:#EEF2FF;border:2px solid #4F46E5;border-radius:8px;text-align:center;padding:10px 6px;">
+                <div style="font-size:11px;font-weight:800;color:#3730A3;">四戸（AI基盤）</div>
+                <div style="font-size:10px;color:#4F46E5;margin-top:2px;">AI診断/レポート</div>
+              </div>
+              <div style="background:#D1FAE5;border:2px solid #10B981;border-radius:8px;text-align:center;padding:10px 6px;">
+                <div style="font-size:11px;font-weight:800;color:#065F46;">自動化</div>
+                <div style="font-size:10px;color:#059669;margin-top:2px;">月次レポート</div>
+              </div>
+            </div>
+            <!-- 矢印 -->
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:center;">
+              <div style="font-size:20px;color:#C7D2FE;">↓</div>
+              <div style="font-size:20px;color:#C7D2FE;">↓</div>
+              <div style="font-size:20px;color:#C7D2FE;">↓</div>
+              <div style="font-size:20px;color:#C7D2FE;">↓</div>
+              <div style="font-size:20px;color:#C7D2FE;">↓</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:center;font-size:11px;color:var(--text-sub);">
+              <div>新規リード獲得</div>
+              <div>ヒアリング〜提案</div>
+              <div>合意・契約締結</div>
+              <div>診断URL発行〜運用</div>
+              <div>全自動配信</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- フェーズ移行（ここが肝） -->
+      <div class="section">
+        <div class="section-title">🔁 フェーズ移行（ここが肝）</div>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+
+          <div class="card" style="border-top:4px solid #EF4444;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+              <div>
+                <div style="font-size:11px;font-weight:800;color:#EF4444;margin-bottom:4px;">Phase 1</div>
+                <div style="font-size:16px;font-weight:900;color:var(--text);">0〜3件</div>
+              </div>
+              <span class="badge badge-red">現在地</span>
+            </div>
+            <p style="font-size:13px;font-weight:800;color:var(--text);margin-bottom:8px;">四戸 主導（JV同席）</p>
+            <ul class="feature-list">
+              <li><span class="icon">🎯</span>型を作る</li>
+              <li><span class="icon">📹</span>商談を録画・言語化</li>
+              <li><span class="icon">📝</span>テンプレを整備</li>
+              <li><span class="icon">👥</span>JVが見て学ぶ</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top:4px solid #F59E0B;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+              <div>
+                <div style="font-size:11px;font-weight:800;color:#F59E0B;margin-bottom:4px;">Phase 2</div>
+                <div style="font-size:16px;font-weight:900;color:var(--text);">4〜6件</div>
+              </div>
+              <span class="badge badge-yellow">次のステップ</span>
+            </div>
+            <p style="font-size:13px;font-weight:800;color:var(--text);margin-bottom:8px;">JV 主導（四戸同席）</p>
+            <ul class="feature-list">
+              <li><span class="icon">✅</span>JVが動かす</li>
+              <li><span class="icon">🔍</span>四戸が再現性チェック</li>
+              <li><span class="icon">🛠️</span>ズレたらテンプレ修正</li>
+              <li><span class="icon">📊</span>成約率・品質を計測</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top:4px solid #10B981;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+              <div>
+                <div style="font-size:11px;font-weight:800;color:#10B981;margin-bottom:4px;">Phase 3</div>
+                <div style="font-size:16px;font-weight:900;color:var(--text);">7件〜</div>
+              </div>
+              <span class="badge badge-green">目標</span>
+            </div>
+            <p style="font-size:13px;font-weight:800;color:var(--text);margin-bottom:8px;">JVのみで回す</p>
+            <ul class="feature-list">
+              <li><span class="icon">🚀</span>JVが完全自走</li>
+              <li><span class="icon">👁️</span>四戸は品質チェックのみ</li>
+              <li><span class="icon">📈</span>スケール・横展開</li>
+              <li><span class="icon">🤝</span>新JV追加可能</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 役割分担 -->
+      <div class="section">
+        <div class="section-title">🧩 役割分担（固定）</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="card" style="border-left:4px solid #4F46E5;">
+            <div class="card-header"><div class="card-icon">🧠</div><div><div class="card-title">四戸（Miho）の役割</div><div class="card-sub">ここ以外は手を出さない</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">⚙️</span><strong>プロダクト設計</strong>：システム・テンプレ・フロー設計</li>
+              <li><span class="icon">✅</span><strong>品質担保</strong>：AI診断精度・レポート品質チェック</li>
+              <li><span class="icon">🔧</span><strong>改善</strong>：データを見てシステムをアップデート</li>
+              <li><span class="icon">📋</span><strong>型の言語化</strong>：Phase1で型を作りテンプレに落とす</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left:4px solid #F59E0B;">
+            <div class="card-header"><div class="card-icon">🤝</div><div><div class="card-title">オルタナの役割</div><div class="card-sub">集客〜請求まで全部</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">📢</span><strong>集客</strong>：メルマガ・セミナー・SNS</li>
+              <li><span class="icon">💬</span><strong>営業</strong>：面談・ヒアリング・クロージング</li>
+              <li><span class="icon">📄</span><strong>契約</strong>：提案書・契約書・請求書</li>
+              <li><span class="icon">🏃</span><strong>実行</strong>：導入後の企業サポート・フォロー</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 仕組み化コンポーネント -->
+      <div class="section">
+        <div class="section-title">⚙️ 仕組み化コンポーネント（必須パーツ）</div>
+        <div class="url-card">
+
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">🎤</span>
+            <div style="flex:1;">
+              <div class="url-item-title">セミナー台本（動画＋スライド）</div>
+              <div class="url-item-url">集客用セミナーの台本・スライド構成。誰でも同じ品質で話せる。</div>
+            </div>
+            <span class="badge badge-yellow">🖊️ 作成中</span>
+          </div>
+
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">💬</span>
+            <div style="flex:1;">
+              <div class="url-item-title">面談テンプレ（質問10項目＋ヒアリングシート）</div>
+              <div class="url-item-url">初回面談で必ず聞く10項目。ヒアリングシートにそのまま記入。</div>
+            </div>
+            <span class="badge badge-yellow">🖊️ 作成中</span>
+          </div>
+
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">📊</span>
+            <div style="flex:1;">
+              <div class="url-item-title">提案書テンプレ（価格・分配含む）</div>
+              <div class="url-item-url">会社情報を埋めるだけで完成する提案書。価格・JV分配ルール込み。</div>
+            </div>
+            <span class="badge badge-yellow">🖊️ 作成中</span>
+          </div>
+
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">🗣️</span>
+            <div style="flex:1;">
+              <div class="url-item-title">クロージングスクリプト（3パターン）</div>
+              <div class="url-item-url">「検討します」「高い」「今じゃない」の3反論への返答スクリプト。</div>
+            </div>
+            <span class="badge badge-gray">⏳ 未作成</span>
+          </div>
+
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">❓</span>
+            <div style="flex:1;">
+              <div class="url-item-title">FAQ（反論対応集）</div>
+              <div class="url-item-url">よく出る質問・反論とその返答一覧。商談中・メールで即参照。</div>
+            </div>
+            <span class="badge badge-gray">⏳ 未作成</span>
+          </div>
+
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">📄</span>
+            <div style="flex:1;">
+              <div class="url-item-title">契約・請求テンプレ（JV条件反映）</div>
+              <div class="url-item-url">JV分配ルールを反映した契約書・請求書テンプレ。</div>
+            </div>
+            <span class="badge badge-gray">⏳ 未作成</span>
+          </div>
+
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">💰</span>
+            <div style="flex:1;">
+              <div class="url-item-title">分配管理シート（導入月起点で自動計算）</div>
+              <div class="url-item-url">導入月を入力すると分配額が自動計算されるGoogleスプレッドシート。</div>
+            </div>
+            <span class="badge badge-gray">⏳ 未作成</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 運用ルール -->
+      <div class="section">
+        <div class="section-title">🧠 運用ルール（短く・強く）</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+            <div style="font-size:20px;flex-shrink:0;">🔁</div>
+            <div><div style="font-size:13px;font-weight:800;color:#15803D;">3回やったらテンプレ化</div><div style="font-size:12px;color:#166534;margin-top:4px;line-height:1.6;">同じ説明・作業が3回発生したら必ず型にする。例外なし。</div></div>
+          </div>
+          <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+            <div style="font-size:20px;flex-shrink:0;">📹</div>
+            <div><div style="font-size:13px;font-weight:800;color:#15803D;">重要商談は必ず録画</div><div style="font-size:12px;color:#166534;margin-top:4px;line-height:1.6;">Phase1の商談は全録画。JV研修素材・FAQ作成の原材料になる。</div></div>
+          </div>
+          <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+            <div style="font-size:20px;flex-shrink:0;">📝</div>
+            <div><div style="font-size:13px;font-weight:800;color:#15803D;">価格・分配は資料で事前合意</div><div style="font-size:12px;color:#166534;margin-top:4px;line-height:1.6;">口頭合意不可。提案書で合意 → 契約書で確定。この順番を守る。</div></div>
+          </div>
+          <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+            <div style="font-size:20px;flex-shrink:0;">📅</div>
+            <div><div style="font-size:13px;font-weight:800;color:#15803D;">導入月＝起点で分配計算</div><div style="font-size:12px;color:#166534;margin-top:4px;line-height:1.6;">初回診断が完了した月を「導入月1」として分配シートに記録。</div></div>
+          </div>
+          <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+            <div style="font-size:20px;flex-shrink:0;">💰</div>
+            <div><div style="font-size:13px;font-weight:800;color:#15803D;">スポット10% / 深い関与30%</div><div style="font-size:12px;color:#166534;margin-top:4px;line-height:1.6;">原則スポット10%。集客〜クロージングまで担う場合は最大30%。</div></div>
+          </div>
         </div>
       </div>
 
