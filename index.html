@@ -494,12 +494,50 @@
       </div>
 
       <div class="section">
-        <div class="section-title">📋 契約書・案件管理（準備中）</div>
-        <div class="manual-card">
-          <div class="manual-card-icon">🔧</div>
-          <div>
-            <div class="manual-card-title">受注・請求・ロイヤリティ管理シートを構築予定</div>
-            <div class="manual-card-desc">案件台帳・請求書自動生成・JVロイヤリティ自動計算・支払い確認・確定申告用データ出力まで Google Sheets + GAS で構築します。</div>
+        <div class="section-title">📋 案件・請求・ロイヤリティ管理</div>
+
+        <div style="background:#F0FDF4;border:1.5px solid #6EE7B7;border-radius:12px;padding:20px 24px;margin-bottom:16px;">
+          <p style="font-size:13px;font-weight:800;color:#065F46;margin-bottom:12px;">⚙️ セットアップ手順（15分）</p>
+          <ol style="font-size:13px;color:#047857;padding-left:18px;line-height:2.2;">
+            <li><a href="https://script.google.com" target="_blank" style="color:#047857;font-weight:700;">script.google.com ↗</a> → 「新しいプロジェクト」→ 名前を「リミー 案件・請求管理」に</li>
+            <li><code style="background:#D1FAE5;padding:1px 6px;border-radius:3px;font-size:11px;">business-mgmt.gs</code> の内容を全コピー → GASに貼り付け → 💾 保存</li>
+            <li>関数選択で <code style="background:#D1FAE5;padding:1px 6px;border-radius:3px;font-size:11px;">setupSpreadsheet</code> → ▶ 実行 → スプレッドシート自動生成</li>
+            <li>関数選択で <code style="background:#D1FAE5;padding:1px 6px;border-radius:3px;font-size:11px;">setupTriggers</code> → ▶ 実行 → リマインド自動化完了</li>
+          </ol>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="card-header"><div class="card-icon">📋</div><div><div class="card-title">案件台帳</div><div class="card-sub">RIMEE-2026-001 形式で自動採番</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">✅</span>チャネル別管理（直販/JV-オルタナ/JV-はじめさん/スポット）</li>
+              <li><span class="icon">✅</span>ステータス色分け（商談中/受注/提供中/完了）</li>
+              <li><span class="icon">✅</span>契約書Driveリンクをここにペーストするだけ</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-icon">🧾</div><div><div class="card-title">請求管理</div><div class="card-sub">INV-2026-001 形式で管理</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">✅</span>消費税・請求合計・差額を自動計算</li>
+              <li><span class="icon">✅</span>期日3日前・超過時にリマインドメール自動送信</li>
+              <li><span class="icon">✅</span>入金確認状況をステータスで管理</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-icon">💰</div><div><div class="card-title">JVロイヤリティ</div><div class="card-sub">パートナー別・自動計算</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">✅</span>スポット10% / JVフル関与30% で自動計算</li>
+              <li><span class="icon">✅</span>支払い済み金額と残額を自動管理</li>
+              <li><span class="icon">✅</span>パートナー別の支払い状況を一覧で確認</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-icon">📊</div><div><div class="card-title">売上サマリー</div><div class="card-sub">毎月1日に自動更新</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">✅</span>月別・チャネル別の売上を自動集計</li>
+              <li><span class="icon">✅</span>JVロイヤリティを差し引いた純売上を表示</li>
+              <li><span class="icon">✅</span>確定申告用データ（売上合計・経費）を自動出力</li>
+            </ul>
           </div>
         </div>
       </div>
