@@ -496,50 +496,82 @@
       <div class="section">
         <div class="section-title">📋 案件・請求・ロイヤリティ管理</div>
 
-        <div style="background:#F0FDF4;border:1.5px solid #6EE7B7;border-radius:12px;padding:20px 24px;margin-bottom:16px;">
-          <p style="font-size:13px;font-weight:800;color:#065F46;margin-bottom:12px;">⚙️ セットアップ手順（15分）</p>
-          <ol style="font-size:13px;color:#047857;padding-left:18px;line-height:2.2;">
-            <li><a href="https://script.google.com" target="_blank" style="color:#047857;font-weight:700;">script.google.com ↗</a> → 「新しいプロジェクト」→ 名前を「リミー 案件・請求管理」に</li>
-            <li><code style="background:#D1FAE5;padding:1px 6px;border-radius:3px;font-size:11px;">business-mgmt.gs</code> の内容を全コピー → GASに貼り付け → 💾 保存</li>
-            <li>関数選択で <code style="background:#D1FAE5;padding:1px 6px;border-radius:3px;font-size:11px;">setupSpreadsheet</code> → ▶ 実行 → スプレッドシート自動生成</li>
-            <li>関数選択で <code style="background:#D1FAE5;padding:1px 6px;border-radius:3px;font-size:11px;">setupTriggers</code> → ▶ 実行 → リマインド自動化完了</li>
-          </ol>
+        <!-- ステータスバー -->
+        <div style="background:linear-gradient(135deg,#1A472A,#2D6A4F);border-radius:12px;padding:18px 24px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <p style="font-size:14px;font-weight:900;color:white;margin-bottom:4px;">✅ 稼働中</p>
+            <p style="font-size:12px;color:rgba(255,255,255,0.75);">business-mgmt.gs / Google Sheets 5シート構成</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">📋 案件台帳</span>
+            <span style="background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">🧾 請求管理</span>
+            <span style="background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">💰 JVロイヤリティ</span>
+            <span style="background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">📄 契約書管理</span>
+            <span style="background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">📊 売上サマリー</span>
+          </div>
         </div>
 
-        <div class="grid">
+        <div class="grid" style="margin-bottom:16px;">
+
+          <!-- 手動入力 -->
           <div class="card">
-            <div class="card-header"><div class="card-icon">📋</div><div><div class="card-title">案件台帳</div><div class="card-sub">RIMEE-2026-001 形式で自動採番</div></div></div>
+            <div class="card-header"><div class="card-icon">🖱️</div><div><div class="card-title">手動追加：スプレッドシートのメニューから</div><div class="card-sub">スプレッドシートを開くと「🏢 リミー管理」メニューが出る</div></div></div>
             <ul class="feature-list">
-              <li><span class="icon">✅</span>チャネル別管理（直販/JV-オルタナ/JV-はじめさん/スポット）</li>
-              <li><span class="icon">✅</span>ステータス色分け（商談中/受注/提供中/完了）</li>
-              <li><span class="icon">✅</span>契約書Driveリンクをここにペーストするだけ</li>
+              <li><span class="icon">1️⃣</span>スプレッドシートを開く</li>
+              <li><span class="icon">2️⃣</span>上部メニュー「🏢 リミー管理」→「📋 新規案件を追加」</li>
+              <li><span class="icon">3️⃣</span>ダイアログに会社名・チャネル・金額を入力して送信</li>
+              <li><span class="icon">✅</span>JVチャネルなら<strong>ロイヤリティ行も自動追加</strong></li>
             </ul>
           </div>
+
+          <!-- 自動連携 -->
           <div class="card">
-            <div class="card-header"><div class="card-icon">🧾</div><div><div class="card-title">請求管理</div><div class="card-sub">INV-2026-001 形式で管理</div></div></div>
+            <div class="card-header"><div class="card-icon">🔗</div><div><div class="card-title">自動追加：AI診断の企業登録と連動</div><div class="card-sub">register.html から登録→案件台帳に自動追加</div></div></div>
             <ul class="feature-list">
-              <li><span class="icon">✅</span>消費税・請求合計・差額を自動計算</li>
-              <li><span class="icon">✅</span>期日3日前・超過時にリマインドメール自動送信</li>
-              <li><span class="icon">✅</span>入金確認状況をステータスで管理</li>
+              <li><span class="icon">✅</span>企業がregister.htmlで登録 → 案件台帳に自動で1行追加</li>
+              <li><span class="icon">✅</span>会社名・管理者名・登録日が自動入力</li>
+              <li><span class="icon">✅</span>受注金額・チャネルは後から手動で更新</li>
+              <li><span class="icon">🔧</span>onboarding-diagnosis GASにスニペット追加で有効化</li>
             </ul>
           </div>
+
+          <!-- 書類自動生成 -->
           <div class="card">
-            <div class="card-header"><div class="card-icon">💰</div><div><div class="card-title">JVロイヤリティ</div><div class="card-sub">パートナー別・自動計算</div></div></div>
+            <div class="card-header"><div class="card-icon">📄</div><div><div class="card-title">書類PDF自動生成（会社名・金額を自動入力）</div><div class="card-sub">Google Docsテンプレートを1回作るだけ</div></div></div>
             <ul class="feature-list">
-              <li><span class="icon">✅</span>スポット10% / JVフル関与30% で自動計算</li>
-              <li><span class="icon">✅</span>支払い済み金額と残額を自動管理</li>
-              <li><span class="icon">✅</span>パートナー別の支払い状況を一覧で確認</li>
+              <li><span class="icon">✅</span>請求書・見積書・契約書に対応</li>
+              <li><span class="icon">✅</span><code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:11px;">{{会社名}}</code> <code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:11px;">{{金額}}</code> <code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:11px;">{{請求番号}}</code> を自動置換</li>
+              <li><span class="icon">✅</span>PDFは「リミー 発行書類」フォルダに自動保存</li>
+              <li><span class="icon">⏳</span>振込先：法人口座開設後にテンプレートへ追加</li>
+            </ul>
+            <div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:11px;color:#92400E;font-weight:700;">
+              📝 テンプレートをGoogle Docsで作成 → DriveのファイルIDをスクリプトプロパティ「INVOICE_TEMPLATE_ID」に設定
+            </div>
+          </div>
+
+          <!-- 自動化 -->
+          <div class="card">
+            <div class="card-header"><div class="card-icon">⏰</div><div><div class="card-title">自動化（トリガー設定済み）</div><div class="card-sub">setupTriggers() 実行後に有効</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">🕘</span><strong>毎朝9時：</strong>期日3日前・超過の請求にリマインドメール</li>
+              <li><span class="icon">📅</span><strong>毎月1日：</strong>売上サマリーを自動更新（月別・チャネル別）</li>
+              <li><span class="icon">📊</span>確定申告用データ（売上合計・ロイヤリティ・純売上）も自動集計</li>
             </ul>
           </div>
-          <div class="card">
-            <div class="card-header"><div class="card-icon">📊</div><div><div class="card-title">売上サマリー</div><div class="card-sub">毎月1日に自動更新</div></div></div>
-            <ul class="feature-list">
-              <li><span class="icon">✅</span>月別・チャネル別の売上を自動集計</li>
-              <li><span class="icon">✅</span>JVロイヤリティを差し引いた純売上を表示</li>
-              <li><span class="icon">✅</span>確定申告用データ（売上合計・経費）を自動出力</li>
-            </ul>
-          </div>
+
         </div>
+
+        <!-- セットアップ手順（折りたたみ） -->
+        <details style="background:#F9FAFB;border:1px solid var(--border);border-radius:10px;padding:16px 20px;">
+          <summary style="font-size:13px;font-weight:800;color:var(--text);cursor:pointer;">⚙️ 初回セットアップ手順（15分）</summary>
+          <ol style="font-size:13px;color:var(--text-sub);padding-left:18px;line-height:2.2;margin-top:12px;">
+            <li><a href="https://script.google.com" target="_blank" style="color:var(--primary);font-weight:700;">script.google.com ↗</a> → 「新しいプロジェクト」→ 名前を「リミー 案件・請求管理」に</li>
+            <li><code style="background:#F3F4F6;padding:1px 6px;border-radius:3px;">business-mgmt.gs</code> の内容を全コピー → GASに貼り付け → 💾 保存</li>
+            <li>関数選択で <code style="background:#F3F4F6;padding:1px 6px;border-radius:3px;">setupSpreadsheet</code> → ▶ 実行 → スプレッドシート自動生成</li>
+            <li>関数選択で <code style="background:#F3F4F6;padding:1px 6px;border-radius:3px;">setupTriggers</code> → ▶ 実行 → 自動化完了</li>
+            <li>（任意）請求書テンプレをGoogle Docsで作成 → スクリプトプロパティ <code style="background:#F3F4F6;padding:1px 6px;border-radius:3px;">INVOICE_TEMPLATE_ID</code> にDriveファイルIDを設定</li>
+          </ol>
+        </details>
       </div>
 
     </div>
