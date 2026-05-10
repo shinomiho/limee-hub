@@ -200,7 +200,8 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('overview')">📋 全体一覧</button>
     <button class="tab-btn" onclick="switchTab('structure')">🗺️ 構造図</button>
-    <button class="tab-btn" onclick="switchTab('clients')">📄 お客様・JV資料</button>
+    <button class="tab-btn" onclick="switchTab('customers')">🏢 お客様</button>
+    <button class="tab-btn" onclick="switchTab('jv')">🤝 JV</button>
     <button class="tab-btn" onclick="switchTab('jvops')">⚙️ JV運用設計</button>
     <button class="tab-btn" onclick="switchTab('handover')">📖 引き継ぎガイド</button>
   </div>
@@ -322,8 +323,101 @@
     </div>
   </div>
 
-  <!-- ===== お客様・JV資料タブ ===== -->
-  <div id="tab-clients" class="tab-panel">
+  <!-- ===== お客様タブ ===== -->
+  <div id="tab-customers" class="tab-panel">
+    <div class="container">
+
+      <div class="section">
+        <div class="section-title">📬 お客様への渡し方フロー</div>
+        <div class="card" style="max-width:640px;">
+          <ul class="feature-list" style="font-size:13px;">
+            <li><span class="icon">1️⃣</span>SNS・名刺交換 → <strong>採用リスク診断URL</strong>を送る</li>
+            <li><span class="icon">2️⃣</span>診断完了 → <strong>個別相談予約URL</strong>を送る</li>
+            <li><span class="icon">3️⃣</span>商談 → <strong>サービス説明資料・サンプルレポート</strong>を見せる</li>
+            <li><span class="icon">4️⃣</span>契約 → <strong>企業登録フォームURL</strong>を送る（あとは全自動）</li>
+            <li><span class="icon">5️⃣</span>翌月以降 → <strong>月次レポート</strong>が自動配信される</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🏢 お客様向けリンク・資料</div>
+        <div class="url-card">
+          <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="url-item">
+            <span class="url-item-icon">⚠️</span>
+            <div><div class="url-item-title">採用リスク診断（商談前の興味喚起）</div><div class="url-item-url">SNSや名刺交換後に送る1分診断。リードとして活用。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://app.spirinc.com/t/BaVcJLzp1EBNlPmMopnQj/as/nEkvuC6zy3wU2bD10nCV0/confirm" target="_blank" class="url-item">
+            <span class="url-item-icon">💬</span>
+            <div><div class="url-item-title">個別相談予約（Spir）</div><div class="url-item-url">興味を持った相手に送る相談予約URL。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://drive.google.com/file/d/135xa2_0X2pNx7oG3fn5XRaSdGFCAeb1S/view?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📄</span>
+            <div><div class="url-item-title">AIレポートサンプル（商談デモ用）</div><div class="url-item-url">実際に生成されるレポートのサンプル。導入前の説明に使用。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1q8BV7-TiUlO5qgcKmMCjADqahwxp1UNyu/view?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📊</span>
+            <div><div class="url-item-title">月次レポートサンプル（継続利用説明用）</div><div class="url-item-url">毎月1日・15日に自動配信されるレポートのサンプル。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="url-item">
+            <span class="url-item-icon">🏢</span>
+            <div><div class="url-item-title">企業登録フォーム（契約後に送付）</div><div class="url-item-url">契約成立後にこのURLを送るだけ。企業が自己登録→URL即時発行。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <div class="url-item" style="cursor:default;opacity:0.5;">
+            <span class="url-item-icon">🎨</span>
+            <div><div class="url-item-title">会社紹介資料・サービス説明（Canva等）</div><div class="url-item-url">← リンクを追加してください</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ファイル管理ルール -->
+      <div class="section">
+        <div class="section-title">📁 資料ファイルの管理ルール（リンク切れを防ぐ）</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="card" style="border-top:4px solid #10B981;">
+            <div class="card-header"><div class="card-icon">🐙</div><div><div class="card-title">PDFファイル → GitHub にアップ</div><div class="card-sub">ファイル名が同じなら更新してもURLそのまま</div></div></div>
+            <div style="background:#F0FDF4;border-radius:8px;padding:12px;margin-top:4px;">
+              <ol style="font-size:12px;color:#047857;padding-left:16px;line-height:2.1;">
+                <li><a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" style="color:#047857;font-weight:700;">limee-hub/docs フォルダ ↗</a> を開く</li>
+                <li>「Add file」→「Upload files」</li>
+                <li>ドラッグ＆ドロップ → 「Commit changes」</li>
+              </ol>
+            </div>
+            <div style="margin-top:10px;">
+              <a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" class="link-btn">📤 ファイルをアップ ↗</a>
+            </div>
+          </div>
+          <div class="card" style="border-top:4px solid #4F46E5;">
+            <div class="card-header"><div class="card-icon">📝</div><div><div class="card-title">Google Docs → 上書き編集でOK</div><div class="card-sub">新規作成して差し替えるとURLが変わる</div></div></div>
+            <ul class="feature-list" style="margin-top:4px;">
+              <li><span class="icon">✅</span>既存ファイルを開いて編集 → URLは変わらない</li>
+              <li><span class="icon">❌</span>新しいドキュメントを作成して差し替え → URL変わる</li>
+            </ul>
+            <div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:11px;color:#92400E;font-weight:700;">⚠️ 必ず元のファイルを開いて上書き保存する</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-icon">📂</div><div><div class="card-title">docs フォルダ（GitHub）— 永続URL資料一覧</div></div></div>
+          <div class="url-item" style="cursor:default;opacity:0.5;">
+            <span class="url-item-icon">➕</span>
+            <div><div class="url-item-title">資料をアップロードしてください</div><div class="url-item-url">docsフォルダにアップ後、Claude Codeにリンク追加を依頼してください</div></div>
+          </div>
+          <div style="margin-top:8px;">
+            <a href="https://github.com/shinomiho/limee-hub/tree/main/docs" target="_blank" class="link-btn">🐙 docsフォルダを開く ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== JVタブ ===== -->
+  <div id="tab-jv" class="tab-panel">
     <div class="container">
 
       <div class="section">
@@ -331,7 +425,7 @@
         <div class="url-card">
           <a href="https://docs.google.com/document/d/1nwm2x6e0JGezvoBcN8lf8H9E0SWSOAvKgZAnh3pPTrY/edit?usp=sharing" target="_blank" class="url-item">
             <span class="url-item-icon">💰</span>
-            <div><div class="url-item-title">料金モデル（チャネル別・JV分配設計）</div><div class="url-item-url">Google Docs — JVモデル・直販モデル・スポット支援の分配ルール</div></div>
+            <div><div class="url-item-title">料金モデル（チャネル別・JV分配設計）</div><div class="url-item-url">JVモデル・直販モデル・スポット支援の分配ルール</div></div>
             <span class="url-arrow">↗</span>
           </a>
           <div class="url-item" style="cursor:default;opacity:0.5;">
@@ -346,105 +440,68 @@
       </div>
 
       <div class="section">
-        <div class="section-title">🏢 お客様向け資料</div>
+        <div class="section-title">👥 JVパートナー一覧</div>
         <div class="url-card">
-          <a href="https://drive.google.com/file/d/135xa2_0X2pNx7oG3fn5XRaSdGFCAeb1S/view?usp=sharing" target="_blank" class="url-item">
-            <span class="url-item-icon">📄</span>
-            <div><div class="url-item-title">AIレポートサンプル（管理者向け）</div><div class="url-item-url">導入前の説明・デモ用。実際に生成されるレポートのサンプル。</div></div>
-            <span class="url-arrow">↗</span>
-          </a>
-          <a href="https://drive.google.com/file/d/1q8BV7-TiUlO5qgcKmMCjADqahwxp1UNyu/view?usp=sharing" target="_blank" class="url-item">
-            <span class="url-item-icon">📊</span>
-            <div><div class="url-item-title">月次レポートサンプル</div><div class="url-item-url">継続利用時に届く月次レポートのサンプル。導入説明時に使用。</div></div>
-            <span class="url-arrow">↗</span>
-          </a>
-          <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="url-item">
+          <div class="url-item" style="cursor:default;">
             <span class="url-item-icon">🏢</span>
-            <div><div class="url-item-title">企業登録フォーム（契約後に送付）</div><div class="url-item-url">契約成立後にこのURLを送るだけで企業が自己登録できる。</div></div>
-            <span class="url-arrow">↗</span>
-          </a>
-          <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="url-item">
-            <span class="url-item-icon">⚠️</span>
-            <div><div class="url-item-title">採用リスク診断（商談前の興味喚起用）</div><div class="url-item-url">SNSや名刺交換後に送る1分診断。リードとして活用。</div></div>
-            <span class="url-arrow">↗</span>
-          </a>
-          <a href="https://app.spirinc.com/t/BaVcJLzp1EBNlPmMopnQj/as/nEkvuC6zy3wU2bD10nCV0/confirm" target="_blank" class="url-item">
-            <span class="url-item-icon">💬</span>
-            <div><div class="url-item-title">個別相談予約（商談設定）</div><div class="url-item-url">興味を持った相手に送る相談予約URL。</div></div>
-            <span class="url-arrow">↗</span>
-          </a>
+            <div style="flex:1;">
+              <div class="url-item-title">オルタナ</div>
+              <div class="url-item-url">集客・営業・契約・実行を担当。チャネル種別：JV</div>
+            </div>
+            <span class="badge badge-green">稼働中</span>
+          </div>
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">👤</span>
+            <div style="flex:1;">
+              <div class="url-item-title">はじめさん</div>
+              <div class="url-item-url">← 役割・チャネル区分を追加してください</div>
+            </div>
+            <span class="badge badge-yellow">確認中</span>
+          </div>
           <div class="url-item" style="cursor:default;opacity:0.5;">
-            <span class="url-item-icon">🎨</span>
-            <div><div class="url-item-title">会社紹介資料・サービス説明（Canva等）</div><div class="url-item-url">← リンクを追加してください</div></div>
+            <span class="url-item-icon">➕</span>
+            <div><div class="url-item-title">パートナーを追加</div><div class="url-item-url">Claude Codeに「JVパートナーを追加して」と伝えてください</div></div>
           </div>
         </div>
       </div>
 
-      <!-- ファイル管理ルール -->
       <div class="section">
-        <div class="section-title">📁 資料ファイルの管理ルール（リンク切れを防ぐ）</div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
-
-          <div class="card" style="border-top:4px solid #10B981;">
-            <div class="card-header"><div class="card-icon">🐙</div><div><div class="card-title">PDFなどのファイル → GitHub にアップ</div><div class="card-sub">一度アップしたらURLが永遠に変わらない</div></div></div>
-            <ul class="feature-list">
-              <li><span class="icon">✅</span>ファイル名が同じなら更新してもURLはそのまま</li>
-              <li><span class="icon">✅</span>ターミナル不要・ブラウザだけで完結</li>
-              <li><span class="icon">✅</span>リンク形式：<code style="font-size:10px;background:#F3F4F6;padding:1px 4px;border-radius:3px;">shinomiho.github.io/limee-hub/docs/ファイル名</code></li>
-            </ul>
-            <div style="background:#F0FDF4;border-radius:8px;padding:12px;margin-top:10px;">
-              <p style="font-size:12px;font-weight:800;color:#065F46;margin-bottom:6px;">📤 アップロード手順（ターミナル不要）</p>
-              <ol style="font-size:12px;color:#047857;padding-left:16px;line-height:2;">
-                <li><a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" style="color:#047857;font-weight:700;">github.com/shinomiho/limee-hub → docs フォルダ ↗</a> を開く</li>
-                <li>「Add file」→「Upload files」をクリック</li>
-                <li>ファイルをドラッグ＆ドロップ</li>
-                <li>「Commit changes」ボタンを押す → 即時公開</li>
-              </ol>
-            </div>
-          </div>
-
-          <div class="card" style="border-top:4px solid #4F46E5;">
-            <div class="card-header"><div class="card-icon">📝</div><div><div class="card-title">Google Docs（編集する文書）→ そのまま使う</div><div class="card-sub">編集してもURLは変わらない</div></div></div>
-            <ul class="feature-list">
-              <li><span class="icon">✅</span>同じファイルを上書き編集 → URLは変わらない</li>
-              <li><span class="icon">❌</span>新しいドキュメントを作って差し替え → URLが変わる</li>
-              <li><span class="icon">🔑</span><strong>ルール：既存ファイルを必ず上書きする</strong></li>
-            </ul>
-            <div style="background:#FFFBEB;border-radius:8px;padding:12px;margin-top:10px;">
-              <p style="font-size:12px;font-weight:800;color:#92400E;margin-bottom:4px;">⚠️ やってはいけないこと</p>
-              <p style="font-size:12px;color:#B45309;line-height:1.7;">「新しいバージョン」として新規ドキュメントを作成してしまうこと。必ず元のファイルを開いて編集する。</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- 現在の docs フォルダ一覧 -->
+        <div class="section-title">💰 ロイヤリティ区分</div>
         <div class="card">
-          <div class="card-header"><div class="card-icon">📂</div><div><div class="card-title">docs フォルダ（GitHub管理）— 現在の資料一覧</div><div class="card-sub">ここに資料を追加すると永続URLになります</div></div></div>
-          <div id="docs-list">
-            <div class="url-item" style="cursor:default;opacity:0.5;">
-              <span class="url-item-icon">➕</span>
-              <div><div class="url-item-title">資料をアップロードしてください</div><div class="url-item-url">github.com/shinomiho/limee-hub の docs フォルダにアップ → ここのリンクを更新</div></div>
-            </div>
-          </div>
-          <div style="margin-top:12px;">
-            <a href="https://github.com/shinomiho/limee-hub/tree/main/docs" target="_blank" class="link-btn">🐙 docsフォルダを開く ↗</a>
-            <a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" class="link-btn">📤 ファイルをアップ ↗</a>
-          </div>
+          <table style="width:100%;font-size:13px;border-collapse:collapse;">
+            <tr style="background:#F9FAFB;">
+              <th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);">チャネル区分</th>
+              <th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);">関与範囲</th>
+              <th style="text-align:right;padding:10px 12px;border-bottom:1px solid var(--border);">ロイヤリティ率</th>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;border-bottom:1px solid #F3F4F6;font-weight:700;">直販</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #F3F4F6;color:var(--text-sub);">Miho自身が集客〜クロージング</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #F3F4F6;text-align:right;"><span class="badge badge-blue">0%</span></td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;border-bottom:1px solid #F3F4F6;font-weight:700;">スポット支援</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #F3F4F6;color:var(--text-sub);">紹介のみ・関与薄い</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #F3F4F6;text-align:right;"><span class="badge badge-yellow">10%</span></td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;font-weight:700;">JVフル関与</td>
+              <td style="padding:10px 12px;color:var(--text-sub);">集客〜クロージングまで担う</td>
+              <td style="padding:10px 12px;text-align:right;"><span class="badge badge-red">最大 30%</span></td>
+            </tr>
+          </table>
+          <p style="font-size:11px;color:var(--text-sub);margin-top:10px;">※ 詳細な分配ルールは<a href="https://docs.google.com/document/d/1nwm2x6e0JGezvoBcN8lf8H9E0SWSOAvKgZAnh3pPTrY/edit?usp=sharing" target="_blank" style="color:var(--primary);">料金モデルドキュメント ↗</a> を参照</p>
         </div>
       </div>
 
       <div class="section">
-        <div class="section-title">📬 お客様への渡し方フロー</div>
-        <div class="card" style="max-width:600px;">
-          <ul class="feature-list" style="font-size:13px;">
-            <li><span class="icon">1️⃣</span>SNS・名刺交換 → <strong>採用リスク診断URL</strong>を送る</li>
-            <li><span class="icon">2️⃣</span>診断完了 → <strong>個別相談予約URL</strong>を送る</li>
-            <li><span class="icon">3️⃣</span>商談 → <strong>サービス説明資料・サンプルレポート</strong>を見せる</li>
-            <li><span class="icon">4️⃣</span>契約 → <strong>企業登録フォームURL</strong>を送る（あとは全自動）</li>
-            <li><span class="icon">5️⃣</span>翌月以降 → <strong>月次レポート</strong>が自動配信される</li>
-          </ul>
+        <div class="section-title">📋 契約書・案件管理（準備中）</div>
+        <div class="manual-card">
+          <div class="manual-card-icon">🔧</div>
+          <div>
+            <div class="manual-card-title">受注・請求・ロイヤリティ管理シートを構築予定</div>
+            <div class="manual-card-desc">案件台帳・請求書自動生成・JVロイヤリティ自動計算・支払い確認・確定申告用データ出力まで Google Sheets + GAS で構築します。</div>
+          </div>
         </div>
       </div>
 
