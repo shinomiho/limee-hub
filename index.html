@@ -170,6 +170,43 @@
     .gas-fn { color: #795E26; }
     .gas-str { color: #A31515; }
     .gas-btn { background: #4285F4; color: white; border: none; border-radius: 4px; padding: 5px 14px; font-size: 12px; font-family: 'Hiragino Sans', sans-serif; cursor: pointer; margin-left: auto; }
+
+    /* 操作パネル */
+    .op-section { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px; margin-bottom: 20px; }
+    .op-title { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+    .op-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .op-form.single { grid-template-columns: 1fr; }
+    .op-form.three { grid-template-columns: 1fr 1fr 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: 12px; font-weight: 700; color: var(--text-sub); }
+    .form-input { border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px; font-size: 13px; outline: none; font-family: inherit; background: white; }
+    .form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.1); }
+    .form-select { border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px; font-size: 13px; outline: none; font-family: inherit; background: white; cursor: pointer; }
+    .form-select:focus { border-color: var(--primary); }
+    .op-btn { background: var(--primary); color: white; border: none; border-radius: 8px; padding: 11px 24px; font-size: 14px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; transition: background 0.2s; }
+    .op-btn:hover { background: var(--primary-dark); }
+    .op-btn:disabled { background: #9CA3AF; cursor: not-allowed; }
+    .op-btn-sm { background: var(--primary); color: white; border: none; border-radius: 6px; padding: 7px 16px; font-size: 12px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+    .op-btn-sm:hover { background: var(--primary-dark); }
+    .op-result { border-radius: 8px; padding: 14px 16px; margin-top: 14px; font-size: 13px; display: none; }
+    .op-result.ok { background: #D1FAE5; color: #065F46; border: 1px solid #6EE7B7; }
+    .op-result.err { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+    .op-result.info { background: var(--primary-light); color: var(--primary-dark); border: 1px solid #A5B4FC; }
+    .op-setup-banner { background: #FFFBEB; border: 2px solid #FDE68A; border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; }
+    .summary-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .summary-table th { background: #F9FAFB; text-align: left; padding: 8px 12px; border-bottom: 2px solid var(--border); font-weight: 700; }
+    .summary-table td { padding: 8px 12px; border-bottom: 1px solid #F3F4F6; }
+    .summary-table tr:hover td { background: var(--primary-light); }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: #F9FAFB; border-radius: 10px; padding: 14px 16px; text-align: center; border: 1px solid var(--border); }
+    .stat-num { font-size: 22px; font-weight: 900; color: var(--primary); }
+    .stat-label { font-size: 11px; color: var(--text-sub); margin-top: 4px; }
+    @media (max-width: 600px) {
+      .op-form { grid-template-columns: 1fr; }
+      .op-form.three { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -202,6 +239,8 @@
     <button class="tab-btn" onclick="switchTab('customers')">🏢 お客様</button>
     <button class="tab-btn" onclick="switchTab('jv')">🤝 JV</button>
     <button class="tab-btn" onclick="switchTab('jvops')">⚙️ JV運用設計</button>
+    <button class="tab-btn" onclick="switchTab('operations')">💼 管理操作</button>
+    <button class="tab-btn" onclick="switchTab('brain')">🧠 マイブレイン</button>
     <button class="tab-btn" onclick="switchTab('handover')">📖 引き継ぎガイド</button>
   </div>
 
@@ -376,29 +415,53 @@
 
       <!-- ファイル管理ルール -->
       <div class="section">
-        <div class="section-title">📁 資料ファイルの管理ルール（リンク切れを防ぐ）</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+        <div class="section-title">📁 ファイル管理ルール — どのシチュエーションで何をするか</div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px;">
+
+          <!-- シチュエーション1 -->
           <div class="card" style="border-top:4px solid #10B981;">
-            <div class="card-header"><div class="card-icon">🐙</div><div><div class="card-title">PDFファイル → GitHub にアップ</div><div class="card-sub">ファイル名が同じなら更新してもURLそのまま</div></div></div>
-            <div style="background:#F0FDF4;border-radius:8px;padding:12px;margin-top:4px;">
-              <ol style="font-size:12px;color:#047857;padding-left:16px;line-height:2.1;">
-                <li><a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" style="color:#047857;font-weight:700;">limee-hub/docs フォルダ ↗</a> を開く</li>
-                <li>「Add file」→「Upload files」</li>
-                <li>ドラッグ＆ドロップ → 「Commit changes」</li>
-              </ol>
+            <div style="font-size:11px;font-weight:800;color:#10B981;margin-bottom:8px;">シチュエーション ①</div>
+            <div style="font-size:13px;font-weight:800;margin-bottom:6px;">お客様に渡す<br>PDF・スライド資料</div>
+            <div style="font-size:12px;color:var(--text-sub);margin-bottom:10px;line-height:1.7;">会社紹介・サービス説明・<br>サンプルレポートなど</div>
+            <div style="background:#F0FDF4;border-radius:8px;padding:10px 12px;font-size:12px;color:#047857;line-height:2.1;">
+              👉 <strong>GitHubにアップロード</strong><br>
+              1. <a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" style="color:#047857;font-weight:700;">docsフォルダ ↗</a> を開く<br>
+              2. 「Add file」→「Upload files」<br>
+              3. ファイルをドロップ → 「Commit changes」
             </div>
-            <div style="margin-top:10px;">
-              <a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" class="link-btn">📤 ファイルをアップ ↗</a>
-            </div>
+            <div style="font-size:11px;color:#065F46;margin-top:8px;font-weight:700;">✅ ファイル名が同じなら更新してもURLそのまま</div>
+            <a href="https://github.com/shinomiho/limee-hub/upload/main/docs" target="_blank" class="link-btn" style="margin-top:8px;">📤 アップロードする ↗</a>
           </div>
+
+          <!-- シチュエーション2 -->
           <div class="card" style="border-top:4px solid #4F46E5;">
-            <div class="card-header"><div class="card-icon">📝</div><div><div class="card-title">Google Docs → 上書き編集でOK</div><div class="card-sub">新規作成して差し替えるとURLが変わる</div></div></div>
-            <ul class="feature-list" style="margin-top:4px;">
-              <li><span class="icon">✅</span>既存ファイルを開いて編集 → URLは変わらない</li>
-              <li><span class="icon">❌</span>新しいドキュメントを作成して差し替え → URL変わる</li>
-            </ul>
-            <div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:11px;color:#92400E;font-weight:700;">⚠️ 必ず元のファイルを開いて上書き保存する</div>
+            <div style="font-size:11px;font-weight:800;color:#4F46E5;margin-bottom:8px;">シチュエーション ②</div>
+            <div style="font-size:13px;font-weight:800;margin-bottom:6px;">自分で何度も<br>編集する資料</div>
+            <div style="font-size:12px;color:var(--text-sub);margin-bottom:10px;line-height:1.7;">提案書・マニュアル・<br>料金モデルなど</div>
+            <div style="background:#EEF2FF;border-radius:8px;padding:10px 12px;font-size:12px;color:#3730A3;line-height:2.1;">
+              👉 <strong>Google Docsを直接編集</strong><br>
+              ✅ 既存ファイルを開いて上書き<br>
+              &nbsp;&nbsp;&nbsp;→ URLは変わらない<br>
+              ❌ 新しいファイルを作って差し替え<br>
+              &nbsp;&nbsp;&nbsp;→ URLが変わってリンク切れ
+            </div>
+            <div style="font-size:11px;color:#3730A3;margin-top:8px;font-weight:700;">⚠️ 必ず元のファイルを上書き保存</div>
           </div>
+
+          <!-- シチュエーション3 -->
+          <div class="card" style="border-top:4px solid #F59E0B;">
+            <div style="font-size:11px;font-weight:800;color:#F59E0B;margin-bottom:8px;">シチュエーション ③</div>
+            <div style="font-size:13px;font-weight:800;margin-bottom:6px;">GASが自動生成した<br>請求書・契約書</div>
+            <div style="font-size:12px;color:var(--text-sub);margin-bottom:10px;line-height:1.7;">管理操作タブから<br>発行したPDF書類</div>
+            <div style="background:#FFFBEB;border-radius:8px;padding:10px 12px;font-size:12px;color:#92400E;line-height:2.1;">
+              👉 <strong>何もしなくてOK</strong><br>
+              GASが自動で<br>「リミー 発行書類 / 会社名」<br>フォルダに保存する
+            </div>
+            <div style="font-size:11px;color:#92400E;margin-top:8px;font-weight:700;">✅ 操作不要・自動保存される</div>
+            <a href="https://drive.google.com" target="_blank" class="link-btn" style="margin-top:8px;background:#FEF3C7;color:#92400E;">📂 Driveで確認 ↗</a>
+          </div>
+
         </div>
         <div class="card">
           <div class="card-header"><div class="card-icon">📂</div><div><div class="card-title">docs フォルダ（GitHub）— 永続URL資料一覧</div></div></div>
@@ -509,6 +572,12 @@
             <span style="background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">📄 契約書管理</span>
             <span style="background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;">📊 売上サマリー</span>
           </div>
+        </div>
+
+        <!-- クイックアクション -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+          <a href="javascript:document.querySelector('[onclick*=operations]').click()" onclick="switchTabByName('operations')" style="display:inline-flex;align-items:center;gap:6px;background:#1A472A;color:white;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;">💼 案件登録・PDF発行はこちら →</a>
+          <a href="https://drive.google.com/drive/folders/search?q=%E3%83%AA%E3%83%9F%E3%83%BC+%E7%99%BA%E8%A1%8C%E6%9B%B8%E9%A1%9E" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:white;color:#1A472A;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;">📂 発行書類フォルダ ↗</a>
         </div>
 
         <div class="grid" style="margin-bottom:16px;">
@@ -825,6 +894,339 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ===== 管理操作タブ ===== -->
+  <div id="tab-operations" class="tab-panel">
+    <div class="container">
+
+      <!-- 使い方ガイド -->
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px;">
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">📋</div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">① 案件登録</div>
+          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">新しい契約が決まったら会社名・金額を入力して登録。Sheetsに自動追加。</div>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">🧾</div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">② 請求追加</div>
+          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">案件を選んで金額を確認→追加。請求管理シートに自動記録。</div>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">📄</div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">③ 書類PDF発行</div>
+          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">案件＋書類種別を選んで発行。会社名・金額が自動入力されたPDFが完成。</div>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">💰</div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">④ 入金確認</div>
+          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">「データ読み込む」で一覧表示。入金確認できたら「更新」でステータス変更。</div>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:6px;">💴</div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">⑤ 経費記録</div>
+          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">ツール代・交通費・外注費など自分の支払いを記録。確定申告時にCSV出力できる。</div>
+        </div>
+      </div>
+
+      <!-- セットアップバナー -->
+      <div class="op-setup-banner" id="setup-banner">
+        <p style="font-size:13px;font-weight:800;color:#92400E;margin-bottom:8px;">⚙️ 初回セットアップ：GAS Web App URLの設定が必要です</p>
+        <p style="font-size:12px;color:#B45309;line-height:1.8;margin-bottom:10px;">
+          1. <a href="https://script.google.com/home/projects/1SLP4PlSy1vUblk6i6zb1g9TjByFIhHCIAPj7fhLP7IIfDP2pEz23UTYb/edit" target="_blank" style="color:#92400E;font-weight:700;">GASエディタを開く ↗</a><br>
+          2. 「デプロイ」→「新しいデプロイ」→ 種類：ウェブアプリ<br>
+          3. 実行するユーザー：<strong>自分</strong> / アクセスできるユーザー：<strong>全員</strong><br>
+          4. デプロイ → 発行されたURLをコピー → 下の欄に貼り付け → 保存
+        </p>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input type="text" id="gas-url-input" class="form-input" style="flex:1;" placeholder="https://script.google.com/macros/s/.../exec">
+          <button onclick="saveGasUrl()" class="op-btn-sm">保存</button>
+        </div>
+        <p id="url-save-msg" style="font-size:12px;color:#065F46;margin-top:6px;display:none;">✅ 保存しました。このページを再読み込みせずそのまま使えます。</p>
+      </div>
+
+      <!-- 1. 新規案件登録 -->
+      <div class="op-section">
+        <div class="op-title">📋 新規案件登録</div>
+        <div class="op-form">
+          <div class="form-group">
+            <label class="form-label">会社名 *</label>
+            <input type="text" id="case-company" class="form-input" placeholder="株式会社〇〇">
+          </div>
+          <div class="form-group">
+            <label class="form-label">担当者名</label>
+            <input type="text" id="case-contact" class="form-input" placeholder="山田 太郎">
+          </div>
+          <div class="form-group">
+            <label class="form-label">チャネル *</label>
+            <select id="case-channel" class="form-select">
+              <option value="直販">直販（Miho自身）</option>
+              <option value="スポット">スポット支援（10%）</option>
+              <option value="JV-オルタナ">JV-オルタナ（30%）</option>
+              <option value="JV-はじめさん">JV-はじめさん（30%）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">サービス名 *</label>
+            <input type="text" id="case-service" class="form-input" placeholder="AI診断（月額）">
+          </div>
+          <div class="form-group">
+            <label class="form-label">受注金額（税抜・円）*</label>
+            <input type="number" id="case-amount" class="form-input" placeholder="100000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">契約日</label>
+            <input type="date" id="case-date" class="form-input">
+          </div>
+          <div class="form-group full">
+            <label class="form-label">備考</label>
+            <input type="text" id="case-note" class="form-input" placeholder="自由記入">
+          </div>
+        </div>
+        <button onclick="submitAddCase()" class="op-btn" id="btn-add-case">📋 案件を登録する</button>
+        <div id="result-add-case" class="op-result"></div>
+      </div>
+
+      <!-- 2. 請求追加 -->
+      <div class="op-section">
+        <div class="op-title">🧾 請求を追加する</div>
+        <div style="margin-bottom:12px;">
+          <button onclick="loadCasesForInvoice()" class="op-btn-sm">🔄 案件一覧を読み込む</button>
+          <span id="cases-load-msg" style="font-size:12px;color:var(--text-sub);margin-left:8px;"></span>
+        </div>
+        <div class="op-form">
+          <div class="form-group">
+            <label class="form-label">案件ID *</label>
+            <select id="inv-case-select" class="form-select">
+              <option value="">← まず「案件一覧を読み込む」を押す</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">請求金額（税抜・円）*</label>
+            <input type="number" id="inv-amount" class="form-input" placeholder="100000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">請求日</label>
+            <input type="date" id="inv-date" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">支払期限（日数）</label>
+            <select id="inv-days" class="form-select">
+              <option value="30">30日後（翌月末）</option>
+              <option value="14">14日後</option>
+              <option value="60">60日後</option>
+            </select>
+          </div>
+        </div>
+        <button onclick="submitAddInvoice()" class="op-btn" id="btn-add-invoice">🧾 請求を追加する</button>
+        <div id="result-add-invoice" class="op-result"></div>
+      </div>
+
+      <!-- 3. 書類PDF発行 -->
+      <div class="op-section">
+        <div class="op-title">📄 書類PDF発行（Driveに自動保存）</div>
+        <div style="margin-bottom:12px;">
+          <button onclick="loadCasesForPDF()" class="op-btn-sm">🔄 案件一覧を読み込む</button>
+          <span id="cases-pdf-msg" style="font-size:12px;color:var(--text-sub);margin-left:8px;"></span>
+        </div>
+        <div class="op-form three">
+          <div class="form-group">
+            <label class="form-label">案件ID *</label>
+            <select id="pdf-case-select" class="form-select">
+              <option value="">← まず「案件一覧を読み込む」を押す</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">書類種別 *</label>
+            <select id="pdf-type" class="form-select">
+              <option value="invoice">📄 請求書</option>
+              <option value="quote">📋 見積書</option>
+              <option value="contract">📝 業務委託契約書</option>
+              <option value="service">🔄 サービス利用契約書（サブスク）</option>
+              <option value="consult">💼 コンサルティング契約書</option>
+              <option value="sales">🛒 売買契約書</option>
+            </select>
+          </div>
+          <div class="form-group" style="justify-content:flex-end;">
+            <label class="form-label">&nbsp;</label>
+            <button onclick="submitGeneratePDF()" class="op-btn" id="btn-gen-pdf">✨ PDFを発行する</button>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-sub);margin-top:8px;">※ 発行したPDFは「リミー 発行書類 / 会社名」フォルダに自動保存されます</div>
+        <div id="result-gen-pdf" class="op-result"></div>
+      </div>
+
+      <!-- 4. 売上・入金サマリー -->
+      <div class="op-section">
+        <div class="op-title">📊 売上・入金サマリー</div>
+        <button onclick="loadSummary()" class="op-btn" id="btn-summary">📊 データを読み込む</button>
+        <div id="summary-area" style="margin-top:16px;display:none;">
+          <div class="stat-grid" id="stat-grid"></div>
+          <div style="font-size:14px;font-weight:800;margin-bottom:10px;">請求一覧・入金ステータス更新</div>
+          <div style="overflow-x:auto;">
+            <table class="summary-table" id="invoice-table">
+              <thead>
+                <tr>
+                  <th>請求ID</th><th>会社名</th><th>請求額（税込）</th><th>支払期限</th><th>ステータス</th><th>更新</th>
+                </tr>
+              </thead>
+              <tbody id="invoice-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="result-summary" class="op-result"></div>
+      </div>
+
+      <!-- 5. 経費記録 -->
+      <div class="op-section">
+        <div class="op-title">💴 経費を記録する</div>
+        <p style="font-size:12px;color:var(--text-sub);margin-bottom:14px;">Mihoが支払った経費（ツール費・交通費・外注費など）を記録。確定申告時にCSV出力できます。</p>
+        <div class="op-form">
+          <div class="form-group">
+            <label class="form-label">日付 *</label>
+            <input type="date" id="exp-date" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">カテゴリ *</label>
+            <select id="exp-category" class="form-select">
+              <option value="💻 ソフトウェア・ツール">💻 ソフトウェア・ツール</option>
+              <option value="📡 通信費">📡 通信費</option>
+              <option value="🚃 交通費">🚃 交通費</option>
+              <option value="📚 書籍・セミナー">📚 書籍・セミナー</option>
+              <option value="🎨 外注費">🎨 外注費</option>
+              <option value="🏢 家賃・光熱費">🏢 家賃・光熱費</option>
+              <option value="🍽️ 接待交際費">🍽️ 接待交際費</option>
+              <option value="📦 消耗品">📦 消耗品</option>
+              <option value="📋 その他">📋 その他</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label">内容 *</label>
+            <input type="text" id="exp-desc" class="form-input" placeholder="例：Claude API費用（5月分）">
+          </div>
+          <div class="form-group">
+            <label class="form-label">金額（税抜・円）*</label>
+            <input type="number" id="exp-amount" class="form-input" placeholder="10000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">支払方法</label>
+            <select id="exp-payment" class="form-select">
+              <option value="クレジットカード">クレジットカード</option>
+              <option value="銀行振込">銀行振込</option>
+              <option value="現金">現金</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label">メモ</label>
+            <input type="text" id="exp-memo" class="form-input" placeholder="領収書番号など">
+          </div>
+        </div>
+        <button onclick="submitAddExpense()" class="op-btn" id="btn-add-exp">💴 経費を記録する</button>
+        <div id="result-add-exp" class="op-result"></div>
+
+        <!-- 当月経費一覧 -->
+        <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+            <span style="font-size:13px;font-weight:800;">当月の経費一覧</span>
+            <input type="month" id="exp-month" class="form-input" style="width:auto;">
+            <button onclick="loadExpenses()" class="op-btn-sm">読み込む</button>
+          </div>
+          <div id="exp-summary" style="display:none;">
+            <div class="stat-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:12px;" id="exp-stat-grid"></div>
+            <div style="overflow-x:auto;">
+              <table class="summary-table">
+                <thead><tr><th>日付</th><th>カテゴリ</th><th>内容</th><th>金額（税抜）</th><th>合計（税込）</th><th>支払方法</th></tr></thead>
+                <tbody id="exp-tbody"></tbody>
+              </table>
+            </div>
+            <div style="margin-top:10px;font-size:12px;color:var(--text-sub);">
+              💡 確定申告用：Googleスプレッドシートの「経費管理」シートをファイル → ダウンロード → CSVで出力し、マネーフォワードやFreeeにインポートできます。
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== マイブレインタブ ===== -->
+  <div id="tab-brain" class="tab-panel">
+    <div class="container">
+
+      <div style="background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:16px;padding:24px 28px;margin-bottom:28px;color:white;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <p style="font-size:20px;font-weight:900;margin-bottom:4px;">🧠 Mihoのブレイン</p>
+          <p style="font-size:13px;opacity:0.8;" id="brain-date"></p>
+        </div>
+        <button onclick="loadBrain()" class="op-btn" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);">🔄 全部読み込む</button>
+      </div>
+
+      <!-- 使い方 -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;">
+        <div style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:10px;padding:14px;color:white;">
+          <div style="font-size:13px;font-weight:800;margin-bottom:4px;">📋 タスク</div>
+          <div style="font-size:12px;opacity:0.85;line-height:1.7;">テキスト入力 → Enter か「＋追加」<br>丸ボタンで完了。✕で削除。<br>優先度と期限も設定できる。</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:10px;padding:14px;color:white;">
+          <div style="font-size:13px;font-weight:800;margin-bottom:4px;">📅 スケジュール</div>
+          <div style="font-size:12px;opacity:0.85;line-height:1.7;">「全部読み込む」でGoogleカレンダーの今週の予定を表示。「更新」ボタンで再読み込み。</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:10px;padding:14px;color:white;">
+          <div style="font-size:13px;font-weight:800;margin-bottom:4px;">📧 未読メール</div>
+          <div style="font-size:12px;opacity:0.85;line-height:1.7;">「全部読み込む」でGmailの未読受信箱を表示。クリックするとGmailが開く。</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+        <!-- タスク -->
+        <div style="grid-column:1 / -1;">
+          <div class="op-section">
+            <div class="op-title">📋 今日のタスク</div>
+
+            <!-- タスク追加 -->
+            <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+              <input type="text" id="task-text" class="form-input" style="flex:1;min-width:200px;" placeholder="タスクを入力...（Enterで追加）" onkeydown="if(event.key==='Enter')addTask()">
+              <select id="task-priority" class="form-select" style="width:auto;">
+                <option value="高">🔴 高</option>
+                <option value="中" selected>🟡 中</option>
+                <option value="低">🟢 低</option>
+              </select>
+              <input type="date" id="task-deadline" class="form-input" style="width:auto;" title="期限（任意）">
+              <button onclick="addTask()" class="op-btn-sm">＋ 追加</button>
+            </div>
+
+            <!-- 未完了タスク -->
+            <div id="task-list-todo" style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;"></div>
+
+            <!-- 完了タスク（折りたたみ） -->
+            <details>
+              <summary style="font-size:12px;color:var(--text-sub);cursor:pointer;padding:4px 0;">✅ 完了済み</summary>
+              <div id="task-list-done" style="display:flex;flex-direction:column;gap:6px;margin-top:8px;"></div>
+            </details>
+
+            <div id="result-task" class="op-result"></div>
+          </div>
+        </div>
+
+        <!-- スケジュール -->
+        <div class="op-section" style="height:fit-content;">
+          <div class="op-title">📅 今週のスケジュール <button onclick="loadSchedule()" style="background:none;border:none;font-size:12px;color:var(--primary);cursor:pointer;font-weight:700;margin-left:4px;">更新</button></div>
+          <div id="schedule-list">
+            <p style="font-size:13px;color:var(--text-sub);">「全部読み込む」を押してください</p>
+          </div>
+        </div>
+
+        <!-- 要返信メール -->
+        <div class="op-section" style="height:fit-content;">
+          <div class="op-title">📧 未読メール（要返信） <button onclick="loadEmails()" style="background:none;border:none;font-size:12px;color:var(--primary);cursor:pointer;font-weight:700;margin-left:4px;">更新</button></div>
+          <div id="email-list">
+            <p style="font-size:13px;color:var(--text-sub);">「全部読み込む」を押してください</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -1206,6 +1608,423 @@
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + name).classList.add('active');
     event.target.classList.add('active');
+  }
+
+  // ============================================================
+  // 管理操作パネル — GAS Web App 連携
+  // ============================================================
+  let GAS_URL = localStorage.getItem('gas_web_app_url') || 'https://script.google.com/macros/s/AKfycbyieHoHI6reLXlEII6yCvCNjvtjTiOMnvQj-3upznvNm9v35NfJAgz1aiNOdpQrAsfV/exec';
+  const GAS_SECRET = 'LIMEE2026API';
+
+  // 初期表示：URLが設定済みならバナーを閉じる
+  window.addEventListener('load', () => {
+    if (GAS_URL) {
+      document.getElementById('gas-url-input').value = GAS_URL;
+      document.getElementById('setup-banner').style.borderColor = '#6EE7B7';
+      document.getElementById('setup-banner').style.background = '#F0FDF4';
+    }
+    // 今日の日付をデフォルト設定
+    const today = new Date().toISOString().split('T')[0];
+    ['case-date','inv-date'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = today;
+    });
+  });
+
+  function saveGasUrl() {
+    const val = document.getElementById('gas-url-input').value.trim();
+    if (!val || !val.startsWith('https://script.google.com')) {
+      alert('正しいGAS Web App URLを入力してください（https://script.google.com/macros/s/...）');
+      return;
+    }
+    GAS_URL = val;
+    localStorage.setItem('gas_web_app_url', val);
+    document.getElementById('url-save-msg').style.display = 'block';
+    document.getElementById('setup-banner').style.borderColor = '#6EE7B7';
+    document.getElementById('setup-banner').style.background = '#F0FDF4';
+  }
+
+  async function gasCall(action, params) {
+    if (!GAS_URL) {
+      alert('GAS Web App URLが未設定です。上のセットアップ欄でURLを保存してください。');
+      return null;
+    }
+    const url = new URL(GAS_URL);
+    url.searchParams.set('secret', GAS_SECRET);
+    url.searchParams.set('action', action);
+    if (params) Object.entries(params).forEach(([k, v]) => v !== undefined && v !== '' && url.searchParams.set(k, v));
+    try {
+      const res = await fetch(url.toString());
+      const json = await res.json();
+      return json;
+    } catch(e) {
+      return { ok: false, error: 'ネットワークエラー: ' + e.message };
+    }
+  }
+
+  function showResult(id, msg, type) {
+    const el = document.getElementById(id);
+    el.className = 'op-result ' + type;
+    el.innerHTML = msg;
+    el.style.display = 'block';
+  }
+
+  function setLoading(btnId, loading) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.disabled = loading;
+    btn.textContent = loading ? '⏳ 処理中...' : btn.dataset.label || btn.textContent;
+  }
+
+  // 案件登録
+  async function submitAddCase() {
+    const company = document.getElementById('case-company').value.trim();
+    const amount  = document.getElementById('case-amount').value;
+    if (!company) { showResult('result-add-case', '⚠️ 会社名は必須です', 'err'); return; }
+    if (!amount)  { showResult('result-add-case', '⚠️ 金額は必須です', 'err'); return; }
+    setLoading('btn-add-case', true);
+    const r = await gasCall('addCase', {
+      companyName:  company,
+      contactName:  document.getElementById('case-contact').value,
+      channel:      document.getElementById('case-channel').value,
+      service:      document.getElementById('case-service').value,
+      amount:       amount,
+      contractDate: document.getElementById('case-date').value,
+      note:         document.getElementById('case-note').value,
+    });
+    setLoading('btn-add-case', false);
+    document.getElementById('btn-add-case').textContent = '📋 案件を登録する';
+    if (!r) return;
+    if (r.ok) {
+      showResult('result-add-case', '✅ 登録完了！ 案件ID：<strong>' + r.result.caseId + '</strong><br>スプレッドシートの案件台帳に追加されました。', 'ok');
+      ['case-company','case-contact','case-amount','case-note'].forEach(id => document.getElementById(id).value = '');
+    } else {
+      showResult('result-add-case', '❌ エラー: ' + r.error, 'err');
+    }
+  }
+
+  // 案件一覧ロード（請求用）
+  async function loadCasesForInvoice() {
+    document.getElementById('cases-load-msg').textContent = '読み込み中...';
+    const r = await gasCall('getCases');
+    if (!r || !r.ok) { document.getElementById('cases-load-msg').textContent = '❌ 読み込み失敗'; return; }
+    const sel = document.getElementById('inv-case-select');
+    sel.innerHTML = '<option value="">案件を選択</option>';
+    r.result.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.dataset.company = c.company;
+      opt.dataset.amount  = c.amount;
+      opt.textContent = c.id + ' — ' + c.company + '（' + (Number(c.amount)||0).toLocaleString() + '円）';
+      sel.appendChild(opt);
+    });
+    document.getElementById('cases-load-msg').textContent = '✅ ' + r.result.length + '件';
+    // 金額を自動入力
+    sel.addEventListener('change', () => {
+      const opt = sel.options[sel.selectedIndex];
+      if (opt.dataset.amount) document.getElementById('inv-amount').value = opt.dataset.amount;
+    });
+  }
+
+  // 請求追加
+  async function submitAddInvoice() {
+    const sel = document.getElementById('inv-case-select');
+    const caseId = sel.value;
+    const opt    = sel.options[sel.selectedIndex];
+    const company = opt ? opt.dataset.company : '';
+    const amount  = document.getElementById('inv-amount').value;
+    if (!caseId)  { showResult('result-add-invoice', '⚠️ 案件を選択してください', 'err'); return; }
+    if (!amount)  { showResult('result-add-invoice', '⚠️ 金額を入力してください', 'err'); return; }
+    setLoading('btn-add-invoice', true);
+    const r = await gasCall('addInvoice', {
+      caseId:      caseId,
+      companyName: company,
+      amount:      amount,
+      invoiceDate: document.getElementById('inv-date').value,
+      dueDays:     document.getElementById('inv-days').value,
+    });
+    setLoading('btn-add-invoice', false);
+    document.getElementById('btn-add-invoice').textContent = '🧾 請求を追加する';
+    if (!r) return;
+    if (r.ok) {
+      showResult('result-add-invoice', '✅ 請求追加完了！ 請求ID：<strong>' + r.result.invId + '</strong>', 'ok');
+    } else {
+      showResult('result-add-invoice', '❌ エラー: ' + r.error, 'err');
+    }
+  }
+
+  // 案件一覧ロード（PDF用）
+  async function loadCasesForPDF() {
+    document.getElementById('cases-pdf-msg').textContent = '読み込み中...';
+    const r = await gasCall('getCases');
+    if (!r || !r.ok) { document.getElementById('cases-pdf-msg').textContent = '❌ 読み込み失敗'; return; }
+    const sel = document.getElementById('pdf-case-select');
+    sel.innerHTML = '<option value="">案件を選択</option>';
+    r.result.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.textContent = c.id + ' — ' + c.company;
+      sel.appendChild(opt);
+    });
+    document.getElementById('cases-pdf-msg').textContent = '✅ ' + r.result.length + '件';
+  }
+
+  // PDF発行
+  async function submitGeneratePDF() {
+    const caseId  = document.getElementById('pdf-case-select').value;
+    const docType = document.getElementById('pdf-type').value;
+    if (!caseId) { showResult('result-gen-pdf', '⚠️ 案件を選択してください', 'err'); return; }
+    setLoading('btn-gen-pdf', true);
+    showResult('result-gen-pdf', '⏳ PDFを生成中です（10〜30秒かかります）...', 'info');
+    const r = await gasCall('generatePDF', { caseId, docType });
+    setLoading('btn-gen-pdf', false);
+    document.getElementById('btn-gen-pdf').textContent = '✨ PDFを発行する';
+    if (!r) return;
+    if (r.ok) {
+      showResult('result-gen-pdf',
+        '✅ PDF生成完了！<br><a href="' + r.result.pdfUrl + '" target="_blank" style="color:#065F46;font-weight:700;text-decoration:underline;">📄 ' + r.result.fileName + ' を開く ↗</a><br><span style="font-size:12px;">「リミー 発行書類 / 会社名」フォルダに保存されました</span>', 'ok');
+    } else {
+      showResult('result-gen-pdf', '❌ エラー: ' + r.error, 'err');
+    }
+  }
+
+  // サマリー読み込み
+  async function loadSummary() {
+    setLoading('btn-summary', true);
+    const r = await gasCall('getSummary');
+    setLoading('btn-summary', false);
+    document.getElementById('btn-summary').textContent = '📊 データを読み込む';
+    if (!r) return;
+    if (!r.ok) { showResult('result-summary', '❌ エラー: ' + r.error, 'err'); return; }
+    const s = r.result.summary;
+    document.getElementById('stat-grid').innerHTML =
+      statCard(s.totalCases + '件', '登録案件数') +
+      statCard('¥' + (s.totalInvoiced||0).toLocaleString(), '請求累計（税込）') +
+      statCard('¥' + (s.totalPaid||0).toLocaleString(), '入金確認済み') +
+      statCard('¥' + (s.unpaid||0).toLocaleString(), '未回収');
+
+    const tbody = document.getElementById('invoice-tbody');
+    tbody.innerHTML = '';
+    (r.result.invoices || []).forEach(inv => {
+      const statusColor = inv.status === '入金確認' ? 'badge-green' : inv.status === '請求済' ? 'badge-yellow' : 'badge-red';
+      tbody.innerHTML += '<tr>' +
+        '<td style="font-family:monospace;font-size:12px;">' + inv.id + '</td>' +
+        '<td>' + inv.company + '</td>' +
+        '<td>¥' + (inv.total||0).toLocaleString() + '</td>' +
+        '<td>' + (inv.dueDate||'') + '</td>' +
+        '<td><span class="badge ' + statusColor + '">' + inv.status + '</span></td>' +
+        '<td><button onclick="updatePayment(\'' + inv.id + '\')" class="op-btn-sm" style="font-size:11px;padding:4px 10px;">更新</button></td>' +
+        '</tr>';
+    });
+    document.getElementById('summary-area').style.display = 'block';
+  }
+
+  function statCard(num, label) {
+    return '<div class="stat-card"><div class="stat-num">' + num + '</div><div class="stat-label">' + label + '</div></div>';
+  }
+
+  // ============================================================
+  // 💴 経費管理
+  // ============================================================
+  window.addEventListener('load', () => {
+    const now = new Date();
+    const expDate = document.getElementById('exp-date');
+    const expMonth = document.getElementById('exp-month');
+    if (expDate) expDate.value = now.toISOString().split('T')[0];
+    if (expMonth) expMonth.value = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0');
+  });
+
+  async function submitAddExpense() {
+    const desc   = document.getElementById('exp-desc').value.trim();
+    const amount = document.getElementById('exp-amount').value;
+    if (!desc)   { showResult('result-add-exp', '⚠️ 内容を入力してください', 'err'); return; }
+    if (!amount) { showResult('result-add-exp', '⚠️ 金額を入力してください', 'err'); return; }
+    setLoading('btn-add-exp', true);
+    const r = await gasCall('addExpense', {
+      date:          document.getElementById('exp-date').value,
+      category:      document.getElementById('exp-category').value,
+      description:   desc,
+      amount:        amount,
+      paymentMethod: document.getElementById('exp-payment').value,
+      memo:          document.getElementById('exp-memo').value,
+    });
+    setLoading('btn-add-exp', false);
+    document.getElementById('btn-add-exp').textContent = '💴 経費を記録する';
+    if (!r) return;
+    if (r.ok) {
+      const total = r.result.total;
+      showResult('result-add-exp', '✅ 記録しました！ 経費ID：<strong>' + r.result.expId + '</strong>　合計（税込）：¥' + total.toLocaleString(), 'ok');
+      document.getElementById('exp-desc').value = '';
+      document.getElementById('exp-amount').value = '';
+      document.getElementById('exp-memo').value = '';
+    } else {
+      showResult('result-add-exp', '❌ エラー: ' + r.error, 'err');
+    }
+  }
+
+  async function loadExpenses() {
+    const month = document.getElementById('exp-month').value;
+    const r = await gasCall('getExpenses', { month });
+    if (!r || !r.ok) { showResult('result-add-exp', '❌ ' + (r ? r.error : '通信エラー'), 'err'); return; }
+    const d = r.result;
+    document.getElementById('exp-stat-grid').innerHTML =
+      statCard(d.expenses.length + '件', d.month + 'の件数') +
+      statCard('¥' + (d.totalAmount||0).toLocaleString(), '経費合計（税抜）') +
+      statCard('¥' + (d.totalAll||0).toLocaleString(), '経費合計（税込）');
+    const tbody = document.getElementById('exp-tbody');
+    tbody.innerHTML = '';
+    if (d.expenses.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-sub);padding:16px;">この月の経費はありません</td></tr>';
+    } else {
+      d.expenses.forEach(e => {
+        tbody.innerHTML += '<tr>' +
+          '<td>' + e.date + '</td>' +
+          '<td style="white-space:nowrap;">' + e.category + '</td>' +
+          '<td>' + e.description + (e.memo ? '<br><span style="font-size:11px;color:var(--text-sub);">' + e.memo + '</span>' : '') + '</td>' +
+          '<td>¥' + (e.amount||0).toLocaleString() + '</td>' +
+          '<td style="font-weight:700;">¥' + (e.total||0).toLocaleString() + '</td>' +
+          '<td style="font-size:12px;">' + e.payment + '</td>' +
+          '</tr>';
+      });
+    }
+    document.getElementById('exp-summary').style.display = 'block';
+  }
+
+  // ============================================================
+  // 🧠 マイブレイン
+  // ============================================================
+  const DAYS = ['日','月','火','水','木','金','土'];
+
+  window.addEventListener('load', () => {
+    const now = new Date();
+    const el = document.getElementById('brain-date');
+    if (el) el.textContent = now.getFullYear() + '年' + (now.getMonth()+1) + '月' + now.getDate() + '日（' + DAYS[now.getDay()] + '）';
+    if (document.getElementById('task-deadline')) {
+      document.getElementById('task-deadline').value = now.toISOString().split('T')[0];
+    }
+  });
+
+  async function loadBrain() {
+    await Promise.all([loadTasks(), loadSchedule(), loadEmails()]);
+  }
+
+  // ─── タスク ───
+  async function loadTasks() {
+    const r = await gasCall('getTasks');
+    if (!r || !r.ok) return;
+    renderTasks(r.result);
+  }
+
+  function renderTasks(tasks) {
+    const todo = document.getElementById('task-list-todo');
+    const done = document.getElementById('task-list-done');
+    todo.innerHTML = '';
+    done.innerHTML = '';
+    if (!tasks || tasks.length === 0) {
+      todo.innerHTML = '<p style="font-size:13px;color:var(--text-sub);padding:8px 0;">タスクはありません 🎉</p>';
+      return;
+    }
+    const prioColor = { '高': '#EF4444', '中': '#F59E0B', '低': '#10B981' };
+    tasks.forEach(t => {
+      const isDone = t.status === '完了';
+      const card = document.createElement('div');
+      card.style.cssText = 'display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:' + (isDone ? '#F9FAFB' : 'white') + ';';
+      card.innerHTML =
+        '<button onclick="completeTask(\'' + t.id + '\')" style="width:20px;height:20px;border-radius:50%;border:2px solid ' + (prioColor[t.priority]||'#9CA3AF') + ';background:' + (isDone ? (prioColor[t.priority]||'#9CA3AF') : 'white') + ';cursor:pointer;flex-shrink:0;" title="完了にする"></button>' +
+        '<span style="flex:1;font-size:13px;' + (isDone ? 'text-decoration:line-through;color:var(--text-sub);' : '') + '">' + t.text + '</span>' +
+        (t.deadline ? '<span style="font-size:11px;color:var(--text-sub);">期限:' + t.deadline + '</span>' : '') +
+        '<button onclick="deleteTask(\'' + t.id + '\')" style="background:none;border:none;color:#D1D5DB;cursor:pointer;font-size:14px;padding:0 4px;" title="削除">✕</button>';
+      (isDone ? done : todo).appendChild(card);
+    });
+  }
+
+  async function addTask() {
+    const text     = document.getElementById('task-text').value.trim();
+    const priority = document.getElementById('task-priority').value;
+    const deadline = document.getElementById('task-deadline').value;
+    if (!text) return;
+    const r = await gasCall('addTask', { text, priority, deadline });
+    if (r && r.ok) {
+      document.getElementById('task-text').value = '';
+      loadTasks();
+    } else if (r) {
+      showResult('result-task', '❌ ' + r.error, 'err');
+    }
+  }
+
+  async function completeTask(taskId) {
+    const r = await gasCall('completeTask', { taskId });
+    if (r && r.ok) loadTasks();
+  }
+
+  async function deleteTask(taskId) {
+    if (!confirm('このタスクを削除しますか？')) return;
+    const r = await gasCall('deleteTask', { taskId });
+    if (r && r.ok) loadTasks();
+  }
+
+  // ─── スケジュール ───
+  async function loadSchedule() {
+    document.getElementById('schedule-list').innerHTML = '<p style="font-size:13px;color:var(--text-sub);">読み込み中...</p>';
+    const r = await gasCall('getSchedule');
+    if (!r || !r.ok) {
+      document.getElementById('schedule-list').innerHTML = '<p style="font-size:12px;color:var(--danger);">❌ 読み込み失敗。GASのカレンダー権限を確認してください。</p>';
+      return;
+    }
+    const events = r.result;
+    if (!events || events.length === 0) {
+      document.getElementById('schedule-list').innerHTML = '<p style="font-size:13px;color:var(--text-sub);">今週の予定はありません</p>';
+      return;
+    }
+    let html = '';
+    let lastDay = '';
+    events.forEach(ev => {
+      if (ev.startDay !== lastDay) {
+        html += '<div style="font-size:11px;font-weight:800;color:var(--text-sub);margin:' + (lastDay?'12px':'0') + ' 0 4px;">' + ev.startDay + '</div>';
+        lastDay = ev.startDay;
+      }
+      html += '<div style="display:flex;gap:8px;align-items:flex-start;padding:6px 10px;background:#F9FAFB;border-radius:6px;margin-bottom:4px;">' +
+        '<span style="font-size:11px;color:var(--primary);font-weight:700;flex-shrink:0;">' + (ev.allDay ? '終日' : ev.start.split(' ')[1]) + '</span>' +
+        '<span style="font-size:13px;">' + ev.title + (ev.location ? '<br><span style="font-size:11px;color:var(--text-sub);">📍' + ev.location + '</span>' : '') + '</span>' +
+        '</div>';
+    });
+    document.getElementById('schedule-list').innerHTML = html;
+  }
+
+  // ─── メール ───
+  async function loadEmails() {
+    document.getElementById('email-list').innerHTML = '<p style="font-size:13px;color:var(--text-sub);">読み込み中...</p>';
+    const r = await gasCall('getEmails');
+    if (!r || !r.ok) {
+      document.getElementById('email-list').innerHTML = '<p style="font-size:12px;color:var(--danger);">❌ 読み込み失敗。GASのGmail権限を確認してください。</p>';
+      return;
+    }
+    const emails = r.result;
+    if (!emails || emails.length === 0) {
+      document.getElementById('email-list').innerHTML = '<p style="font-size:13px;color:var(--text-sub);">未読メールはありません 🎉</p>';
+      return;
+    }
+    let html = '';
+    emails.forEach(em => {
+      html += '<a href="' + em.url + '" target="_blank" style="display:block;text-decoration:none;color:inherit;padding:10px 12px;border:1px solid var(--border);border-radius:8px;margin-bottom:6px;background:white;transition:background 0.15s;" onmouseover="this.style.background=\'#EEF2FF\'" onmouseout="this.style.background=\'white\'">' +
+        '<div style="display:flex;justify-content:space-between;gap:8px;">' +
+        '<span style="font-size:13px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + em.subject + '</span>' +
+        '<span style="font-size:11px;color:var(--text-sub);flex-shrink:0;">' + em.date + '</span>' +
+        '</div>' +
+        '<div style="font-size:12px;color:var(--text-sub);margin-top:2px;">' + em.from + '</div>' +
+        '</a>';
+    });
+    document.getElementById('email-list').innerHTML = html;
+  }
+
+  async function updatePayment(invId) {
+    const status = prompt('ステータスを入力してください\n（入金確認 / 請求済 / 未払い）');
+    if (!status) return;
+    const paidDate   = status === '入金確認' ? prompt('入金日を入力（例：2026-05-10）') : '';
+    const paidAmount = status === '入金確認' ? prompt('入金金額（税込・数字のみ）') : '';
+    const r = await gasCall('updatePayment', { invId, status, paidDate: paidDate||'', paidAmount: paidAmount||'' });
+    if (r && r.ok) { alert('✅ 更新しました'); loadSummary(); }
+    else if (r) alert('❌ ' + r.error);
   }
 </script>
 </body>
