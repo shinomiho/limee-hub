@@ -133,6 +133,43 @@
       .container { padding: 20px 12px; }
       .tabs { padding: 0 12px; }
     }
+
+    /* ターミナル・UI モックアップ */
+    .mock-wrap { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2); margin: 14px 0; font-family: 'SF Mono', 'Menlo', monospace; }
+    .mock-titlebar { background: #3C3C3C; padding: 9px 12px; display: flex; align-items: center; gap: 6px; }
+    .mock-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .mock-title { color: #999; font-size: 11px; margin-left: 8px; font-family: 'Hiragino Sans', sans-serif; }
+    .mock-body { background: #1E1E1E; padding: 16px 18px; color: #E5E5E5; font-size: 12px; line-height: 1.9; }
+    .mock-prompt { color: #00D26A; }
+    .mock-cmd { color: #79C0FF; }
+    .mock-out { color: #8B949E; }
+    .mock-out-b { color: #C3E88D; }
+    .mock-user { color: #E5C07B; }
+    .mock-claude { color: #ABB2BF; }
+    .mock-cursor { display: inline-block; width: 8px; height: 14px; background: #E5E5E5; vertical-align: middle; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .spotlight-mock { background: rgba(40,40,40,0.92); border-radius: 14px; padding: 0; overflow: hidden; max-width: 480px; margin: 14px auto; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+    .spotlight-input { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .spotlight-text { color: white; font-size: 18px; font-family: 'Hiragino Sans', sans-serif; }
+    .spotlight-result { display: flex; align-items: center; gap: 12px; padding: 10px 18px; background: rgba(79,70,229,0.5); }
+    .spotlight-result-icon { font-size: 22px; }
+    .spotlight-result-text { color: white; font-size: 14px; font-family: 'Hiragino Sans', sans-serif; font-weight: 700; }
+    .spotlight-result-sub { color: rgba(255,255,255,0.6); font-size: 12px; font-family: 'Hiragino Sans', sans-serif; margin-left: auto; }
+
+    .gas-mock { background: #fff; border: 1px solid #E0E0E0; border-radius: 8px; overflow: hidden; margin: 14px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .gas-header { background: #F8F9FA; border-bottom: 1px solid #E0E0E0; padding: 8px 14px; display: flex; align-items: center; gap: 10px; }
+    .gas-logo { font-size: 14px; font-weight: 800; color: #4285F4; font-family: sans-serif; }
+    .gas-title { font-size: 13px; color: #333; font-family: 'Hiragino Sans', sans-serif; }
+    .gas-body { display: grid; grid-template-columns: 180px 1fr; min-height: 120px; }
+    .gas-sidebar { background: #F8F9FA; border-right: 1px solid #E0E0E0; padding: 10px; }
+    .gas-file { font-size: 11px; color: #333; padding: 4px 6px; border-radius: 4px; font-family: monospace; cursor: default; }
+    .gas-file.active { background: #E8F0FE; color: #1A73E8; font-weight: 700; }
+    .gas-code { padding: 10px 14px; font-size: 11px; font-family: monospace; line-height: 1.8; color: #333; }
+    .gas-kw { color: #0000FF; }
+    .gas-fn { color: #795E26; }
+    .gas-str { color: #A31515; }
+    .gas-btn { background: #4285F4; color: white; border: none; border-radius: 4px; padding: 5px 14px; font-size: 12px; font-family: 'Hiragino Sans', sans-serif; cursor: pointer; margin-left: auto; }
   </style>
 </head>
 <body>
@@ -707,10 +744,34 @@
         <div class="card" style="margin-bottom:16px;">
           <div class="card-header"><div class="card-icon">📱</div><div><div class="card-title">SNS自動投稿の更新手順</div><div class="card-sub">コードはGAS上にあるため、ブラウザだけで完結</div></div></div>
           <ul class="feature-list">
-            <li><span class="icon">1️⃣</span><a href="https://script.google.com/home/projects/1kWqpYwUyRRNdjGO9-cHrloLhgwCuNR-5-ph2hyHCKc4T4iv1eAbgoZV6/edit" target="_blank" style="color:var(--primary);font-weight:700;">SNS自動投稿GASを開く</a>（Googleアカウントでログイン要）</li>
-            <li><span class="icon">2️⃣</span>GAS上のコードをすべてコピーして、Claude Codeに貼り付け + 変更内容を伝える</li>
-            <li><span class="icon">3️⃣</span>Claudeが修正したコードをGASエディタに貼り戻す → 保存</li>
-            <li><span class="icon">4️⃣</span>「デプロイ」→「既存のデプロイを管理」→「バージョンを新しく」で更新完了</li>
+            <li><span class="icon">1️⃣</span><a href="https://script.google.com/home/projects/1kWqpYwUyRRNdjGO9-cHrloLhgwCuNR-5-ph2hyHCKc4T4iv1eAbgoZV6/edit" target="_blank" style="color:var(--primary);font-weight:700;">SNS自動投稿GASを開く ↗</a>（Googleアカウントでログイン要）</li>
+            <li><span class="icon">2️⃣</span>開くとこのような画面になります（Google Apps Script エディタ）</li>
+          </ul>
+          <div class="gas-mock">
+            <div class="gas-header">
+              <span class="gas-logo">Apps Script</span>
+              <span class="gas-title">SNS自動投稿 — apps-script.gs</span>
+              <button class="gas-btn">▶ 実行</button>
+            </div>
+            <div class="gas-body">
+              <div class="gas-sidebar">
+                <div class="gas-file active">📄 apps-script.gs</div>
+              </div>
+              <div class="gas-code">
+                <span class="gas-kw">function</span> <span class="gas-fn">runDailyPost</span>() {<br>
+                &nbsp;&nbsp;<span class="gas-kw">var</span> config = getConfig();<br>
+                &nbsp;&nbsp;<span class="gas-kw">var</span> content = generateContent(...);<br>
+                &nbsp;&nbsp;postToLinkedIn(content);<br>
+                &nbsp;&nbsp;postToInstagram(content);<br>
+                }
+              </div>
+            </div>
+          </div>
+          <ul class="feature-list" style="margin-top:8px;">
+            <li><span class="icon">3️⃣</span>左側の「apps-script.gs」をクリック → 全選択（⌘A）→ コピー（⌘C）</li>
+            <li><span class="icon">4️⃣</span>Claude Codeに貼り付けて「〇〇を変更して」と伝える</li>
+            <li><span class="icon">5️⃣</span>Claudeが直したコードをGASに貼り戻す（⌘A → ⌘V）→「💾 保存」をクリック</li>
+            <li><span class="icon">6️⃣</span>「デプロイ」→「既存のデプロイを管理」→「バージョンを新しく」で更新完了</li>
           </ul>
         </div>
 
@@ -725,14 +786,67 @@
         </div>
 
         <div class="card">
-          <div class="card-header"><div class="card-icon">🤖</div><div><div class="card-title">Claude Codeの使い方（初めての場合）</div></div></div>
-          <ul class="feature-list">
-            <li><span class="icon">1️⃣</span><a href="https://claude.ai/download" target="_blank" style="color:var(--primary);font-weight:700;">claude.ai/download</a> からClaude Codeをインストール</li>
-            <li><span class="icon">2️⃣</span>ターミナルを開く（Mac：Command+Space → 「ターミナル」）</li>
-            <li><span class="icon">3️⃣</span><code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">claude</code> と入力してEnter → 起動</li>
-            <li><span class="icon">4️⃣</span>「〇〇を変更したい」「〇〇が壊れた」など日本語で伝えるだけでOK</li>
-          </ul>
-          <p style="font-size:12px;color:var(--text-sub);margin-top:10px;line-height:1.7;">💡 Claudeにはリミーのシステム構成の記憶があります。「以前と同じスタイルで」「リミーの診断フォームを修正して」など伝えるだけで文脈を理解して対応します。</p>
+          <div class="card-header"><div class="card-icon">🖥️</div><div><div class="card-title">【初めての方へ】Terminal と Claude Code の使い方</div><div class="card-sub">ここを読めばゼロから使えます</div></div></div>
+
+          <p style="font-size:13px;font-weight:800;color:var(--text);margin:0 0 6px;">① Terminalとは何か</p>
+          <p style="font-size:13px;color:var(--text-sub);line-height:1.8;margin-bottom:12px;">
+            「ターミナル」はMacに最初から入っているアプリです。文字を打ってパソコンに命令を出せます。<br>
+            普段使わないので馴染みがないだけで、難しいことはありません。
+          </p>
+
+          <p style="font-size:13px;font-weight:800;color:var(--text);margin:0 0 6px;">② Terminalの開き方</p>
+          <p style="font-size:12px;color:var(--text-sub);margin-bottom:6px;">⌘Command + Space を押すと「Spotlight検索」が開きます。「ターミナル」と入力してEnterを押す。</p>
+          <div class="spotlight-mock">
+            <div class="spotlight-input">
+              <span style="font-size:18px;color:rgba(255,255,255,0.6);">🔍</span>
+              <span class="spotlight-text">ターミナル</span>
+            </div>
+            <div class="spotlight-result">
+              <span class="spotlight-result-icon">🖥️</span>
+              <span class="spotlight-result-text">ターミナル</span>
+              <span class="spotlight-result-sub">アプリケーション &nbsp;return ↵</span>
+            </div>
+          </div>
+
+          <p style="font-size:13px;font-weight:800;color:var(--text);margin:12px 0 6px;">③ Claude Codeをインストールする（初回のみ）</p>
+          <p style="font-size:12px;color:var(--text-sub);margin-bottom:8px;">
+            <a href="https://claude.ai/download" target="_blank" style="color:var(--primary);font-weight:700;">claude.ai/download ↗</a> を開いてダウンロード・インストールします。<br>
+            インストール後、ターミナルに下のコマンドを入力してEnter：
+          </p>
+          <div class="mock-wrap">
+            <div class="mock-titlebar">
+              <div class="mock-dot" style="background:#FF5F57;"></div>
+              <div class="mock-dot" style="background:#FEBC2E;"></div>
+              <div class="mock-dot" style="background:#28C840;"></div>
+              <span class="mock-title">ターミナル — zsh</span>
+            </div>
+            <div class="mock-body">
+              <div><span class="mock-prompt">% </span><span class="mock-cmd">npm install -g @anthropic-ai/claude-code</span></div>
+              <div class="mock-out">インストール中... ✓ 完了</div>
+              <div style="margin-top:4px;"><span class="mock-prompt">% </span><span class="mock-cmd">claude</span></div>
+            </div>
+          </div>
+
+          <p style="font-size:13px;font-weight:800;color:var(--text);margin:12px 0 6px;">④ 起動するとこの画面になります</p>
+          <div class="mock-wrap">
+            <div class="mock-titlebar">
+              <div class="mock-dot" style="background:#FF5F57;"></div>
+              <div class="mock-dot" style="background:#FEBC2E;"></div>
+              <div class="mock-dot" style="background:#28C840;"></div>
+              <span class="mock-title">ターミナル — claude</span>
+            </div>
+            <div class="mock-body">
+              <div class="mock-out">╭─────────────────────────────────────╮</div>
+              <div class="mock-out">│  ✻ Welcome to Claude Code!          │</div>
+              <div class="mock-out">│  claude-sonnet-4-6                  │</div>
+              <div class="mock-out">╰─────────────────────────────────────╯</div>
+              <div style="margin-top:8px;"><span class="mock-user">You: </span><span class="mock-claude">リミーのAI診断フォームの3番目の質問を変更したい</span></div>
+              <div style="margin-top:4px;"><span class="mock-user">You: </span><span class="mock-cursor"></span></div>
+            </div>
+          </div>
+          <p style="font-size:12px;color:var(--text-sub);margin-top:8px;line-height:1.7;">
+            💡 <strong>日本語でそのまま話しかけるだけでOKです。</strong> Claudeにはリミーのシステム構成の記憶があります。「壊れた」「変えたい」「追加したい」など伝えれば理解して対応します。
+          </p>
         </div>
       </div>
 

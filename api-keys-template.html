@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リミー｜秘密コード・APIキー管理表</title>
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --danger: #EF4444;
+      --border: #E5E7EB;
+      --text: #111827;
+      --text-sub: #6B7280;
+      --bg: #F9FAFB;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; }
+    .page { max-width: 860px; margin: 0 auto; }
+    h1 { font-size: 20px; font-weight: 900; color: var(--primary); margin-bottom: 4px; }
+    .sub { font-size: 13px; color: var(--text-sub); margin-bottom: 32px; line-height: 1.8; }
+    .warning { background: #FEE2E2; border: 2px solid #FCA5A5; border-radius: 10px; padding: 14px 18px; margin-bottom: 28px; font-size: 13px; color: #991B1B; font-weight: 700; line-height: 1.8; }
+    .section-title { font-size: 15px; font-weight: 800; color: var(--text); margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 8px; }
+    th { background: #F3F4F6; font-size: 12px; font-weight: 800; color: var(--text-sub); text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    td { font-size: 13px; padding: 12px 14px; border-bottom: 1px solid #F9FAFB; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .key-cell { font-family: monospace; font-size: 12px; background: #F9FAFB; border-radius: 4px; padding: 3px 6px; color: #B91C1C; }
+    .blank-cell { background: #FFFBEB; border: 1px dashed #FDE68A; border-radius: 6px; padding: 6px 10px; font-size: 12px; color: #92400E; min-width: 200px; display: inline-block; }
+    .how-to { font-size: 11px; color: var(--text-sub); line-height: 1.7; margin-top: 4px; }
+    .note { font-size: 11px; color: var(--danger); font-weight: 700; }
+    .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; }
+    .badge-free { background: #D1FAE5; color: #065F46; }
+    .badge-paid { background: #FEE2E2; color: #991B1B; }
+    .print-note { font-size: 11px; color: var(--text-sub); text-align: center; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 16px; }
+    @media print {
+      body { background: white; padding: 0; }
+      .warning { background: #fff; border-color: #999; color: #333; }
+      .print-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>🔐 リミー秘密コード・APIキー管理表</h1>
+  <p class="sub">
+    このドキュメントには各サービスへのアクセス情報を記入します。<br>
+    <strong>印刷して金庫保管、またはパスワードマネージャー（1Passwordなど）に入力してください。</strong><br>
+    クラウドに平文でアップロードしないこと。このHTMLファイルはGitHubにpushしないこと。
+  </p>
+
+  <div class="warning">
+    ⚠️ 社外秘・最高機密 — このファイルは篠辺美穂本人および指定の後継者のみが閲覧できます。<br>
+    紛失・流出した場合は各サービスのAPIキーを即座に無効化してください。
+  </div>
+
+  <!-- Googleアカウント -->
+  <div class="section-title">🔑 Googleアカウント（最重要）</div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>メールアドレス</strong></td>
+      <td><span class="key-cell">miho.shinohe@remenow.com</span></td>
+      <td>GAS・Drive・Sheets・Gmail すべての起点</td>
+    </tr>
+    <tr>
+      <td><strong>パスワード</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td><p class="how-to">→ Google アカウント設定から変更可能</p></td>
+    </tr>
+    <tr>
+      <td><strong>2段階認証 バックアップコード</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td><p class="how-to">Google アカウント → セキュリティ → 2段階認証 → バックアップコード</p><p class="note">※ スマホが手元にない場合に必要</p></td>
+    </tr>
+  </table>
+
+  <!-- GitHub -->
+  <div class="section-title">🐙 GitHub（コード管理・サイト公開）</div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>ユーザー名</strong></td>
+      <td><span class="key-cell">shinomiho</span></td>
+      <td>公開URL：github.com/shinomiho</td>
+    </tr>
+    <tr>
+      <td><strong>パスワード</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Personal Access Token</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td><p class="how-to">GitHub → Settings → Developer Settings → Personal Access Tokens</p><p class="note">※ gitコマンドでpushする際に使用</p></td>
+    </tr>
+  </table>
+
+  <!-- Anthropic -->
+  <div class="section-title">🤖 Anthropic（Claude AI） <span class="badge badge-paid">有料</span></div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>APIキー（CLAUDE_API_KEY）</strong></td>
+      <td><span class="blank-cell">ここに記入：sk-ant-＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td>
+        <p class="how-to">console.anthropic.com → API Keys から発行</p>
+        <p class="how-to">保存場所：AI診断GAS スクリプトプロパティ「CLAUDE_API_KEY」<br>SNS GAS スクリプトプロパティ「CLAUDE_API_KEY」</p>
+        <p class="note">※ 漏洩時は即座にconsole.anthropic.comで無効化</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>ログインメール</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>月額目安</strong></td>
+      <td>$20〜$50程度（使用量による）</td>
+      <td>console.anthropic.com で使用量確認可能</td>
+    </tr>
+  </table>
+
+  <!-- ElevenLabs -->
+  <div class="section-title">🎙️ ElevenLabs（AI音声・篠辺美穂の声） <span class="badge badge-paid">有料</span></div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>APIキー（ELEVENLABS_API_KEY）</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td>
+        <p class="how-to">elevenlabs.io → Profile → API Key</p>
+        <p class="how-to">保存場所：SNS GAS スクリプトプロパティ「ELEVENLABS_API_KEY」</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Voice ID（ELEVENLABS_VOICE_ID）</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td>
+        <p class="how-to">elevenlabs.io → Voices → 「篠辺美穂」のVoice IDをコピー</p>
+        <p class="note">※ この声はMihoの声のクローン。引き継ぎ後は新しい人の声に変更推奨</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>ログインメール</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- Meta（Instagram/Threads） -->
+  <div class="section-title">📸 Meta（Instagram・Threads自動投稿）</div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>Instagram アカウント</strong></td>
+      <td><span class="key-cell">@shinomiho_reme_hrtech</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Meta Access Token（META_ACCESS_TOKEN）</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td>
+        <p class="how-to">developers.facebook.com → アプリ → アクセストークン</p>
+        <p class="how-to">保存場所：SNS GAS スクリプトプロパティ「META_ACCESS_TOKEN」</p>
+        <p class="note">※ トークンは60日で期限切れ。切れたら再発行が必要</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Instagram Business Account ID</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td><p class="how-to">SNS GAS スクリプトプロパティ「INSTAGRAM_ACCOUNT_ID」</p></td>
+    </tr>
+  </table>
+
+  <!-- LinkedIn -->
+  <div class="section-title">💼 LinkedIn</div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>プロフィールURL</strong></td>
+      <td><span class="key-cell">linkedin.com/in/miho-shinohe/</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Access Token（LINKEDIN_ACCESS_TOKEN）</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td>
+        <p class="how-to">linkedin.com/developers → アプリ → Auth → Access Token</p>
+        <p class="how-to">保存場所：SNS GAS スクリプトプロパティ「LINKEDIN_ACCESS_TOKEN」</p>
+        <p class="note">※ 期限切れの場合はOAuthで再認証が必要</p>
+      </td>
+    </tr>
+  </table>
+
+  <!-- LINE -->
+  <div class="section-title">💚 LINE公式アカウント</div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>Channel Access Token（LINE_ACCESS_TOKEN）</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td>
+        <p class="how-to">LINE Developers → チャネル → Messaging API → Channel access token</p>
+        <p class="how-to">保存場所：SNS GAS スクリプトプロパティ「LINE_ACCESS_TOKEN」</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>LINE Official Account Manager ログイン</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- GASスプレッドシート -->
+  <div class="section-title">📊 Google Sheets（データ管理）</div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>AI診断スプレッドシートID</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td>
+        <p class="how-to">スプレッドシートURLの /spreadsheets/d/＿＿＿/edit の＿＿＿部分</p>
+        <p class="how-to">保存場所：AI診断GAS スクリプトプロパティ「SPREADSHEET_ID」</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>SNS投稿ログ スプレッドシートID</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td><p class="how-to">保存場所：SNS GAS スクリプトプロパティ「SPREADSHEET_ID」</p></td>
+    </tr>
+  </table>
+
+  <!-- GASシークレット -->
+  <div class="section-title">🔒 GAS管理パスワード</div>
+  <table>
+    <tr><th>項目</th><th>値</th><th>メモ</th></tr>
+    <tr>
+      <td><strong>管理画面パスワード（ADMIN_SECRET）</strong></td>
+      <td><span class="blank-cell">ここに記入：＿＿＿＿＿＿＿＿＿＿＿</span></td>
+      <td><p class="how-to">AI診断 admin.html のログインパスワード</p></td>
+    </tr>
+    <tr>
+      <td><strong>企業登録トークン（REG_TOKEN）</strong></td>
+      <td><span class="key-cell">REME2026</span>（現在の値）</td>
+      <td><p class="how-to">register.html のURL末尾に付ける認証トークン。変更する場合はGASスクリプトプロパティ「REG_TOKEN」を更新</p></td>
+    </tr>
+    <tr>
+      <td><strong>コントロールセンターPW</strong></td>
+      <td><span class="key-cell">REME2026</span>（現在の値）</td>
+      <td><p class="how-to">limee-hub/index.html のログインパスワード</p></td>
+    </tr>
+  </table>
+
+  <!-- 更新履歴 -->
+  <div class="section-title">📝 更新履歴</div>
+  <table>
+    <tr><th>日付</th><th>更新内容</th><th>更新者</th></tr>
+    <tr><td>2026年5月</td><td>テンプレート作成</td><td>篠辺美穂</td></tr>
+    <tr><td><span class="blank-cell" style="min-width:100px;">＿＿年＿月</span></td><td><span class="blank-cell" style="min-width:200px;"></span></td><td><span class="blank-cell" style="min-width:100px;"></span></td></tr>
+    <tr><td><span class="blank-cell" style="min-width:100px;">＿＿年＿月</span></td><td><span class="blank-cell" style="min-width:200px;"></span></td><td><span class="blank-cell" style="min-width:100px;"></span></td></tr>
+  </table>
+
+  <p class="print-note">
+    🖨️ このページを印刷して、記入後は施錠できる場所に保管してください。<br>
+    デジタルで保管する場合は 1Password・Bitwarden などのパスワードマネージャーを使用してください。<br>
+    ファイル自体をクラウドストレージ（Google Drive等）に保存しないこと。
+  </p>
+
+</div>
+</body>
+</html>
