@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リミー コントロールセンター</title>
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-light: #EEF2FF;
+      --primary-dark: #3730A3;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --gray: #6B7280;
+      --bg: #F9FAFB;
+      --border: #E5E7EB;
+      --text: #111827;
+      --text-sub: #6B7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background: var(--bg); color: var(--text); }
+
+    /* ログイン */
+    #login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .login-card { background: white; border-radius: 16px; padding: 40px; width: 360px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); text-align: center; }
+    .login-card h1 { font-size: 20px; margin-bottom: 6px; color: var(--primary); }
+    .login-card p { font-size: 13px; color: var(--text-sub); margin-bottom: 24px; }
+    .login-input { width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 14px; outline: none; margin-bottom: 12px; }
+    .login-input:focus { border-color: var(--primary); }
+    .login-btn { width: 100%; background: var(--primary); color: white; border: none; border-radius: 8px; padding: 12px; font-size: 14px; font-weight: 700; cursor: pointer; }
+    .login-btn:hover { background: var(--primary-dark); }
+    .login-error { color: var(--danger); font-size: 13px; margin-top: 8px; display: none; }
+
+    /* メイン */
+    #main-screen { display: none; }
+    .top-bar { background: linear-gradient(135deg, #4F46E5, #7C3AED); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .top-bar h1 { color: white; font-size: 20px; font-weight: 800; }
+    .top-bar span { color: rgba(255,255,255,0.7); font-size: 13px; }
+    .logout-btn { background: rgba(255,255,255,0.15); color: white; border: none; border-radius: 6px; padding: 6px 14px; font-size: 12px; cursor: pointer; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+
+    /* セクション */
+    .section { margin-bottom: 40px; }
+    .section-title { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* カードグリッド */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .card { background: white; border-radius: 12px; padding: 20px; border: 1px solid var(--border); transition: box-shadow 0.2s; }
+    .card:hover { box-shadow: 0 4px 16px rgba(79,70,229,0.1); }
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .card-icon { font-size: 22px; }
+    .card-title { font-size: 14px; font-weight: 800; color: var(--text); }
+    .card-sub { font-size: 11px; color: var(--text-sub); margin-top: 2px; }
+
+    /* ステータスバッジ */
+    .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px; }
+    .badge-green { background: #D1FAE5; color: #065F46; }
+    .badge-yellow { background: #FEF3C7; color: #92400E; }
+    .badge-red { background: #FEE2E2; color: #991B1B; }
+    .badge-gray { background: #F3F4F6; color: #374151; }
+    .badge-blue { background: #DBEAFE; color: #1E40AF; }
+
+    /* 機能リスト */
+    .feature-list { list-style: none; }
+    .feature-list li { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 5px 0; border-bottom: 1px solid #F9FAFB; color: var(--text-sub); }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list .icon { width: 18px; text-align: center; flex-shrink: 0; }
+
+    /* リンクボタン */
+    .link-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--primary); text-decoration: none; padding: 6px 12px; background: var(--primary-light); border-radius: 6px; margin-top: 12px; margin-right: 6px; transition: background 0.2s; }
+    .link-btn:hover { background: #C7D2FE; }
+
+    /* 手動タスクカード */
+    .manual-card { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px; padding: 16px 20px; display: flex; align-items: flex-start; gap: 12px; }
+    .manual-card-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .manual-card-title { font-size: 13px; font-weight: 800; color: #92400E; margin-bottom: 4px; }
+    .manual-card-desc { font-size: 12px; color: #B45309; line-height: 1.7; }
+
+    /* 未構築カード */
+    .todo-card { background: #F8F9FA; border: 1px dashed var(--border); border-radius: 12px; padding: 16px 20px; display: flex; align-items: flex-start; gap: 12px; }
+    .todo-card-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .todo-card-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .todo-card-desc { font-size: 12px; color: var(--text-sub); line-height: 1.7; }
+
+    /* URLリスト */
+    .url-card { background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+    .url-item { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); transition: background 0.15s; }
+    .url-item:last-child { border-bottom: none; }
+    .url-item:hover { background: var(--primary-light); }
+    .url-item-icon { font-size: 18px; width: 28px; text-align: center; flex-shrink: 0; }
+    .url-item-title { font-size: 13px; font-weight: 700; }
+    .url-item-url { font-size: 11px; color: var(--text-sub); margin-top: 2px; font-family: monospace; }
+    .url-arrow { margin-left: auto; color: var(--text-sub); font-size: 14px; }
+
+    /* 資料プレースホルダー */
+    .doc-placeholder { background: white; border: 2px dashed var(--border); border-radius: 12px; padding: 20px; text-align: center; color: var(--text-sub); font-size: 13px; cursor: pointer; }
+    .doc-placeholder:hover { border-color: var(--primary); color: var(--primary); }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .top-bar { padding: 16px; }
+      .container { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ログイン画面 -->
+<div id="login-screen">
+  <div class="login-card">
+    <div style="font-size:36px;margin-bottom:12px;">🏢</div>
+    <h1>リミー コントロールセンター</h1>
+    <p>社外秘 — パスワードを入力してください</p>
+    <input type="password" id="pw-input" class="login-input" placeholder="パスワード" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()" class="login-btn">ログイン</button>
+    <p id="pw-error" class="login-error">パスワードが違います</p>
+  </div>
+</div>
+
+<!-- メイン画面 -->
+<div id="main-screen">
+  <div class="top-bar">
+    <div>
+      <h1>🏢 リミー コントロールセンター</h1>
+      <span>Rimee Inc. — 全システム・リソース一覧</span>
+    </div>
+    <button onclick="logout()" class="logout-btn">ログアウト</button>
+  </div>
+
+  <div class="container">
+
+    <!-- ===== 構築済みシステム ===== -->
+    <div class="section">
+      <div class="section-title">🤖 構築済みシステム</div>
+      <div class="grid">
+
+        <!-- AI診断システム -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <div>
+              <div class="card-title">入社90日 AI診断システム</div>
+              <div class="card-sub">onboarding-diagnosis</div>
+            </div>
+            <span class="badge badge-green" style="margin-left:auto;">✅ 稼働中</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="icon">✅</span>25問診断フォーム（6因子・5点スケール）</li>
+            <li><span class="icon">✅</span>AIレポート自動生成（本人・管理者向け）</li>
+            <li><span class="icon">✅</span>メール自動送信（本人・管理者・リミー）</li>
+            <li><span class="icon">✅</span>🚨 要介入アラート自動通知</li>
+            <li><span class="icon">✅</span>月次レポート自動配信（毎月1日・15日）</li>
+            <li><span class="icon">✅</span>管理者アクションチェック（5日・20日）</li>
+            <li><span class="icon">✅</span>企業自己登録フォーム（トークン認証）</li>
+            <li><span class="icon">✅</span>管理画面 + KPIダッシュボード</li>
+            <li><span class="icon">✅</span>人的資本開示 3層KPI（自動集計）</li>
+          </ul>
+          <div style="margin-top:14px;">
+            <a href="https://shinomiho.github.io/onboarding-diagnosis/admin.html" target="_blank" class="link-btn">🔐 管理画面</a>
+            <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="link-btn">🏢 企業登録URL</a>
+          </div>
+        </div>
+
+        <!-- SNS自動投稿 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📱</div>
+            <div>
+              <div class="card-title">SNS自動投稿システム</div>
+              <div class="card-sub">social-auto-post（毎朝8時自動実行）</div>
+            </div>
+            <span class="badge badge-green" style="margin-left:auto;">✅ 稼働中</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="icon">✅</span>Claudeによるコンテンツ自動生成</li>
+            <li><span class="icon">✅</span>LinkedIn（個人・会社ページ）自動投稿</li>
+            <li><span class="icon">✅</span>Instagram Reels 自動投稿</li>
+            <li><span class="icon">✅</span>Threads 自動投稿（500文字制限対応）</li>
+            <li><span class="icon">✅</span>LINE公式アカウント 一斉配信</li>
+            <li><span class="icon">✅</span>全SNS CTA自動挿入</li>
+            <li><span class="icon">✅</span>Stand.FM台本生成 → Googleカレンダー保存</li>
+            <li><span class="icon">🔄</span>ElevenLabs AI音声生成（再学習中）</li>
+            <li><span class="icon">⏳</span>Spotify Podcast 自動配信（未設定）</li>
+            <li><span class="icon">🖐️</span>note投稿（毎朝メールから手動）</li>
+          </ul>
+        </div>
+
+        <!-- 採用リスク診断 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">⚠️</div>
+            <div>
+              <div class="card-title">採用コスト・人材流出リスク診断</div>
+              <div class="card-sub">reme-risk-diagnosis</div>
+            </div>
+            <span class="badge badge-green" style="margin-left:auto;">✅ 稼働中</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="icon">✅</span>1分で完了する簡易診断</li>
+            <li><span class="icon">✅</span>採用コスト・流出リスクを可視化</li>
+            <li><span class="icon">✅</span>リードジェネレーション目的</li>
+          </ul>
+          <div style="margin-top:14px;">
+            <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="link-btn">🔗 診断ページを開く</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== Webサイト・公開URL ===== -->
+    <div class="section">
+      <div class="section-title">🌐 Webサイト・公開URL</div>
+      <div class="grid">
+        <div class="url-card">
+          <a href="https://remenow.tokyo/" target="_blank" class="url-item">
+            <span class="url-item-icon">🏠</span>
+            <div><div class="url-item-title">リミー 公式Webサイト</div><div class="url-item-url">remenow.tokyo</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="url-item">
+            <span class="url-item-icon">🏢</span>
+            <div><div class="url-item-title">企業登録フォーム（顧客送付用）</div><div class="url-item-url">register.html?token=REME2026</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="url-item">
+            <span class="url-item-icon">⚠️</span>
+            <div><div class="url-item-title">採用リスク診断（リードGen）</div><div class="url-item-url">shinomiho.github.io/-reme-risk-diagnosis/</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://app.spirinc.com/t/BaVcJLzp1EBNlPmMopnQj/as/nEkvuC6zy3wU2bD10nCV0/confirm" target="_blank" class="url-item">
+            <span class="url-item-icon">💬</span>
+            <div><div class="url-item-title">個別相談予約</div><div class="url-item-url">app.spirinc.com（Spir）</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/admin.html" target="_blank" class="url-item">
+            <span class="url-item-icon">🔐</span>
+            <div><div class="url-item-title">診断 管理画面</div><div class="url-item-url">onboarding-diagnosis/admin.html</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- SNSアカウント -->
+        <div class="url-card">
+          <a href="https://www.instagram.com/shinomiho_reme_hrtech/" target="_blank" class="url-item">
+            <span class="url-item-icon">📸</span>
+            <div><div class="url-item-title">Instagram</div><div class="url-item-url">@shinomiho_reme_hrtech</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/miho-shinohe/" target="_blank" class="url-item">
+            <span class="url-item-icon">💼</span>
+            <div><div class="url-item-title">LinkedIn 個人</div><div class="url-item-url">linkedin.com/in/miho-shinohe</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://www.threads.net/@shinomiho_reme_hrtech" target="_blank" class="url-item">
+            <span class="url-item-icon">🧵</span>
+            <div><div class="url-item-title">Threads</div><div class="url-item-url">@shinomiho_reme_hrtech</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="#" class="url-item" onclick="alert('LINE公式アカウントのURLをここに追加してください')">
+            <span class="url-item-icon">💚</span>
+            <div><div class="url-item-title">LINE公式アカウント</div><div class="url-item-url">← URLを追加してください</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="#" class="url-item" onclick="alert('noteのURLをここに追加してください')">
+            <span class="url-item-icon">📝</span>
+            <div><div class="url-item-title">note</div><div class="url-item-url">← URLを追加してください</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="#" class="url-item" onclick="alert('Stand.FMのURLをここに追加してください')">
+            <span class="url-item-icon">🎙️</span>
+            <div><div class="url-item-title">Stand.FM</div><div class="url-item-url">← URLを追加してください</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 資料・ドキュメント ===== -->
+    <div class="section">
+      <div class="section-title">📄 資料・ドキュメント</div>
+      <div class="grid">
+        <div class="url-card" id="docs-list">
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">📁</span>
+            <div><div class="url-item-title" style="color:var(--text-sub);">Canva・Gamma・Googleドライブの資料リンクをここに追加</div></div>
+          </div>
+          <!-- 資料リンクをここに追加してください -->
+          <!-- 例：
+          <a href="https://www.canva.com/..." target="_blank" class="url-item">
+            <span class="url-item-icon">🎨</span>
+            <div><div class="url-item-title">会社紹介資料</div><div class="url-item-url">Canva</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          -->
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--text-sub);margin-top:10px;">💡 資料のリンクを追加したい場合は Claude Code に「hub.htmlの資料セクションに〇〇を追加して」と伝えてください。</p>
+    </div>
+
+    <!-- ===== 手動対応タスク ===== -->
+    <div class="section">
+      <div class="section-title">🖐️ 手動対応が必要なもの</div>
+      <div class="grid">
+        <div class="manual-card">
+          <div class="manual-card-icon">📝</div>
+          <div>
+            <div class="manual-card-title">note 投稿（毎日）</div>
+            <div class="manual-card-desc">毎朝8時にメールで届く「note下書き」をコピーして、note.comに貼り付けて投稿ボタンを押す。タイトル・本文は自動生成済み。</div>
+          </div>
+        </div>
+        <div class="manual-card">
+          <div class="manual-card-icon">🎙️</div>
+          <div>
+            <div class="manual-card-title">Stand.FM 録音・投稿</div>
+            <div class="manual-card-desc">毎朝Googleカレンダーに台本が自動保存される。台本を読んでStand.FMアプリで録音・投稿。AI音声生成が完成すれば半自動化予定。</div>
+          </div>
+        </div>
+        <div class="manual-card">
+          <div class="manual-card-icon">🎵</div>
+          <div>
+            <div class="manual-card-title">Spotify Podcast アップロード</div>
+            <div class="manual-card-desc">現在は手動でSpotify for Creatorsにアップロード。RSS連携による自動化を検討中。</div>
+          </div>
+        </div>
+        <div class="manual-card">
+          <div class="manual-card-icon">💬</div>
+          <div>
+            <div class="manual-card-title">LINEオープンチャット</div>
+            <div class="manual-card-desc">APIが非公開のため自動投稿不可。公式LINEの一斉配信は自動化済み。オープンチャットは手動投稿。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 未構築・検討中 ===== -->
+    <div class="section">
+      <div class="section-title">⏳ 未構築・検討中</div>
+      <div class="grid">
+        <div class="todo-card">
+          <div class="todo-card-icon">📧</div>
+          <div>
+            <div class="todo-card-title">メルマガ自動配信</div>
+            <div class="todo-card-desc">名刺スキャン（200枚以上）完了後に実装予定。Eightでリスト化 → GASでメール自動配信の仕組みを構築。</div>
+          </div>
+        </div>
+        <div class="todo-card">
+          <div class="todo-card-icon">🎵</div>
+          <div>
+            <div class="todo-card-title">Podcast RSS自動配信</div>
+            <div class="todo-card-desc">Buzzsprout等のRSSホスト経由でSpotifyに自動配信する仕組み。現在サービス選定中。</div>
+          </div>
+        </div>
+        <div class="todo-card">
+          <div class="todo-card-icon">🔐</div>
+          <div>
+            <div class="todo-card-title">ログイン・履歴機能（診断）</div>
+            <div class="todo-card-desc">診断結果の履歴閲覧・ログイン機能。Firebase/Supabase検討中。将来フェーズ。</div>
+          </div>
+        </div>
+        <div class="todo-card">
+          <div class="todo-card-icon">👥</div>
+          <div>
+            <div class="todo-card-title">チーム単位の管理者登録（診断）</div>
+            <div class="todo-card-desc">1社に複数チーム・複数管理者を登録できる機能。管理画面の表示・集計対応が残っている。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:20px 0;font-size:12px;color:var(--text-sub);">
+      リミー コントロールセンター — 社外秘 © 2026 Rimee Inc.
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const PASSWORD = 'REME2026';
+
+  function checkPw() {
+    const val = document.getElementById('pw-input').value;
+    if (val === PASSWORD) {
+      sessionStorage.setItem('hub_auth', '1');
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('main-screen').style.display = 'block';
+    } else {
+      document.getElementById('pw-error').style.display = 'block';
+    }
+  }
+
+  function logout() {
+    sessionStorage.removeItem('hub_auth');
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('main-screen').style.display = 'none';
+    document.getElementById('pw-input').value = '';
+  }
+
+  if (sessionStorage.getItem('hub_auth') === '1') {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('main-screen').style.display = 'block';
+  }
+</script>
+</body>
+</html>
