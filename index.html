@@ -653,57 +653,149 @@
             <div class="card-header"><div class="card-icon">📱</div><div><div class="card-title">SNS自動投稿システム</div></div></div>
             <ul class="feature-list">
               <li><span class="icon">🔧</span><strong>技術：</strong>Google Apps Script + Claude AI + ElevenLabs</li>
-              <li><span class="icon">📁</span><strong>コード：</strong>ローカル「social-auto-post/apps-script.gs」</li>
+              <li><span class="icon">📁</span><strong>コード：</strong>GAS上に直接あり（script.google.comから閲覧・編集可）</li>
               <li><span class="icon">⏰</span><strong>実行：</strong>毎朝8時にGASトリガーで自動実行</li>
               <li><span class="icon">🔑</span><strong>APIキー：</strong>GASのスクリプトプロパティに保存済み</li>
             </ul>
+            <div style="background:#FEE2E2;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:11px;color:#991B1B;font-weight:700;">⚠️ バックアップ未完了：コードをGitHubのプライベートリポジトリにも保存する必要あり</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 緊急引き継ぎ：Mihoさんのパソコンなしで対応する方法 -->
+      <div class="section">
+        <div style="background:linear-gradient(135deg,#FEE2E2,#FFF1F2);border:2px solid #FCA5A5;border-radius:12px;padding:20px 24px;margin-bottom:20px;">
+          <p style="font-size:14px;font-weight:900;color:#991B1B;margin-bottom:8px;">🚨 篠辺美穂のパソコンにアクセスできない場合</p>
+          <p style="font-size:13px;color:#B91C1C;line-height:1.8;margin-bottom:12px;">パソコンは不要です。必要なものは<strong>Googleアカウントのログイン情報</strong>と<strong>GitHubアカウント情報</strong>のみ。すべてブラウザから操作できます。</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div style="background:white;border-radius:8px;padding:14px;">
+              <div style="font-size:12px;font-weight:800;color:#991B1B;margin-bottom:8px;">🔑 まず入手すべき2つの鍵</div>
+              <ul class="feature-list" style="font-size:12px;">
+                <li><span class="icon">1️⃣</span>Googleアカウント：<code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;">miho.shinohe@remenow.com</code></li>
+                <li><span class="icon">2️⃣</span>GitHubアカウント：<code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;">shinomiho</code></li>
+              </ul>
+              <p style="font-size:11px;color:#B91C1C;margin-top:8px;">→ パスワードはパスワードマネージャーまたは信頼できる第三者から入手</p>
+            </div>
+            <div style="background:white;border-radius:8px;padding:14px;">
+              <div style="font-size:12px;font-weight:800;color:#991B1B;margin-bottom:8px;">✅ これだけでできること</div>
+              <ul class="feature-list" style="font-size:12px;">
+                <li><span class="icon">🔧</span>GASの閲覧・編集・再デプロイ</li>
+                <li><span class="icon">📊</span>スプレッドシートのデータ確認</li>
+                <li><span class="icon">💻</span>GitHubからコードをダウンロード</li>
+                <li><span class="icon">🤖</span>Claude Codeで修正・更新</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- メンテナンス方法 -->
       <div class="section">
-        <div class="section-title">🛠️ システムの更新・メンテナンス方法</div>
+        <div class="section-title">🛠️ システムの更新・メンテナンス方法（どのパソコンからでも可）</div>
 
         <div class="card" style="margin-bottom:16px;">
-          <div class="card-header"><div class="card-icon">🤖</div><div><div class="card-title">Claude Codeを使った更新（推奨）</div></div></div>
-          <p style="font-size:13px;color:var(--text-sub);line-height:1.8;margin-bottom:12px;">
-            リミーのシステムはすべて<strong>Claude Code（AIアシスタント）</strong>を使って構築・更新しています。コードの知識がなくても、日本語で指示するだけで更新できます。
-          </p>
+          <div class="card-header"><div class="card-icon">📊</div><div><div class="card-title">AI診断システムの更新手順</div><div class="card-sub">コードはGitHubにあるため、どのパソコンからでも取得可能</div></div></div>
           <ul class="feature-list">
-            <li><span class="icon">1️⃣</span>ターミナルを開く（Mac：Command+Space → 「ターミナル」）</li>
-            <li><span class="icon">2️⃣</span><code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">claude</code> と入力してEnter → Claude Codeが起動</li>
-            <li><span class="icon">3️⃣</span>「〇〇を変更したい」「〇〇が壊れた」など日本語で伝える</li>
-            <li><span class="icon">4️⃣</span>Claudeが修正してくれる → 内容を確認してGASに貼り付け</li>
+            <li><span class="icon">1️⃣</span><a href="https://github.com/shinomiho/onboarding-diagnosis" target="_blank" style="color:var(--primary);font-weight:700;">github.com/shinomiho/onboarding-diagnosis</a> を開く</li>
+            <li><span class="icon">2️⃣</span>「Code」→「Download ZIP」でコードを取得 <em style="color:var(--text-sub);">（またはgit clone）</em></li>
+            <li><span class="icon">3️⃣</span>ターミナルで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">claude</code> と起動し、日本語で変更内容を伝える</li>
+            <li><span class="icon">4️⃣</span>HTMLの変更 → GitHubにpush → 自動でサイト更新</li>
+            <li><span class="icon">5️⃣</span>GASの変更 → <a href="https://script.google.com/home/projects/1-eWdPRO5hqQ4X9K4a_1-3r-9WF4b7sNdIZX0gSC2-pBMHclQnubF7SoC/edit" target="_blank" style="color:var(--primary);font-weight:700;">GASエディタを開く</a> → コードを貼り付け → 保存・デプロイ</li>
           </ul>
         </div>
 
         <div class="card" style="margin-bottom:16px;">
-          <div class="card-header"><div class="card-icon">📊</div><div><div class="card-title">AI診断システムの更新手順</div></div></div>
+          <div class="card-header"><div class="card-icon">📱</div><div><div class="card-title">SNS自動投稿の更新手順</div><div class="card-sub">コードはGAS上にあるため、ブラウザだけで完結</div></div></div>
           <ul class="feature-list">
-            <li><span class="icon">1️⃣</span>Claude Codeで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">cd /Users/mihomatuo/onboarding-diagnosis</code> と入力</li>
-            <li><span class="icon">2️⃣</span>変更したい内容を日本語で伝える（例：「診断の質問3番を変更したい」）</li>
-            <li><span class="icon">3️⃣</span>HTMLファイルの変更 → GitHubにpush → 自動でサイト更新</li>
-            <li><span class="icon">4️⃣</span>GASの変更 → Claudeがコードをコピー → GASエディタに貼り付け → 保存・デプロイ</li>
+            <li><span class="icon">1️⃣</span><a href="https://script.google.com/home/projects/1kWqpYwUyRRNdjGO9-cHrloLhgwCuNR-5-ph2hyHCKc4T4iv1eAbgoZV6/edit" target="_blank" style="color:var(--primary);font-weight:700;">SNS自動投稿GASを開く</a>（Googleアカウントでログイン要）</li>
+            <li><span class="icon">2️⃣</span>GAS上のコードをすべてコピーして、Claude Codeに貼り付け + 変更内容を伝える</li>
+            <li><span class="icon">3️⃣</span>Claudeが修正したコードをGASエディタに貼り戻す → 保存</li>
+            <li><span class="icon">4️⃣</span>「デプロイ」→「既存のデプロイを管理」→「バージョンを新しく」で更新完了</li>
           </ul>
         </div>
 
         <div class="card" style="margin-bottom:16px;">
-          <div class="card-header"><div class="card-icon">📱</div><div><div class="card-title">SNS自動投稿の更新手順</div></div></div>
+          <div class="card-header"><div class="card-icon">🗺️</div><div><div class="card-title">このhubページの更新手順</div><div class="card-sub">コードはGitHubにあるため、どのパソコンからでも取得可能</div></div></div>
           <ul class="feature-list">
-            <li><span class="icon">1️⃣</span>Claude Codeで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">cd /Users/mihomatuo/social-auto-post</code> と入力</li>
-            <li><span class="icon">2️⃣</span>変更内容を伝える（例：「投稿文のトーンを変えたい」「新しいSNSを追加したい」）</li>
-            <li><span class="icon">3️⃣</span>Claudeがapps-script.gsを修正 → クリップボードにコピー</li>
-            <li><span class="icon">4️⃣</span>SNS自動投稿GASを開く → Ctrl+A → Ctrl+V → 保存</li>
+            <li><span class="icon">1️⃣</span><a href="https://github.com/shinomiho/limee-hub" target="_blank" style="color:var(--primary);font-weight:700;">github.com/shinomiho/limee-hub</a> を開く</li>
+            <li><span class="icon">2️⃣</span>「Code」→「Download ZIP」またはgit cloneでコードを取得</li>
+            <li><span class="icon">3️⃣</span>ターミナルで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">claude</code> と起動し、日本語で変更内容を伝える</li>
+            <li><span class="icon">4️⃣</span>Claudeがindex.htmlを修正 → GitHubにpush → 自動で反映</li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-header"><div class="card-icon">🗺️</div><div><div class="card-title">このhubページの更新手順</div></div></div>
+          <div class="card-header"><div class="card-icon">🤖</div><div><div class="card-title">Claude Codeの使い方（初めての場合）</div></div></div>
           <ul class="feature-list">
-            <li><span class="icon">1️⃣</span>Claude Codeで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">cd /Users/mihomatuo/limee-hub</code> と入力</li>
-            <li><span class="icon">2️⃣</span>「〇〇のリンクを追加して」「〇〇のステータスを変更して」など伝える</li>
-            <li><span class="icon">3️⃣</span>Claudeがindex.htmlを修正 → GitHubにpush → 自動で反映</li>
+            <li><span class="icon">1️⃣</span><a href="https://claude.ai/download" target="_blank" style="color:var(--primary);font-weight:700;">claude.ai/download</a> からClaude Codeをインストール</li>
+            <li><span class="icon">2️⃣</span>ターミナルを開く（Mac：Command+Space → 「ターミナル」）</li>
+            <li><span class="icon">3️⃣</span><code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">claude</code> と入力してEnter → 起動</li>
+            <li><span class="icon">4️⃣</span>「〇〇を変更したい」「〇〇が壊れた」など日本語で伝えるだけでOK</li>
+          </ul>
+          <p style="font-size:12px;color:var(--text-sub);margin-top:10px;line-height:1.7;">💡 Claudeにはリミーのシステム構成の記憶があります。「以前と同じスタイルで」「リミーの診断フォームを修正して」など伝えるだけで文脈を理解して対応します。</p>
+        </div>
+      </div>
+
+      <!-- 超初心者向け -->
+      <div class="section">
+        <div class="section-title">🔰 技術が苦手でも大丈夫：困ったときの5ステップ</div>
+
+        <div style="background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:2px solid #6EE7B7;border-radius:12px;padding:20px 24px;margin-bottom:20px;">
+          <p style="font-size:13px;font-weight:800;color:#065F46;margin-bottom:4px;">💡 覚えることはたった1つ</p>
+          <p style="font-size:13px;color:#047857;line-height:1.8;">困ったことは<strong>すべてClaudeに聞けば解決します。</strong> コードや仕組みを理解する必要はありません。<br>エラーをそのままコピペするだけでOKです。</p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+
+          <div style="display:flex;gap:16px;align-items:flex-start;background:white;border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="background:#4F46E5;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;">1</div>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px;">エラーメールが届いたとき</div>
+              <div style="font-size:13px;color:var(--text-sub);line-height:1.8;">メールの件名・本文をそのままコピーして → <a href="https://claude.ai" target="_blank" style="color:var(--primary);font-weight:700;">claude.ai</a> を開いて貼り付け → 「これはどういう意味ですか？どうすればいいですか？」と聞く</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;background:white;border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="background:#4F46E5;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;">2</div>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px;">Claudeに「GASを開いて」と言われたとき</div>
+              <div style="font-size:13px;color:var(--text-sub);line-height:1.8;">上の「AI診断システムの更新手順」のリンクをクリック → Googleアカウントでログイン → GASのページが開く。Claudeに「開けました」と伝えて次の指示をもらう。</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;background:white;border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="background:#4F46E5;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;">3</div>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px;">Claudeがコードを出してきたとき</div>
+              <div style="font-size:13px;color:var(--text-sub);line-height:1.8;">コードをコピー（「コードをコピー」ボタンまたはCtrl+A → Ctrl+C）→ GASエディタを開いて全選択（Ctrl+A）→ 貼り付け（Ctrl+V）→ 「保存」ボタンを押す。コードの中身を読む必要はありません。</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;background:white;border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="background:#F59E0B;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;">4</div>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px;">迷ったら：触らない・待つ</div>
+              <div style="font-size:13px;color:var(--text-sub);line-height:1.8;">「何かしないといけない」と焦って触ると悪化することがあります。まずClaudeに状況を説明して、「何もしなくて大丈夫ですか？」と確認してから動く。</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;background:white;border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="background:#10B981;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;">5</div>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px;">「Claudeに聞いても解決しない」というとき</div>
+              <div style="font-size:13px;color:var(--text-sub);line-height:1.8;">会話を最初から見返して「さっきから解決しないのですが、もし私がパソコンに詳しくない場合の最もシンプルな解決方法を教えてください」と伝える。Claude Codeなら「/clear」でリセットして再度相談。</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:10px;padding:16px 20px;margin-top:16px;">
+          <p style="font-size:13px;font-weight:800;color:#92400E;margin-bottom:6px;">🙅 やってはいけないこと</p>
+          <ul style="list-style:none;padding:0;margin:0;font-size:13px;color:#B45309;line-height:2;">
+            <li>❌ GASのコードを「一部だけ」書き換える（全体のバランスが崩れる）</li>
+            <li>❌ スプレッドシートの列を削除・移動する（システムが列の位置を覚えている）</li>
+            <li>❌ GASのトリガーを勝手に追加・削除する（二重送信や停止の原因になる）</li>
+            <li>❌ GitHubのファイルをブラウザ上で直接編集してコミット（他の変更と衝突する）</li>
           </ul>
         </div>
       </div>
