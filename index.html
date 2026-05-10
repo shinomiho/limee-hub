@@ -99,10 +99,39 @@
     .doc-placeholder { background: white; border: 2px dashed var(--border); border-radius: 12px; padding: 20px; text-align: center; color: var(--text-sub); font-size: 13px; cursor: pointer; }
     .doc-placeholder:hover { border-color: var(--primary); color: var(--primary); }
 
+    /* タブ */
+    .tabs { display: flex; gap: 4px; padding: 0 32px; background: white; border-bottom: 1px solid var(--border); }
+    .tab-btn { padding: 14px 20px; font-size: 13px; font-weight: 700; color: var(--text-sub); border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* 構造図 */
+    .diagram-wrap { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 32px; overflow-x: auto; }
+    .tree { display: flex; flex-direction: column; align-items: center; gap: 0; min-width: 900px; }
+    .tree-row { display: flex; justify-content: center; gap: 12px; position: relative; width: 100%; }
+    .tree-node { border-radius: 10px; padding: 10px 14px; font-size: 12px; font-weight: 700; text-align: center; min-width: 120px; max-width: 160px; line-height: 1.5; position: relative; text-decoration: none; display: block; }
+    a.tree-node:hover { filter: brightness(0.93); transform: translateY(-1px); transition: all 0.15s; cursor: pointer; }
+    a.tree-node::after { content: ' ↗'; font-size: 10px; opacity: 0.6; }
+    .tree-node.root { background: #4F46E5; color: white; font-size: 15px; min-width: 180px; padding: 14px 20px; border-radius: 14px; }
+    .tree-node.system { background: #EEF2FF; color: #3730A3; border: 2px solid #4F46E5; font-size: 13px; min-width: 150px; }
+    .tree-node.done { background: #D1FAE5; color: #065F46; border: 1.5px solid #10B981; }
+    .tree-node.manual { background: #FEF3C7; color: #92400E; border: 1.5px solid #F59E0B; }
+    .tree-node.progress { background: #DBEAFE; color: #1E40AF; border: 1.5px solid #3B82F6; }
+    .tree-node.future { background: #F3F4F6; color: #6B7280; border: 1.5px dashed #D1D5DB; }
+    .vline { width: 2px; background: #C7D2FE; margin: 0 auto; }
+    .vline-sm { height: 16px; }
+    .vline-md { height: 24px; }
+    .hline-wrap { display: flex; justify-content: center; position: relative; width: 100%; }
+    .hline { height: 2px; background: #C7D2FE; flex: 1; margin: 0 60px; }
+    .branch-wrap { display: flex; justify-content: center; gap: 12px; width: 100%; }
+    .branch-col { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
     @media (max-width: 600px) {
       .grid { grid-template-columns: 1fr; }
       .top-bar { padding: 16px; }
       .container { padding: 20px 12px; }
+      .tabs { padding: 0 12px; }
     }
   </style>
 </head>
@@ -130,12 +159,411 @@
     <button onclick="logout()" class="logout-btn">ログアウト</button>
   </div>
 
+  <!-- タブ -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">📋 全体一覧</button>
+    <button class="tab-btn" onclick="switchTab('structure')">🗺️ 構造図</button>
+    <button class="tab-btn" onclick="switchTab('clients')">📄 お客様・JV資料</button>
+    <button class="tab-btn" onclick="switchTab('handover')">📖 引き継ぎガイド</button>
+  </div>
+
+  <!-- 構造図パネル -->
+  <div id="tab-structure" class="tab-panel">
+    <div class="container">
+      <div class="diagram-wrap">
+        <div class="tree">
+
+          <!-- Root -->
+          <div class="tree-node root">🏢 リミー事業<br><span style="font-size:11px;font-weight:400;opacity:0.8;">Rimee Inc.</span></div>
+          <div class="vline vline-md"></div>
+
+          <!-- 横線 -->
+          <div style="display:flex;width:100%;align-items:flex-start;justify-content:center;gap:0;">
+            <!-- 採用リスク診断（独立・一番左） -->
+            <div style="flex:0.8;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:100%;height:2px;background:#C7D2FE;"></div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node system">⚠️ 採用リスク診断<br><span style="font-size:10px;font-weight:400;">フロント独立型</span></div>
+              <div class="vline vline-sm"></div>
+              <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+                <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="tree-node done">📝 1分リスク診断<br>リードGen</a>
+                <div class="tree-node done">📣 SNS全投稿に<br>CTA自動挿入</div>
+                <div class="tree-node future">🔗 CRM連携<br>⏳未構築</div>
+              </div>
+            </div>
+
+          <!-- AI診断 -->
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:100%;height:2px;background:#C7D2FE;"></div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node system">📊 AI診断システム</div>
+              <div class="vline vline-sm"></div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                  <a href="https://shinomiho.github.io/onboarding-diagnosis/index.html?code=LIMEE_XXXXXX" target="_blank" class="tree-node done">📝 診断フォーム<br>25問・6因子</a>
+                  <div class="vline" style="height:12px;"></div>
+                  <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="tree-node done">🏢 企業登録<br>URL自動発行</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                  <a href="https://drive.google.com/file/d/135xa2_0X2pNx7oG3fn5XRaSdGFCAeb1S/view?usp=sharing" target="_blank" class="tree-node done">🤖 AIレポート<br>自動生成</a>
+                  <div class="vline" style="height:12px;"></div>
+                  <div class="tree-node done">📧 メール自動送信<br>本人・管理者</div>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                  <a href="https://shinomiho.github.io/onboarding-diagnosis/admin.html" target="_blank" class="tree-node done">🔐 管理画面<br>KPIダッシュボード</a>
+                  <div class="vline" style="height:12px;"></div>
+                  <a href="https://drive.google.com/file/d/1q8BV7-TiUlO5qgcKmMCjADqahwxp1UNyu/view?usp=sharing" target="_blank" class="tree-node done">📅 月次レポート<br>1日・15日自動</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                  <div class="tree-node done" style="margin-top:0;">✅ アクションチェック<br>5日・20日</div>
+                  <div class="vline" style="height:12px;"></div>
+                  <div class="tree-node done">📊 人的資本KPI<br>3層自動集計</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SNS自動投稿 -->
+            <div style="flex:1.4;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:2px;height:2px;background:#C7D2FE;"></div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node system">📱 SNS自動投稿<br><span style="font-size:10px;font-weight:400;">毎朝8時自動実行</span></div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node done">🧠 Claude AI<br>コンテンツ自動生成</div>
+              <div class="vline vline-sm"></div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">
+                <a href="https://www.linkedin.com/in/miho-shinohe/" target="_blank" class="tree-node done">💼 LinkedIn<br>個人・会社</a>
+                <a href="https://www.instagram.com/shinomiho_reme_hrtech/" target="_blank" class="tree-node done">📸 Instagram<br>Reels</a>
+                <a href="https://www.threads.net/@shinomiho_reme_hrtech" target="_blank" class="tree-node done">🧵 Threads</a>
+                <div class="tree-node done">💚 LINE公式<br>一斉配信</div>
+                <div class="tree-node manual">📝 note<br>🖐️手動投稿</div>
+              </div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node done">🎙️ Stand.FM台本<br>カレンダー自動保存</div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node progress">🎵 ElevenLabs<br>AI音声生成 🔄再学習中</div>
+              <div class="vline vline-sm"></div>
+              <div style="display:flex;gap:8px;">
+                <div class="tree-node manual">📻 Stand.FM<br>🖐️手動投稿</div>
+                <div class="tree-node progress">🎵 Spotify<br>⏳自動配信 設定中</div>
+              </div>
+            </div>
+
+            <!-- Webサイト -->
+            <div style="flex:0.8;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:100%;height:2px;background:#C7D2FE;"></div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node system">🌐 Webサイト・リンク</div>
+              <div class="vline vline-sm"></div>
+              <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+                <a href="https://remenow.tokyo/" target="_blank" class="tree-node done">🏠 remenow.tokyo<br>公式サイト</a>
+                <a href="https://app.spirinc.com/t/BaVcJLzp1EBNlPmMopnQj/as/nEkvuC6zy3wU2bD10nCV0/confirm" target="_blank" class="tree-node done">💬 個別相談予約<br>Spir</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 未構築 -->
+          <div style="margin-top:32px;width:100%;border-top:2px dashed #E5E7EB;padding-top:20px;">
+            <div style="text-align:center;font-size:12px;color:#9CA3AF;margin-bottom:12px;font-weight:700;">⏳ 今後構築予定</div>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+              <div class="tree-node future">📧 メルマガ自動配信<br>名刺スキャン後</div>
+              <div class="tree-node future">🔐 ログイン・履歴機能<br>Firebase/Supabase検討</div>
+              <div class="tree-node future">👥 チーム単位<br>管理者登録</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;">
+        <span style="font-size:12px;display:flex;align-items:center;gap:6px;"><span style="background:#D1FAE5;border:1px solid #10B981;border-radius:4px;padding:2px 8px;">✅ 自動</span> 完全自動化済み</span>
+        <span style="font-size:12px;display:flex;align-items:center;gap:6px;"><span style="background:#FEF3C7;border:1px solid #F59E0B;border-radius:4px;padding:2px 8px;">🖐️ 手動</span> 手動対応が必要</span>
+        <span style="font-size:12px;display:flex;align-items:center;gap:6px;"><span style="background:#DBEAFE;border:1px solid #3B82F6;border-radius:4px;padding:2px 8px;">🔄 進行中</span> 設定・構築中</span>
+        <span style="font-size:12px;display:flex;align-items:center;gap:6px;"><span style="background:#F3F4F6;border:1px solid #D1D5DB;border-radius:4px;padding:2px 8px;">⏳ 予定</span> 今後構築予定</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== お客様・JV資料タブ ===== -->
+  <div id="tab-clients" class="tab-panel">
+    <div class="container">
+
+      <div class="section">
+        <div class="section-title">🤝 JVパートナー向け資料</div>
+        <div class="url-card">
+          <a href="https://docs.google.com/document/d/1nwm2x6e0JGezvoBcN8lf8H9E0SWSOAvKgZAnh3pPTrY/edit?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">💰</span>
+            <div><div class="url-item-title">料金モデル（チャネル別・JV分配設計）</div><div class="url-item-url">Google Docs — JVモデル・直販モデル・スポット支援の分配ルール</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <div class="url-item" style="cursor:default;opacity:0.5;">
+            <span class="url-item-icon">📋</span>
+            <div><div class="url-item-title">JV契約書テンプレート</div><div class="url-item-url">← リンクを追加してください</div></div>
+          </div>
+          <div class="url-item" style="cursor:default;opacity:0.5;">
+            <span class="url-item-icon">📊</span>
+            <div><div class="url-item-title">サービス概要・提案資料（JV向け）</div><div class="url-item-url">← リンクを追加してください</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🏢 お客様向け資料</div>
+        <div class="url-card">
+          <a href="https://drive.google.com/file/d/135xa2_0X2pNx7oG3fn5XRaSdGFCAeb1S/view?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📄</span>
+            <div><div class="url-item-title">AIレポートサンプル（管理者向け）</div><div class="url-item-url">導入前の説明・デモ用。実際に生成されるレポートのサンプル。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1q8BV7-TiUlO5qgcKmMCjADqahwxp1UNyu/view?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📊</span>
+            <div><div class="url-item-title">月次レポートサンプル</div><div class="url-item-url">継続利用時に届く月次レポートのサンプル。導入説明時に使用。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="url-item">
+            <span class="url-item-icon">🏢</span>
+            <div><div class="url-item-title">企業登録フォーム（契約後に送付）</div><div class="url-item-url">契約成立後にこのURLを送るだけで企業が自己登録できる。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="url-item">
+            <span class="url-item-icon">⚠️</span>
+            <div><div class="url-item-title">採用リスク診断（商談前の興味喚起用）</div><div class="url-item-url">SNSや名刺交換後に送る1分診断。リードとして活用。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://app.spirinc.com/t/BaVcJLzp1EBNlPmMopnQj/as/nEkvuC6zy3wU2bD10nCV0/confirm" target="_blank" class="url-item">
+            <span class="url-item-icon">💬</span>
+            <div><div class="url-item-title">個別相談予約（商談設定）</div><div class="url-item-url">興味を持った相手に送る相談予約URL。</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <div class="url-item" style="cursor:default;opacity:0.5;">
+            <span class="url-item-icon">🎨</span>
+            <div><div class="url-item-title">会社紹介資料・サービス説明（Canva等）</div><div class="url-item-url">← リンクを追加してください</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">📬 お客様への渡し方フロー</div>
+        <div class="card" style="max-width:600px;">
+          <ul class="feature-list" style="font-size:13px;">
+            <li><span class="icon">1️⃣</span>SNS・名刺交換 → <strong>採用リスク診断URL</strong>を送る</li>
+            <li><span class="icon">2️⃣</span>診断完了 → <strong>個別相談予約URL</strong>を送る</li>
+            <li><span class="icon">3️⃣</span>商談 → <strong>サービス説明資料・サンプルレポート</strong>を見せる</li>
+            <li><span class="icon">4️⃣</span>契約 → <strong>企業登録フォームURL</strong>を送る（あとは全自動）</li>
+            <li><span class="icon">5️⃣</span>翌月以降 → <strong>月次レポート</strong>が自動配信される</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 引き継ぎガイドタブ ===== -->
+  <div id="tab-handover" class="tab-panel">
+    <div class="container">
+
+      <div style="background:linear-gradient(135deg,#FEF3C7,#FFFBEB);border:1px solid #FDE68A;border-radius:12px;padding:20px 24px;margin-bottom:32px;">
+        <p style="font-size:14px;font-weight:800;color:#92400E;margin-bottom:6px;">📖 このページについて</p>
+        <p style="font-size:13px;color:#B45309;line-height:1.8;">
+          このガイドは、篠辺美穂が病気・不在・または引き継ぎが必要になった際に、<strong>第三者がリミーの事業・システムを理解し継続できるよう</strong>作成されています。<br>
+          2026年5月時点の情報です。システムの更新があった場合は適宜このページも更新してください。
+        </p>
+      </div>
+
+      <!-- 事業概要 -->
+      <div class="section">
+        <div class="section-title">🏢 リミーとは何か</div>
+        <div class="card">
+          <p style="font-size:13px;line-height:1.9;color:var(--text);">
+            <strong>リミー（Rimee）</strong>は、採用後支援・オンボーディング特化のHRテック企業です。代表は篠辺美穂（Miho Shinohe）。<br><br>
+            主なサービスは2つ：<br>
+            ① <strong>入社90日AI診断システム</strong>：新入社員が25問回答 → AIがレポート生成 → 管理者へ自動送信 → 人的資本KPIとして開示支援<br>
+            ② <strong>人的資本経営のKPI設計支援</strong>：インプット・プロセス・アウトカムの3層構造でKPI設計<br><br>
+            ビジョン：<em>「AIと人の力で人事の未来を変える」</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- システム構成 -->
+      <div class="section">
+        <div class="section-title">⚙️ システム構成と担当サービス</div>
+        <div class="grid">
+          <div class="card">
+            <div class="card-header"><div class="card-icon">📊</div><div><div class="card-title">AI診断システム</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">🔧</span><strong>技術：</strong>HTML/CSS/JS + Google Apps Script + Claude AI</li>
+              <li><span class="icon">📁</span><strong>コード：</strong>GitHubリポジトリ「onboarding-diagnosis」</li>
+              <li><span class="icon">🗄️</span><strong>データ：</strong>Googleスプレッドシート（responses・companies等）</li>
+              <li><span class="icon">🔑</span><strong>APIキー：</strong>GASのスクリプトプロパティに保存済み</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-icon">📱</div><div><div class="card-title">SNS自動投稿システム</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">🔧</span><strong>技術：</strong>Google Apps Script + Claude AI + ElevenLabs</li>
+              <li><span class="icon">📁</span><strong>コード：</strong>ローカル「social-auto-post/apps-script.gs」</li>
+              <li><span class="icon">⏰</span><strong>実行：</strong>毎朝8時にGASトリガーで自動実行</li>
+              <li><span class="icon">🔑</span><strong>APIキー：</strong>GASのスクリプトプロパティに保存済み</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- メンテナンス方法 -->
+      <div class="section">
+        <div class="section-title">🛠️ システムの更新・メンテナンス方法</div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-header"><div class="card-icon">🤖</div><div><div class="card-title">Claude Codeを使った更新（推奨）</div></div></div>
+          <p style="font-size:13px;color:var(--text-sub);line-height:1.8;margin-bottom:12px;">
+            リミーのシステムはすべて<strong>Claude Code（AIアシスタント）</strong>を使って構築・更新しています。コードの知識がなくても、日本語で指示するだけで更新できます。
+          </p>
+          <ul class="feature-list">
+            <li><span class="icon">1️⃣</span>ターミナルを開く（Mac：Command+Space → 「ターミナル」）</li>
+            <li><span class="icon">2️⃣</span><code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">claude</code> と入力してEnter → Claude Codeが起動</li>
+            <li><span class="icon">3️⃣</span>「〇〇を変更したい」「〇〇が壊れた」など日本語で伝える</li>
+            <li><span class="icon">4️⃣</span>Claudeが修正してくれる → 内容を確認してGASに貼り付け</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-header"><div class="card-icon">📊</div><div><div class="card-title">AI診断システムの更新手順</div></div></div>
+          <ul class="feature-list">
+            <li><span class="icon">1️⃣</span>Claude Codeで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">cd /Users/mihomatuo/onboarding-diagnosis</code> と入力</li>
+            <li><span class="icon">2️⃣</span>変更したい内容を日本語で伝える（例：「診断の質問3番を変更したい」）</li>
+            <li><span class="icon">3️⃣</span>HTMLファイルの変更 → GitHubにpush → 自動でサイト更新</li>
+            <li><span class="icon">4️⃣</span>GASの変更 → Claudeがコードをコピー → GASエディタに貼り付け → 保存・デプロイ</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-header"><div class="card-icon">📱</div><div><div class="card-title">SNS自動投稿の更新手順</div></div></div>
+          <ul class="feature-list">
+            <li><span class="icon">1️⃣</span>Claude Codeで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">cd /Users/mihomatuo/social-auto-post</code> と入力</li>
+            <li><span class="icon">2️⃣</span>変更内容を伝える（例：「投稿文のトーンを変えたい」「新しいSNSを追加したい」）</li>
+            <li><span class="icon">3️⃣</span>Claudeがapps-script.gsを修正 → クリップボードにコピー</li>
+            <li><span class="icon">4️⃣</span>SNS自動投稿GASを開く → Ctrl+A → Ctrl+V → 保存</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><div class="card-icon">🗺️</div><div><div class="card-title">このhubページの更新手順</div></div></div>
+          <ul class="feature-list">
+            <li><span class="icon">1️⃣</span>Claude Codeで <code style="background:#F3F4F6;padding:2px 6px;border-radius:4px;">cd /Users/mihomatuo/limee-hub</code> と入力</li>
+            <li><span class="icon">2️⃣</span>「〇〇のリンクを追加して」「〇〇のステータスを変更して」など伝える</li>
+            <li><span class="icon">3️⃣</span>Claudeがindex.htmlを修正 → GitHubにpush → 自動で反映</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 重要アカウント -->
+      <div class="section">
+        <div class="section-title">🔑 重要アカウント一覧</div>
+        <div class="card">
+          <p style="font-size:12px;color:var(--danger);margin-bottom:12px;font-weight:700;">⚠️ パスワード・APIキーはここには記載しません。引き継ぎ時は口頭またはパスワードマネージャーで共有してください。</p>
+          <table style="width:100%;font-size:13px;border-collapse:collapse;">
+            <tr style="background:#F9FAFB;"><th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);">サービス</th><th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);">用途</th><th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);">アカウント</th></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">Google（Gmail）</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">GAS・Drive・Sheets・Calendar</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">miho.shinohe@remenow.com</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">GitHub</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">サイト公開（GitHub Pages）</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">shinomiho</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">Anthropic（Claude）</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">AI文章・レポート生成</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">APIキーはGASスクリプトプロパティに保存</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">ElevenLabs</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">AI音声生成（篠辺美穂の声）</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">APIキーはGASスクリプトプロパティに保存</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">LINE公式アカウント</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">一斉配信</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">LINE Official Account Manager</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">Meta（Instagram・Threads）</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">SNS自動投稿</td><td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">@shinomiho_reme_hrtech</td></tr>
+            <tr><td style="padding:8px 10px;">Pexels / OpenAI / Google Cloud</td><td style="padding:8px 10px;">画像・TTS生成</td><td style="padding:8px 10px;">APIキーはGASスクリプトプロパティに保存</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 3年後ビジョン -->
+      <div class="section">
+        <div class="section-title">🚀 3年後のビジョンと業務委託の進め方</div>
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-header"><div class="card-icon">🎯</div><div><div class="card-title">目指す姿（2029年）</div></div></div>
+          <p style="font-size:13px;line-height:1.9;color:var(--text);">
+            業務委託1〜2名が、篠辺美穂なしでもリミーの日常業務を回せる状態。<br>
+            システムはほぼ自動化されているため、人が担当するのは<strong>顧客対応・コンテンツの確認・新機能の追加判断</strong>のみ。
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-icon">👥</div><div><div class="card-title">業務委託に渡す業務（優先順）</div></div></div>
+          <ul class="feature-list">
+            <li><span class="icon">1️⃣</span><strong>note投稿</strong>：毎朝届くメールからコピペするだけ。1日5分。</li>
+            <li><span class="icon">2️⃣</span><strong>Stand.FM録音・投稿</strong>：台本はカレンダーに自動保存。読んで録音するだけ。</li>
+            <li><span class="icon">3️⃣</span><strong>顧客対応メール</strong>：テンプレートあり。契約後の企業サポート。</li>
+            <li><span class="icon">4️⃣</span><strong>システムの軽微な更新</strong>：Claude Codeに日本語で指示するだけで対応可能。</li>
+            <li><span class="icon">5️⃣</span><strong>KPIレポート確認</strong>：管理画面のKPIタブを月1回確認して報告。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 緊急時対応 -->
+      <div class="section">
+        <div class="section-title">🚨 緊急時・困ったときの対処法</div>
+        <div class="grid">
+          <div class="manual-card">
+            <div class="manual-card-icon">🤖</div>
+            <div>
+              <div class="manual-card-title">システムが壊れた・動かない</div>
+              <div class="manual-card-desc">Claude Codeを起動して「〇〇が動かない」と伝える。エラーメッセージをそのまま貼り付ければ原因を特定して直してくれる。</div>
+            </div>
+          </div>
+          <div class="manual-card">
+            <div class="manual-card-icon">🔑</div>
+            <div>
+              <div class="manual-card-title">APIキーが切れた・エラーが出る</div>
+              <div class="manual-card-desc">各サービスのダッシュボードで新しいAPIキーを発行 → GASの「プロジェクトの設定」→「スクリプトプロパティ」で更新する。</div>
+            </div>
+          </div>
+          <div class="manual-card">
+            <div class="manual-card-icon">📧</div>
+            <div>
+              <div class="manual-card-title">エラーメールが届いた</div>
+              <div class="manual-card-desc">件名に「SNSエラー」または「Script function not found」とあればGASの問題。Claude Codeにエラー内容を貼り付けて対処してもらう。</div>
+            </div>
+          </div>
+          <div class="manual-card">
+            <div class="manual-card-icon">💳</div>
+            <div>
+              <div class="manual-card-title">課金・サブスクの確認</div>
+              <div class="manual-card-desc">Anthropic・ElevenLabs・Pexels・Google Cloudの料金が発生している。月次で確認し、不要なら解約・ダウングレードを検討する。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 全体一覧パネル -->
+  <div id="tab-overview" class="tab-panel active">
   <div class="container">
 
     <!-- ===== 構築済みシステム ===== -->
     <div class="section">
       <div class="section-title">🤖 構築済みシステム</div>
       <div class="grid">
+
+        <!-- 採用リスク診断 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">⚠️</div>
+            <div>
+              <div class="card-title">採用コスト・人材流出リスク診断</div>
+              <div class="card-sub">reme-risk-diagnosis（フロント独立型）</div>
+            </div>
+            <span class="badge badge-green" style="margin-left:auto;">✅ 稼働中</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="icon">✅</span>1分で完了する簡易診断</li>
+            <li><span class="icon">✅</span>採用コスト・流出リスクを可視化</li>
+            <li><span class="icon">✅</span>リードジェネレーション用フロントエンド</li>
+            <li><span class="icon">✅</span>SNS全投稿にCTAとして自動挿入</li>
+            <li><span class="icon">⏳</span>診断後のリード獲得・CRM連携（未構築）</li>
+          </ul>
+          <div style="margin-top:14px;">
+            <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="link-btn">🔗 診断ページを開く</a>
+          </div>
+        </div>
 
         <!-- AI診断システム -->
         <div class="card">
@@ -186,26 +614,6 @@
             <li><span class="icon">⏳</span>Spotify Podcast 自動配信（未設定）</li>
             <li><span class="icon">🖐️</span>note投稿（毎朝メールから手動）</li>
           </ul>
-        </div>
-
-        <!-- 採用リスク診断 -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">⚠️</div>
-            <div>
-              <div class="card-title">採用コスト・人材流出リスク診断</div>
-              <div class="card-sub">reme-risk-diagnosis</div>
-            </div>
-            <span class="badge badge-green" style="margin-left:auto;">✅ 稼働中</span>
-          </div>
-          <ul class="feature-list">
-            <li><span class="icon">✅</span>1分で完了する簡易診断</li>
-            <li><span class="icon">✅</span>採用コスト・流出リスクを可視化</li>
-            <li><span class="icon">✅</span>リードジェネレーション目的</li>
-          </ul>
-          <div style="margin-top:14px;">
-            <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="link-btn">🔗 診断ページを開く</a>
-          </div>
         </div>
 
       </div>
@@ -284,18 +692,45 @@
       <div class="section-title">📄 資料・ドキュメント</div>
       <div class="grid">
         <div class="url-card" id="docs-list">
-          <div class="url-item" style="cursor:default;">
-            <span class="url-item-icon">📁</span>
-            <div><div class="url-item-title" style="color:var(--text-sub);">Canva・Gamma・Googleドライブの資料リンクをここに追加</div></div>
-          </div>
-          <!-- 資料リンクをここに追加してください -->
-          <!-- 例：
-          <a href="https://www.canva.com/..." target="_blank" class="url-item">
-            <span class="url-item-icon">🎨</span>
-            <div><div class="url-item-title">会社紹介資料</div><div class="url-item-url">Canva</div></div>
+          <a href="https://docs.google.com/document/d/1nwm2x6e0JGezvoBcN8lf8H9E0SWSOAvKgZAnh3pPTrY/edit?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">💰</span>
+            <div><div class="url-item-title">料金モデル（チャネル別・最終確定版）</div><div class="url-item-url">Google Docs</div></div>
             <span class="url-arrow">↗</span>
           </a>
-          -->
+          <a href="https://drive.google.com/file/d/135xa2_0X2pNx7oG3fn5XRaSdGFCAeb1S/view?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📄</span>
+            <div><div class="url-item-title">AIレポートサンプル（管理者向け）</div><div class="url-item-url">Google Drive</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1q8BV7-TiUlO5qgcKmMCjADqahwxp1UNyu/view?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📊</span>
+            <div><div class="url-item-title">月次レポートサンプル</div><div class="url-item-url">Google Drive</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://script.google.com/home/projects/1-eWdPRO5hqQ4X9K4a_1-3r-9WF4b7sNdIZX0gSC2-pBMHclQnubF7SoC/edit" target="_blank" class="url-item">
+            <span class="url-item-icon">⚙️</span>
+            <div><div class="url-item-title">AI診断システム GAS（⭐リミーAI診断本番）</div><div class="url-item-url">Google Apps Script</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://docs.google.com/spreadsheets/d/13CWd0stdBrfNoCuikfP2bVuvJWcJ0Xj_UzyExCOm34c/edit?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📊</span>
+            <div><div class="url-item-title">AI診断 スプレッドシート（responses・companies・KPI）</div><div class="url-item-url">Google Sheets</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://script.google.com/home/projects/1kWqpYwUyRRNdjGO9-cHrloLhgwCuNR-5-ph2hyHCKc4T4iv1eAbgoZV6/edit" target="_blank" class="url-item">
+            <span class="url-item-icon">⚙️</span>
+            <div><div class="url-item-title">SNS自動投稿システム GAS</div><div class="url-item-url">Google Apps Script</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://docs.google.com/spreadsheets/d/1-UX8sMJp_HjGc_gdWtcbNMHtyFnhvBbBxaY6il8um5s/edit?usp=sharing" target="_blank" class="url-item">
+            <span class="url-item-icon">📊</span>
+            <div><div class="url-item-title">SNS投稿ログ スプレッドシート（content_log）</div><div class="url-item-url">Google Sheets</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <div class="url-item" style="cursor:default;opacity:0.5;">
+            <span class="url-item-icon">📁</span>
+            <div><div class="url-item-title">その他の資料（Canva・Gamma等）はリンクを追加してください</div></div>
+          </div>
         </div>
       </div>
       <p style="font-size:12px;color:var(--text-sub);margin-top:10px;">💡 資料のリンクを追加したい場合は Claude Code に「hub.htmlの資料セクションに〇〇を追加して」と伝えてください。</p>
@@ -376,6 +811,7 @@
     </div>
 
   </div>
+  </div><!-- /tab-overview -->
 </div>
 
 <script>
@@ -402,6 +838,13 @@
   if (sessionStorage.getItem('hub_auth') === '1') {
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('main-screen').style.display = 'block';
+  }
+
+  function switchTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
   }
 </script>
 </body>
