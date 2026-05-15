@@ -369,6 +369,157 @@
   <div id="tab-customers" class="tab-panel">
     <div class="container">
 
+      <!-- ===== 顧客管理マニュアル ===== -->
+      <div class="section">
+        <div class="section-title">📋 顧客管理マニュアル — フロー・自動化・手動作業</div>
+
+        <!-- フロー全体図 -->
+        <div class="card" style="border-top:4px solid #4F46E5;margin-bottom:16px;">
+          <div class="card-header"><div class="card-icon">🗺️</div><div><div class="card-title">月次オペレーション全体フロー</div><div class="card-sub">自動 🤖 と 手動 ✋ の違いを確認</div></div></div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;">
+
+            <!-- 新規顧客 -->
+            <div style="background:#F0FDF4;border-radius:10px;padding:16px;">
+              <div style="font-size:12px;font-weight:800;color:#047857;margin-bottom:10px;">🆕 新規顧客が決まったとき（1回）</div>
+              <div style="font-size:12px;color:#065F46;line-height:2.2;">
+                <span style="background:#D1FAE5;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> 案件台帳に顧客情報を登録<br>
+                　└ 会社名・担当者名・チャネル・金額・<strong>メールアドレス</strong><br>
+                <span style="background:#D1FAE5;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> 企業登録URLを送付<br>
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> ウェルカムメール・診断URL・管理画面URLが自動送信
+              </div>
+            </div>
+
+            <!-- 毎月の請求 -->
+            <div style="background:#EEF2FF;border-radius:10px;padding:16px;">
+              <div style="font-size:12px;font-weight:800;color:#3730A3;margin-bottom:10px;">💴 毎月の請求（末締め翌月払い）</div>
+              <div style="font-size:12px;color:#3730A3;line-height:2.2;">
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 毎月1日 6:00 — 請求書ドラフト生成<br>
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> Mihoに承認メール送信（件数・金額一覧）<br>
+                <span style="background:#D1FAE5;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> <strong>承認メールの「承認する」を押す</strong>（数分）<br>
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> お客様に請求書HTMLメール自動送信
+              </div>
+            </div>
+
+            <!-- 入金管理 -->
+            <div style="background:#FFFBEB;border-radius:10px;padding:16px;">
+              <div style="font-size:12px;font-weight:800;color:#92400E;margin-bottom:10px;">🏦 入金確認（月1回）</div>
+              <div style="font-size:12px;color:#92400E;line-height:2.2;">
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 毎朝9:00 — 期日超過・3日以内の請求をメール通知<br>
+                <span style="background:#FDE68A;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> 入金確認後、スプレッドシートに記入<br>
+                　└ ステータス「入金確認」に変更<br>
+                　└ 入金日・入金金額を記入
+              </div>
+            </div>
+
+            <!-- 進捗トラッキング -->
+            <div style="background:#F0FDF4;border-radius:10px;padding:16px;">
+              <div style="font-size:12px;font-weight:800;color:#047857;margin-bottom:10px;">📊 診断進捗トラッキング（自動）</div>
+              <div style="font-size:12px;color:#065F46;line-height:2.2;">
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 登録3日後 — 従業員未登録ならリマインド<br>
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 7日後 — 未回答ならリマインド<br>
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 14日後 — フィードバック依頼<br>
+                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> Mihoに進捗サマリーをメール報告
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 関連URL一覧 -->
+        <div class="url-card" style="margin-bottom:16px;">
+          <div style="padding:12px 16px;background:#F9FAFB;border-bottom:1px solid var(--border);font-size:12px;font-weight:800;color:var(--text-sub);">🔗 顧客管理 関連URL</div>
+          <a href="https://docs.google.com/spreadsheets/d/13CWd0stdBrfNoCuikfP2bVuvJWcJ0Xj_UzyExCOm34c/edit" target="_blank" class="url-item">
+            <span class="url-item-icon">📊</span>
+            <div><div class="url-item-title">AI診断データ スプレッドシート</div><div class="url-item-url">responses / companies / employees / feedback シート</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/admin.html" target="_blank" class="url-item">
+            <span class="url-item-icon">🖥️</span>
+            <div><div class="url-item-title">管理画面（全顧客の診断状況を確認）</div><div class="url-item-url">https://shinomiho.github.io/onboarding-diagnosis/admin.html</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="url-item">
+            <span class="url-item-icon">🏢</span>
+            <div><div class="url-item-title">企業登録フォーム（契約後にお客様に送るURL）</div><div class="url-item-url">https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/guide.html" target="_blank" class="url-item">
+            <span class="url-item-icon">📋</span>
+            <div><div class="url-item-title">導入ガイド（お客様向け・企業登録後に送付）</div><div class="url-item-url">https://shinomiho.github.io/onboarding-diagnosis/guide.html</div></div>
+            <span class="url-arrow">↗</span>
+          </a>
+          <div class="url-item" style="cursor:default;">
+            <span class="url-item-icon">💼</span>
+            <div><div class="url-item-title">案件台帳・請求管理スプレッドシート</div><div class="url-item-url">setupSpreadsheet() 実行後のURLをここに追加してください</div></div>
+          </div>
+        </div>
+
+        <!-- 手動作業の注意点 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+
+          <div class="manual-card">
+            <div class="manual-card-icon">⚠️</div>
+            <div>
+              <div class="manual-card-title">案件台帳に登録するとき</div>
+              <div class="manual-card-desc">
+                ・顧客メールアドレスを必ず入力（L列）<br>
+                　→ 空のままだと請求書メールが自動送信されない<br>
+                ・ステータスは「受注」または「提供中」にする<br>
+                　→ それ以外は毎月の請求対象から外れる<br>
+                ・受注金額は税抜き金額で入力<br>
+                　→ GASが消費税10%を自動計算する
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-card">
+            <div class="manual-card-icon">⚠️</div>
+            <div>
+              <div class="manual-card-title">入金確認するとき</div>
+              <div class="manual-card-desc">
+                ・請求管理シートのステータスを「入金確認」に変更<br>
+                ・入金金額が請求合計と一致しているか確認<br>
+                ・差額がある場合は備考に理由を記入<br>
+                ・インボイス番号：T5810769837394<br>
+                ・振込先：楽天銀行 ポルカ支店（238）<br>
+                　普通 3528987 シノヘミホ
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-card" style="background:#FEF3C7;border-color:#FDE68A;">
+            <div class="manual-card-icon">🚫</div>
+            <div>
+              <div class="manual-card-title">スプレッドシートで絶対NG</div>
+              <div class="manual-card-desc">
+                ・列の削除・移動をしない<br>
+                　→ GASが列の位置を参照しているため壊れる<br>
+                ・setupSpreadsheet() を再実行しない<br>
+                　→ 既存データが全消去される<br>
+                ・承認トークン列（O列）を手動で編集しない<br>
+                　→ 承認リンクが無効になる
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-card" style="background:#FEF3C7;border-color:#FDE68A;">
+            <div class="manual-card-icon">💡</div>
+            <div>
+              <div class="manual-card-title">ケース別：メールが届かないとき</div>
+              <div class="manual-card-desc">
+                ・承認メールが届かない → GASトリガーを確認（setupTriggers()実行済みか）<br>
+                ・お客様にメールが届かない → 案件台帳L列のメールアドレスを確認<br>
+                ・ステータスが変わらない → 案件のステータスが「受注」「提供中」か確認<br>
+                ・再送したい → 請求管理シートのステータスを「承認待ち」に戻し、新トークンを手動入力
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- ===== /顧客管理マニュアル ===== -->
+
       <div class="section">
         <div class="section-title">📬 お客様への渡し方フロー</div>
         <div class="card" style="max-width:640px;">
