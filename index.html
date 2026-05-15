@@ -451,7 +451,7 @@
           </a>
           <a href="https://shinomiho.github.io/onboarding-diagnosis/kpi.html?code=LIMEE_XXXXXX" target="_blank" class="url-item">
             <span class="url-item-icon">📈</span>
-            <div><div class="url-item-title">KPIダッシュボード（企業専用・?code=企業コードに変えて渡す）</div><div class="url-item-url">有報5指標・期間フィルター・PDFダウンロード・CSVエクスポート対応</div></div>
+            <div><div class="url-item-title">KPIダッシュボード（企業専用・?code=企業コードに変えて渡す）</div><div class="url-item-url">有報5指標・目標値設定（企業カスタム可）・達成判定バッジ・目標点線グラフ・期間フィルター・PDF・CSV対応</div></div>
             <span class="url-arrow">↗</span>
           </a>
           <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="url-item">
@@ -459,6 +459,59 @@
             <div><div class="url-item-title">案件台帳・請求管理スプレッドシート</div><div class="url-item-url">案件台帳 / 請求管理 / JVロイヤリティ / 売上サマリー / 経費管理</div></div>
             <span class="url-arrow">↗</span>
           </a>
+        </div>
+
+        <!-- 有報KPI 5指標 定義・計算ロジック -->
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-header"><div class="card-icon">📐</div><div><div class="card-title">有報KPI 5指標 — 定義と計算ロジック</div><div class="card-sub">企業ごとに目標値を設定可能（デフォルト値あり）</div></div></div>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;margin-top:4px;">
+              <thead>
+                <tr style="background:#F9FAFB;">
+                  <th style="padding:8px 10px;text-align:left;border-bottom:1px solid #E5E7EB;color:#6B7280;font-weight:700;">指標</th>
+                  <th style="padding:8px 10px;text-align:left;border-bottom:1px solid #E5E7EB;color:#6B7280;font-weight:700;">計算式</th>
+                  <th style="padding:8px 10px;text-align:left;border-bottom:1px solid #E5E7EB;color:#6B7280;font-weight:700;">閾値</th>
+                  <th style="padding:8px 10px;text-align:left;border-bottom:1px solid #E5E7EB;color:#6B7280;font-weight:700;">デフォルト目標</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">①エンゲージメントスコア</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-family:monospace;color:#4338CA;">(A+B+C+D+E) ÷ 5</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">高いほど良好（1〜5点）</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">3.5 以上</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">②オンボーディング定着率</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-family:monospace;color:#4338CA;">E≥3.5 の人数 ÷ 全診断人数 × 100</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">高いほど良好（%）</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">80% 以上</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">③アクション実施率</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-family:monospace;color:#4338CA;">実施済み ÷ 推奨アクション総数 × 100</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;">高いほど良好（%）</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">70% 以上</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">④早期離職リスク検知率</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-family:monospace;color:#4338CA;">(C or D or E &lt; 2.5) ÷ 全診断人数 × 100</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;color:#DC2626;font-weight:700;">低いほど良好（%）</td>
+                  <td style="padding:8px 10px;border-bottom:1px solid #F3F4F6;font-weight:700;">20% 以下</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;font-weight:700;">⑤職場環境スコア</td>
+                  <td style="padding:8px 10px;font-family:monospace;color:#4338CA;">(B + C) ÷ 2</td>
+                  <td style="padding:8px 10px;">高いほど良好（1〜5点）</td>
+                  <td style="padding:8px 10px;font-weight:700;">3.5 以上</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:12px;font-size:11px;color:#6B7280;line-height:1.8;">
+            A=業務適応　B=対人関係　C=心理エナジー　D=行動リスク　E=定着意思（各5問・5段階評価）<br>
+            目標値は企業ごとにKPIダッシュボード上で変更可能（ブラウザに保存）。デフォルトはリミー推奨水準。
+          </div>
         </div>
 
         <!-- 手動作業の注意点 -->
@@ -579,7 +632,7 @@
           </a>
           <a href="https://shinomiho.github.io/onboarding-diagnosis/kpi.html?code=LIMEE_XXXXXX" target="_blank" class="url-item">
             <span class="url-item-icon">📈</span>
-            <div><div class="url-item-title">KPIダッシュボード（企業コードを変えて送付・有報活用）</div><div class="url-item-url">有報KPI5指標の推移確認・PDF出力・CSVダウンロード。期間フィルター付き。</div></div>
+            <div><div class="url-item-title">KPIダッシュボード（企業コードを変えて送付・有報活用）</div><div class="url-item-url">有報KPI5指標の推移確認・目標値カスタム設定・達成判定・PDF出力・CSVダウンロード。期間フィルター付き。</div></div>
             <span class="url-arrow">↗</span>
           </a>
           <div class="url-item" style="cursor:default;opacity:0.5;">
@@ -1443,7 +1496,7 @@
               <li><span class="icon">📁</span><strong>コード：</strong>GitHubリポジトリ「onboarding-diagnosis」</li>
               <li><span class="icon">🗄️</span><strong>データ：</strong>Googleスプレッドシート（responses・companies等）</li>
               <li><span class="icon">🔑</span><strong>APIキー：</strong>GASのスクリプトプロパティに保存済み</li>
-              <li><span class="icon">📈</span><strong>KPIダッシュボード：</strong>kpi.html?code=企業コード（有報5指標・期間フィルター・PDF・CSV対応）</li>
+              <li><span class="icon">📈</span><strong>KPIダッシュボード：</strong>kpi.html?code=企業コード（有報5指標・目標値設定・達成判定・計算ロジック表示・期間フィルター・PDF・CSV対応）</li>
             </ul>
           </div>
           <div class="card">
