@@ -326,6 +326,20 @@
               </div>
             </div>
 
+            <!-- 経営管理 -->
+            <div style="flex:0.8;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:100%;height:2px;background:#C7D2FE;"></div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node system">📋 経営管理</div>
+              <div class="vline vline-sm"></div>
+              <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+                <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="tree-node done">📊 案件・請求台帳<br>limee-bizops</a>
+                <div class="tree-node done">✍️ GMOサイン<br>電子署名（月5件無料）</div>
+                <a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" class="tree-node done">📂 契約書管理フォルダ<br>Drive（締結済・交渉中）</a>
+                <a href="https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8" target="_blank" class="tree-node done">📋 契約書台帳<br>自動登録・期限アラート</a>
+              </div>
+            </div>
+
             <!-- Webサイト -->
             <div style="flex:0.8;display:flex;flex-direction:column;align-items:center;">
               <div style="width:100%;height:2px;background:#C7D2FE;"></div>
@@ -1690,6 +1704,16 @@
               <li><span class="icon">🔑</span><strong>APIキー：</strong>GASのスクリプトプロパティに保存済み</li>
             </ul>
             <div style="background:#FEE2E2;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:11px;color:#991B1B;font-weight:700;">⚠️ バックアップ未完了：コードをGitHubのプライベートリポジトリにも保存する必要あり</div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-icon">📋</div><div><div class="card-title">契約書管理システム</div><div class="card-sub">2026-05-18〜稼働</div></div></div>
+            <ul class="feature-list">
+              <li><span class="icon">✍️</span><strong>電子署名：</strong><a href="https://www.gmo-sign.com/" target="_blank" style="color:var(--primary);">GMOサイン</a>（無料プラン・月5件）</li>
+              <li><span class="icon">📂</span><strong>保管場所：</strong><a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" style="color:var(--primary);">Drive「📋 契約書管理」フォルダ</a>（✅ 締結済 / 🔄 交渉中 / 📁 アーカイブ）</li>
+              <li><span class="icon">📊</span><strong>台帳：</strong><a href="https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8" target="_blank" style="color:var(--primary);">契約書台帳スプレッドシート</a></li>
+              <li><span class="icon">🤖</span><strong>自動化：</strong>GAS「契約書管理」— 1時間おきにフォルダ監視→台帳登録 / 毎朝9時に期限アラートメール</li>
+              <li><span class="icon">⚠️</span><strong>注意：</strong>台帳に終了日を必ず入力すること（空欄だとアラートが届かない）</li>
+            </ul>
           </div>
         </div>
       </div>
