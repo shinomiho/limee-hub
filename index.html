@@ -1388,6 +1388,115 @@
         </div>
       </div>
 
+      <!-- ===== GAS全体管理・エラー対処セクション ===== -->
+      <div class="op-section" style="margin-top:24px;">
+        <div class="op-title">⚙️ GASプロジェクト一覧 &amp; エラー対処</div>
+
+        <!-- GAS一覧 -->
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:16px;">
+          <table style="width:100%;border-collapse:collapse;font-size:12px;">
+            <thead>
+              <tr style="background:#F9FAFB;border-bottom:1px solid var(--border);">
+                <th style="padding:10px 14px;text-align:left;font-weight:800;">GASプロジェクト</th>
+                <th style="padding:10px 14px;text-align:left;font-weight:800;">用途</th>
+                <th style="padding:10px 14px;text-align:left;font-weight:800;">トリガー</th>
+                <th style="padding:10px 14px;text-align:left;font-weight:800;">紐づくSheet</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:10px 14px;font-weight:700;">remetokyo_website_popup</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">ポップアップ登録</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">フォーム送信時</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">メール登録データ</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:10px 14px;font-weight:700;">顧客管理-CS</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">案件・請求管理</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">毎月1日・毎朝9時</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">limee-bizops</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:10px 14px;font-weight:700;">リミー診断（onboarding）</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">AI診断・レポート配信</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">毎月1日・15日・5日・20日</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">responses/companies/...</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:10px 14px;font-weight:700;">SNS自動投稿</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">LinkedIn/Instagram/LINE</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">毎朝8時</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">なし</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 14px;font-weight:700;">契約書管理</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">契約書台帳・期限通知</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">1時間おき・毎朝9時</td>
+                <td style="padding:10px 14px;color:var(--text-sub);">契約書台帳</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- エラー通知設定 -->
+        <div style="background:#FFFBEB;border:1px solid #FCD34D;border-radius:10px;padding:14px 18px;margin-bottom:16px;">
+          <div style="font-size:12px;font-weight:800;color:#92400E;margin-bottom:8px;">📬 エラーメール通知の設定（全プロジェクトで必須）</div>
+          <ol style="font-size:12px;color:#92400E;padding-left:18px;line-height:2.2;margin:0;">
+            <li>GASエディタを開く → 左メニュー「⚙️ プロジェクトの設定」</li>
+            <li>「通知を受け取る」セクション → メールアドレスを確認・ONにする</li>
+            <li>これでトリガーがエラーになると自動でメールが届く</li>
+          </ol>
+        </div>
+
+        <!-- エラー対処表 -->
+        <details style="background:#F9FAFB;border:1px solid var(--border);border-radius:10px;padding:14px 18px;">
+          <summary style="font-size:12px;font-weight:800;cursor:pointer;">🚨 エラーが届いたときの対処法</summary>
+          <div style="margin-top:12px;">
+            <div style="font-size:12px;font-weight:800;margin-bottom:8px;">① エラーメールが届いたら</div>
+            <ol style="font-size:12px;color:var(--text-sub);padding-left:18px;line-height:2.2;margin-bottom:14px;">
+              <li>メールのプロジェクト名を確認（どのGASか特定）</li>
+              <li>GASエディタを開く → 左メニュー「実行数」</li>
+              <li>赤くなっている実行をクリック → エラー内容を確認</li>
+            </ol>
+            <div style="font-size:12px;font-weight:800;margin-bottom:8px;">② よくあるエラーと対処</div>
+            <table style="width:100%;border-collapse:collapse;font-size:11px;">
+              <thead>
+                <tr style="background:#F3F4F6;">
+                  <th style="padding:8px 10px;text-align:left;border:1px solid var(--border);">エラー</th>
+                  <th style="padding:8px 10px;text-align:left;border:1px solid var(--border);">原因</th>
+                  <th style="padding:8px 10px;text-align:left;border:1px solid var(--border);">対処</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);"><code>SpreadsheetApp: not found</code></td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">Sheet IDが変わった</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">IDをコード内で更新</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);"><code>DriveApp: not found</code></td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">フォルダが移動・削除</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">フォルダを戻すかID更新</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);"><code>MailApp: exceeded</code></td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">メール上限（1日100件）</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">翌日に自動回復</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);"><code>Authorization required</code></td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">権限切れ</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);color:var(--text-sub);">手動実行→再承認</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top:12px;font-size:12px;color:#166534;background:#F0FDF4;border-radius:6px;padding:10px 12px;font-weight:700;">
+              💡 どうしてもわからなければ、エラーメールの内容をClaudeに貼り付けるだけでOK。一緒に直します。
+            </div>
+          </div>
+        </details>
+      </div>
+
       <!-- ===== 契約書管理セクション ===== -->
       <div class="op-section" style="margin-top:24px;">
         <div class="op-title">📋 契約書管理</div>
