@@ -96,6 +96,27 @@
 
 ---
 
+## 契約書管理システム（2026-05-18〜稼働）
+
+| 項目 | 内容 |
+|------|------|
+| 電子署名 | GMOサイン（無料プラン・月5件）https://www.gmo-sign.com/ |
+| Driveフォルダ | 📋 契約書管理 / ✅ 締結済 / 🔄 交渉中 / 📁 期限切れ・アーカイブ |
+| 契約書台帳 | https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8 |
+| GASプロジェクト名 | 契約書管理 |
+| 締結済フォルダID | 1y-ETnWPUxffBeeDX9FotXufQ4FztElhA |
+
+### GAS関数・トリガー
+- `syncNewContracts`：1時間おき → 締結済フォルダの新規ファイルを台帳に自動登録
+- `checkDeadlines`：毎日午前9時 → 終了日60日以内の契約をメール通知（30日以内は【要対応】）
+
+### 運用手順
+1. GMOサインで締結 → PDFダウンロード → Drive「✅ 締結済」に保存
+2. 1時間以内に台帳へ自動登録される
+3. 台帳で取引先名・契約種別・**終了日**・自動更新を手入力（終了日必須）
+
+---
+
 ## 運用ルール・注意事項
 
 - Webサイトを修正したら `git add → git commit → git push` でGitHub Pagesに反映

@@ -1388,6 +1388,67 @@
         </div>
       </div>
 
+      <!-- ===== 契約書管理セクション ===== -->
+      <div class="op-section" style="margin-top:24px;">
+        <div class="op-title">📋 契約書管理</div>
+
+        <!-- フロー説明 -->
+        <div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:800;color:#166534;margin-bottom:8px;">✅ 稼働中（2026-05-18〜）</div>
+          <div style="font-size:12px;color:#166534;line-height:2;">
+            <strong>【自社発行】</strong> GMOサインで送付 → 締結 → PDFダウンロード → Drive「✅ 締結済」フォルダへ保存<br>
+            <strong>【他者発行】</strong> PDF受領 → Drive「✅ 締結済」フォルダへ保存<br>
+            <strong>【自動】</strong> GASが1時間おきにフォルダを監視 → 新規ファイルを台帳スプレッドシートに自動登録<br>
+            <strong>【自動】</strong> 毎朝9時：終了日60日以内の契約をメールで通知（30日以内は【要対応】）
+          </div>
+        </div>
+
+        <!-- リンク集 -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;">
+          <a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" style="display:block;background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;">
+            <div style="font-size:20px;margin-bottom:6px;">📂</div>
+            <div style="font-size:12px;font-weight:800;color:var(--text);">契約書管理フォルダ</div>
+            <div style="font-size:11px;color:var(--text-sub);margin-top:4px;line-height:1.5;">✅ 締結済 / 🔄 交渉中<br>📁 期限切れ・アーカイブ</div>
+          </a>
+          <a href="https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8" target="_blank" style="display:block;background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;">
+            <div style="font-size:20px;margin-bottom:6px;">📊</div>
+            <div style="font-size:12px;font-weight:800;color:var(--text);">契約書台帳</div>
+            <div style="font-size:11px;color:var(--text-sub);margin-top:4px;line-height:1.5;">取引先・種別・締結日<br>終了日・ファイルURLを管理</div>
+          </a>
+          <a href="https://www.gmo-sign.com/" target="_blank" style="display:block;background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;">
+            <div style="font-size:20px;margin-bottom:6px;">✍️</div>
+            <div style="font-size:12px;font-weight:800;color:var(--text);">GMOサイン（電子署名）</div>
+            <div style="font-size:11px;color:var(--text-sub);margin-top:4px;line-height:1.5;">無料プラン：月5件まで<br>締結後PDFをDriveへ保存</div>
+          </a>
+        </div>
+
+        <!-- 運用手順 -->
+        <div style="background:#F9FAFB;border:1px solid var(--border);border-radius:10px;padding:14px 18px;">
+          <div style="font-size:12px;font-weight:800;margin-bottom:8px;">📌 運用手順（毎回）</div>
+          <ol style="font-size:12px;color:var(--text-sub);padding-left:18px;line-height:2.2;margin:0;">
+            <li>GMOサインで契約書を送付・締結</li>
+            <li>締結済PDFをダウンロード → Drive「✅ 締結済」フォルダに保存（ファイル名：<code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;">YYYY_取引先名_契約種別.pdf</code>）</li>
+            <li>1時間以内に台帳へ自動登録される（No.・ファイルURL・締結日が入る）</li>
+            <li>台帳を開いて取引先名・契約種別・終了日・自動更新を手入力</li>
+          </ol>
+          <div style="margin-top:10px;font-size:11px;color:#92400E;background:#FFFBEB;border-radius:6px;padding:8px 10px;font-weight:700;">
+            ⚠️ 終了日を必ず入力すること。空欄だと期限アラートが機能しない。
+          </div>
+        </div>
+
+        <!-- GAS情報 -->
+        <details style="background:#F9FAFB;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-top:12px;">
+          <summary style="font-size:12px;font-weight:800;cursor:pointer;">⚙️ GASプロジェクト詳細（契約書管理）</summary>
+          <div style="margin-top:10px;font-size:12px;color:var(--text-sub);line-height:2;">
+            <strong>プロジェクト名：</strong>契約書管理<br>
+            <strong>関数①</strong> <code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;">syncNewContracts</code>：締結済フォルダを監視、新規ファイルを台帳登録 / トリガー：1時間おき<br>
+            <strong>関数②</strong> <code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;">checkDeadlines</code>：終了日60日以内の契約をメール通知 / トリガー：毎日午前9時<br>
+            <strong>台帳スプレッドシートID：</strong><code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:10px;">1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8</code><br>
+            <strong>締結済フォルダID：</strong><code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:10px;">1y-ETnWPUxffBeeDX9FotXufQ4FztElhA</code>
+          </div>
+        </details>
+      </div>
+
     </div>
   </div>
 
