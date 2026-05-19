@@ -262,29 +262,82 @@
         </div>
 
         <!-- ビジネスフロー図 -->
-        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:20px;flex-wrap:wrap;">
-          <div style="background:white;border-radius:14px;padding:16px 14px;text-align:center;min-width:130px;box-shadow:0 2px 8px rgba(79,70,229,0.1);">
-            <div style="font-size:34px;margin-bottom:6px;">🏢</div>
-            <div style="font-size:12px;font-weight:800;color:#4F46E5;margin-bottom:4px;">① 会社が登録</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">専用URLが<br>自動発行される</div>
-          </div>
-          <div style="font-size:22px;color:#C7D2FE;">→</div>
-          <div style="background:white;border-radius:14px;padding:16px 14px;text-align:center;min-width:130px;box-shadow:0 2px 8px rgba(16,185,129,0.1);">
-            <div style="font-size:34px;margin-bottom:6px;">📝</div>
-            <div style="font-size:12px;font-weight:800;color:#059669;margin-bottom:4px;">② 従業員が診断</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">25問・10〜15分<br>スマホでOK</div>
-          </div>
-          <div style="font-size:22px;color:#C7D2FE;">→</div>
-          <div style="background:white;border-radius:14px;padding:16px 14px;text-align:center;min-width:130px;box-shadow:0 2px 8px rgba(245,158,11,0.1);">
-            <div style="font-size:34px;margin-bottom:6px;">🤖</div>
-            <div style="font-size:12px;font-weight:800;color:#D97706;margin-bottom:4px;">③ AIがレポート</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">上司に自動送信<br>手動介入なし</div>
-          </div>
-          <div style="font-size:22px;color:#C7D2FE;">→</div>
-          <div style="background:white;border-radius:14px;padding:16px 14px;text-align:center;min-width:130px;box-shadow:0 2px 8px rgba(37,99,235,0.1);">
-            <div style="font-size:34px;margin-bottom:6px;">📊</div>
-            <div style="font-size:12px;font-weight:800;color:#2563EB;margin-bottom:4px;">④ データ蓄積</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">有価証券報告書に<br>使えるKPIになる</div>
+        <div style="overflow-x:auto;padding:18px 4px 8px;margin-bottom:8px;">
+          <div style="display:flex;align-items:stretch;justify-content:center;gap:0;min-width:640px;">
+
+            <!-- STEP 1 -->
+            <div style="flex-shrink:0;width:152px;background:white;border-radius:16px;padding:20px 12px 16px;text-align:center;box-shadow:0 3px 14px rgba(79,70,229,0.12);border:2px solid #E0E7FF;position:relative;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#4F46E5;color:white;font-size:10px;font-weight:800;padding:3px 12px;border-radius:99px;white-space:nowrap;">STEP 1</div>
+              <div style="background:#EEF2FF;border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;margin:6px auto 10px;font-size:26px;">🏢</div>
+              <div style="font-size:13px;font-weight:800;color:#1F2937;margin-bottom:5px;">会社が登録</div>
+              <div style="font-size:11px;color:#6B7280;line-height:1.6;margin-bottom:10px;">会社名とメールを入力するだけ。専用URLが即発行される</div>
+              <div style="background:#EEF2FF;color:#4338CA;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;display:inline-block;">✋ 管理者が操作</div>
+            </div>
+
+            <!-- Arrow 1→2 -->
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 6px;flex-shrink:0;gap:3px;">
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">専用URL</div>
+              <div style="font-size:26px;color:#A5B4FC;line-height:1;">→</div>
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">自動発行</div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div style="flex-shrink:0;width:152px;background:white;border-radius:16px;padding:20px 12px 16px;text-align:center;box-shadow:0 3px 14px rgba(16,185,129,0.12);border:2px solid #D1FAE5;position:relative;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#059669;color:white;font-size:10px;font-weight:800;padding:3px 12px;border-radius:99px;white-space:nowrap;">STEP 2</div>
+              <div style="background:#F0FDF4;border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;margin:6px auto 10px;font-size:26px;">📩</div>
+              <div style="font-size:13px;font-weight:800;color:#1F2937;margin-bottom:5px;">従業員を招待</div>
+              <div style="font-size:11px;color:#6B7280;line-height:1.6;margin-bottom:10px;">管理画面から名前・メールを入力。招待メールが自動送信される</div>
+              <div style="background:#D1FAE5;color:#065F46;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;display:inline-block;">✋ 管理者が操作</div>
+            </div>
+
+            <!-- Arrow 2→3 -->
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 6px;flex-shrink:0;gap:3px;">
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">招待メール</div>
+              <div style="font-size:26px;color:#A5B4FC;line-height:1;">→</div>
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">自動送信</div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div style="flex-shrink:0;width:152px;background:white;border-radius:16px;padding:20px 12px 16px;text-align:center;box-shadow:0 3px 14px rgba(245,158,11,0.12);border:2px solid #FDE68A;position:relative;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;font-size:10px;font-weight:800;padding:3px 12px;border-radius:99px;white-space:nowrap;">STEP 3</div>
+              <div style="background:#FFFBEB;border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;margin:6px auto 10px;font-size:26px;">📝</div>
+              <div style="font-size:13px;font-weight:800;color:#1F2937;margin-bottom:5px;">従業員が診断</div>
+              <div style="font-size:11px;color:#6B7280;line-height:1.6;margin-bottom:10px;">25問に回答（約15分）。スマホ・PCどちらでもOK</div>
+              <div style="background:#FEF3C7;color:#92400E;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;display:inline-block;">✋ 従業員が回答</div>
+            </div>
+
+            <!-- Arrow 3→4 -->
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 6px;flex-shrink:0;gap:3px;">
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">回答後</div>
+              <div style="font-size:26px;color:#A5B4FC;line-height:1;">→</div>
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">即座に</div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div style="flex-shrink:0;width:152px;background:white;border-radius:16px;padding:20px 12px 16px;text-align:center;box-shadow:0 3px 14px rgba(124,58,237,0.12);border:2px solid #DDD6FE;position:relative;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#7C3AED;color:white;font-size:10px;font-weight:800;padding:3px 12px;border-radius:99px;white-space:nowrap;">STEP 4</div>
+              <div style="background:#F5F3FF;border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;margin:6px auto 10px;font-size:26px;">🤖</div>
+              <div style="font-size:13px;font-weight:800;color:#1F2937;margin-bottom:5px;">AIがレポート生成</div>
+              <div style="font-size:11px;color:#6B7280;line-height:1.6;margin-bottom:10px;">本人・上司それぞれに自動でメール送信。手動作業ゼロ</div>
+              <div style="background:#EDE9FE;color:#5B21B6;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;display:inline-block;">🤖 完全自動</div>
+            </div>
+
+            <!-- Arrow 4→5 -->
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 6px;flex-shrink:0;gap:3px;">
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">毎月</div>
+              <div style="font-size:26px;color:#A5B4FC;line-height:1;">→</div>
+              <div style="font-size:10px;color:#9CA3AF;white-space:nowrap;">自動蓄積</div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div style="flex-shrink:0;width:152px;background:white;border-radius:16px;padding:20px 12px 16px;text-align:center;box-shadow:0 3px 14px rgba(37,99,235,0.12);border:2px solid #BFDBFE;position:relative;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;font-size:10px;font-weight:800;padding:3px 12px;border-radius:99px;white-space:nowrap;">STEP 5</div>
+              <div style="background:#EFF6FF;border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;margin:6px auto 10px;font-size:26px;">📊</div>
+              <div style="font-size:13px;font-weight:800;color:#1F2937;margin-bottom:5px;">KPIとして活用</div>
+              <div style="font-size:11px;color:#6B7280;line-height:1.6;margin-bottom:10px;">有価証券報告書に使えるデータが自動で揃う</div>
+              <div style="background:#DBEAFE;color:#1E40AF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;display:inline-block;">🤖 自動蓄積</div>
+            </div>
+
           </div>
         </div>
 
