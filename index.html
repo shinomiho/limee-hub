@@ -550,52 +550,172 @@
         <div class="card" style="border-top:4px solid #4F46E5;margin-bottom:16px;">
           <div class="card-header"><div class="card-icon">🗺️</div><div><div class="card-title">月次オペレーション全体フロー</div><div class="card-sub">自動 🤖 と 手動 ✋ の違いを確認</div></div></div>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;">
+          <!-- フロー1: 新規顧客 -->
+          <div style="margin-bottom:28px;">
+            <div style="font-size:12px;font-weight:900;color:#047857;margin-bottom:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span style="background:#D1FAE5;border:1px solid #10B981;border-radius:99px;padding:2px 10px;font-size:11px;">フロー 1</span>
+              🆕 新規顧客が決まったとき（1回だけ）
+            </div>
+            <div style="overflow-x:auto;">
+              <div style="display:flex;align-items:flex-start;gap:0;min-width:600px;padding:16px 4px 8px;">
 
-            <!-- 新規顧客 -->
-            <div style="background:#F0FDF4;border-radius:10px;padding:16px;">
-              <div style="font-size:12px;font-weight:800;color:#047857;margin-bottom:10px;">🆕 新規顧客が決まったとき（1回）</div>
-              <div style="font-size:12px;color:#065F46;line-height:2.2;">
-                <span style="background:#D1FAE5;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> 案件台帳に顧客情報を登録<br>
-                　└ 会社名・担当者名・チャネル・金額・<strong>メールアドレス</strong><br>
-                <span style="background:#D1FAE5;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> 企業登録URLを送付<br>
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> ウェルカムメール自動送信（企業コード・管理画面URL・KPIダッシュボードURL含む）
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#059669;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 1</div>
+                  <div style="border:2px solid #059669;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#F0FDF4;">
+                    <div style="font-size:28px;margin-bottom:6px;">📋</div>
+                    <div style="font-size:12px;font-weight:800;color:#065F46;line-height:1.4;margin-bottom:4px;">案件台帳に登録</div>
+                    <div style="font-size:10px;color:#047857;line-height:1.5;margin-bottom:8px;">会社名・担当者・金額・メールアドレス</div>
+                    <div style="background:#D1FAE5;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#065F46;display:inline-block;">✋ Mihoが入力</div>
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;font-size:18px;color:#9CA3AF;">→</div>
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#059669;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+                  <div style="border:2px solid #059669;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#F0FDF4;">
+                    <div style="font-size:28px;margin-bottom:6px;">📨</div>
+                    <div style="font-size:12px;font-weight:800;color:#065F46;line-height:1.4;margin-bottom:4px;">企業登録URLを送付</div>
+                    <div style="font-size:10px;color:#047857;line-height:1.5;margin-bottom:8px;">お客様のご担当者様へメールやチャット</div>
+                    <div style="background:#D1FAE5;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#065F46;display:inline-block;">✋ Mihoが送付</div>
+                  </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:32px;">
+                  <div style="font-size:18px;color:#9CA3AF;">→</div>
+                  <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">自動登録</div>
+                </div>
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 3</div>
+                  <div style="border:2px solid #2563EB;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#EFF6FF;">
+                    <div style="font-size:28px;margin-bottom:6px;">📩</div>
+                    <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">ウェルカムメール自動送信</div>
+                    <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:8px;">企業コード・管理画面・KPIダッシュボードURL</div>
+                    <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 完全自動</div>
+                  </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:32px;">
+                  <div style="font-size:18px;color:#9CA3AF;">→</div>
+                  <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">以降ずっと</div>
+                </div>
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 4</div>
+                  <div style="border:2px solid #2563EB;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#EFF6FF;">
+                    <div style="font-size:28px;margin-bottom:6px;">📊</div>
+                    <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">月次レポート・KPI自動蓄積</div>
+                    <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:8px;">診断→AIレポート→KPIダッシュボード</div>
+                    <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 完全自動</div>
+                  </div>
+                </div>
+
               </div>
             </div>
+          </div>
 
-            <!-- 毎月の請求 -->
-            <div style="background:#EEF2FF;border-radius:10px;padding:16px;">
-              <div style="font-size:12px;font-weight:800;color:#3730A3;margin-bottom:10px;">💴 毎月の請求（末締め翌月払い）</div>
-              <div style="font-size:12px;color:#3730A3;line-height:2.2;">
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 毎月1日 6:00 — 請求書ドラフト生成<br>
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> Mihoに承認メール送信（件数・金額一覧）<br>
-                <span style="background:#D1FAE5;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> <strong>承認メールの「承認する」を押す</strong>（数分）<br>
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> お客様に請求書HTMLメール自動送信
+          <!-- フロー2: 毎月の請求 -->
+          <div style="margin-bottom:28px;">
+            <div style="font-size:12px;font-weight:900;color:#3730A3;margin-bottom:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span style="background:#EEF2FF;border:1px solid #818CF8;border-radius:99px;padding:2px 10px;font-size:11px;">フロー 2</span>
+              💴 毎月の請求ルーティン（末締め翌月払い）
+            </div>
+            <div style="overflow-x:auto;">
+              <div style="display:flex;align-items:flex-start;gap:0;min-width:720px;padding:16px 4px 8px;">
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 1</div>
+                  <div style="border:2px solid #2563EB;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#EFF6FF;">
+                    <div style="font-size:28px;margin-bottom:6px;">📄</div>
+                    <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">請求書ドラフト生成</div>
+                    <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:8px;">毎月1日 AM6:00 自動</div>
+                    <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 完全自動</div>
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;font-size:18px;color:#9CA3AF;">→</div>
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+                  <div style="border:2px solid #2563EB;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#EFF6FF;">
+                    <div style="font-size:28px;margin-bottom:6px;">📬</div>
+                    <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">Mihoに承認メール</div>
+                    <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:8px;">件数・金額一覧が届く</div>
+                    <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 完全自動</div>
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;font-size:18px;color:#F59E0B;">→</div>
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 3 ⚠️ 手動</div>
+                  <div style="border:2px solid #D97706;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#FFFBEB;">
+                    <div style="font-size:28px;margin-bottom:6px;">👆</div>
+                    <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">「承認する」を押す</div>
+                    <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:8px;">メール内ボタンをクリック（数分）</div>
+                    <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ ここだけ手動！</div>
+                  </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:32px;">
+                  <div style="font-size:18px;color:#9CA3AF;">→</div>
+                  <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">承認後即座</div>
+                </div>
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 4</div>
+                  <div style="border:2px solid #2563EB;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#EFF6FF;">
+                    <div style="font-size:28px;margin-bottom:6px;">📧</div>
+                    <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">請求書メール自動送信</div>
+                    <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:8px;">お客様全員に自動配信</div>
+                    <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 完全自動</div>
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;font-size:18px;color:#9CA3AF;">→</div>
+
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+                  <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
+                  <div style="border:2px solid #D97706;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#FFFBEB;">
+                    <div style="font-size:28px;margin-bottom:6px;">🏦</div>
+                    <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">入金確認・スプシ記入</div>
+                    <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:8px;">入金日・金額をスプレッドシートに入力</div>
+                    <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ Mihoが入力</div>
+                  </div>
+                </div>
+
               </div>
             </div>
+          </div>
 
-            <!-- 入金管理 -->
-            <div style="background:#FFFBEB;border-radius:10px;padding:16px;">
-              <div style="font-size:12px;font-weight:800;color:#92400E;margin-bottom:10px;">🏦 入金確認（月1回）</div>
-              <div style="font-size:12px;color:#92400E;line-height:2.2;">
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 毎朝9:00 — 期日超過・3日以内の請求をメール通知<br>
-                <span style="background:#FDE68A;border-radius:4px;padding:1px 6px;font-weight:700;">✋ 手動</span> 入金確認後、スプレッドシートに記入<br>
-                　└ ステータス「入金確認」に変更<br>
-                　└ 入金日・入金金額を記入
+          <!-- フロー3: 診断進捗トラッキング -->
+          <div>
+            <div style="font-size:12px;font-weight:900;color:#047857;margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span style="background:#D1FAE5;border:1px solid #10B981;border-radius:99px;padding:2px 10px;font-size:11px;">フロー 3</span>
+              📊 診断進捗トラッキング（すべて自動）
+            </div>
+            <div style="background:#F0FDF4;border-radius:10px;padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+              <div style="background:white;border:1px solid #10B981;border-radius:10px;padding:10px 14px;text-align:center;min-width:120px;">
+                <div style="font-size:10px;font-weight:900;color:#065F46;margin-bottom:3px;">🤖 登録3日後</div>
+                <div style="font-size:11px;color:#047857;line-height:1.4;">未招待なら<br>リマインド</div>
+              </div>
+              <div style="color:#9CA3AF;font-size:16px;">→</div>
+              <div style="background:white;border:1px solid #10B981;border-radius:10px;padding:10px 14px;text-align:center;min-width:120px;">
+                <div style="font-size:10px;font-weight:900;color:#065F46;margin-bottom:3px;">🤖 7日後</div>
+                <div style="font-size:11px;color:#047857;line-height:1.4;">未回答なら<br>リマインド</div>
+              </div>
+              <div style="color:#9CA3AF;font-size:16px;">→</div>
+              <div style="background:white;border:1px solid #10B981;border-radius:10px;padding:10px 14px;text-align:center;min-width:120px;">
+                <div style="font-size:10px;font-weight:900;color:#065F46;margin-bottom:3px;">🤖 14日後</div>
+                <div style="font-size:11px;color:#047857;line-height:1.4;">フィードバック<br>依頼メール</div>
+              </div>
+              <div style="color:#9CA3AF;font-size:16px;">→</div>
+              <div style="background:white;border:1px solid #10B981;border-radius:10px;padding:10px 14px;text-align:center;min-width:120px;">
+                <div style="font-size:10px;font-weight:900;color:#065F46;margin-bottom:3px;">🤖 随時</div>
+                <div style="font-size:11px;color:#047857;line-height:1.4;">Mihoへ進捗<br>サマリー報告</div>
               </div>
             </div>
-
-            <!-- 進捗トラッキング -->
-            <div style="background:#F0FDF4;border-radius:10px;padding:16px;">
-              <div style="font-size:12px;font-weight:800;color:#047857;margin-bottom:10px;">📊 診断進捗トラッキング（自動）</div>
-              <div style="font-size:12px;color:#065F46;line-height:2.2;">
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 登録3日後 — 従業員未登録ならリマインド<br>
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 7日後 — 未回答ならリマインド<br>
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> 14日後 — フィードバック依頼<br>
-                <span style="background:#DBEAFE;border-radius:4px;padding:1px 6px;font-weight:700;">🤖 自動</span> Mihoに進捗サマリーをメール報告
-              </div>
-            </div>
-
           </div>
         </div>
 
@@ -1916,14 +2036,46 @@
       <!-- 事業概要 -->
       <div class="section">
         <div class="section-title">🏢 リミーとは何か</div>
-        <div class="card">
-          <p style="font-size:13px;line-height:1.9;color:var(--text);">
-            <strong>リミー（Rimee）</strong>は、採用後支援・オンボーディング特化のHRテック企業です。代表は Miho Shinohe。<br><br>
-            主なサービスは2つ：<br>
-            ① <strong>入社90日AI診断システム</strong>：新入社員が25問回答 → AIがレポート生成 → 管理者へ自動送信 → 人的資本経営開示ダッシュボードで有報5指標を可視化・目標管理・PDF出力可能<br>
-            ② <strong>人的資本経営のKPI設計支援</strong>：インプット・プロセス・アウトカムの3層構造でKPI設計<br><br>
-            ビジョン：<em>「AIと人の力で人事の未来を変える」</em>
-          </p>
+
+        <!-- タグライン -->
+        <div style="background:linear-gradient(135deg,#EEF2FF,#E0E7FF);border-radius:12px;padding:20px 24px;margin-bottom:16px;text-align:center;">
+          <div style="font-size:16px;font-weight:900;color:#3730A3;margin-bottom:4px;">リミー（Rimee）</div>
+          <div style="font-size:13px;color:#4F46E5;font-weight:700;margin-bottom:6px;">採用後支援・オンボーディング特化の HRテック企業</div>
+          <div style="font-size:12px;color:#6366F1;margin-bottom:10px;">代表：Miho Shinohe（四戸美穂）</div>
+          <div style="display:inline-block;background:white;border:1px solid #A5B4FC;border-radius:99px;padding:4px 16px;font-size:13px;color:#4338CA;font-style:italic;font-weight:700;">「AIと人の力で人事の未来を変える」</div>
+        </div>
+
+        <!-- 2つのサービス -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+
+          <div style="background:white;border:2px solid #4F46E5;border-radius:12px;padding:16px;">
+            <div style="font-size:12px;font-weight:900;color:#4F46E5;margin-bottom:12px;">① 入社90日 AI診断システム</div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="background:#EEF2FF;border-radius:8px;padding:8px 10px;font-size:11px;color:#3730A3;text-align:center;">👤 新入社員が25問回答</div>
+              <div style="text-align:center;color:#9CA3AF;font-size:13px;">↓</div>
+              <div style="background:#DBEAFE;border-radius:8px;padding:8px 10px;font-size:11px;color:#1E40AF;text-align:center;">🤖 AIが個人レポートを生成</div>
+              <div style="text-align:center;color:#9CA3AF;font-size:13px;">↓</div>
+              <div style="background:#D1FAE5;border-radius:8px;padding:8px 10px;font-size:11px;color:#065F46;text-align:center;">📬 本人・管理者へ自動メール</div>
+              <div style="text-align:center;color:#9CA3AF;font-size:13px;">↓</div>
+              <div style="background:#EEF2FF;border-radius:8px;padding:8px 10px;font-size:11px;color:#3730A3;text-align:center;">📊 KPIダッシュボードに自動蓄積</div>
+            </div>
+          </div>
+
+          <div style="background:white;border:2px solid #0891B2;border-radius:12px;padding:16px;">
+            <div style="font-size:12px;font-weight:900;color:#0891B2;margin-bottom:10px;">② 人的資本経営KPI設計支援</div>
+            <div style="font-size:11px;color:#0E7490;line-height:1.7;margin-bottom:12px;">有価証券報告書（有報）への開示が義務化された5指標を管理・可視化するダッシュボードを提供。</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="background:#ECFEFF;border-radius:8px;padding:7px 10px;font-size:11px;color:#164E63;">📥 インプット指標（採用・研修費用等）</div>
+              <div style="background:#ECFEFF;border-radius:8px;padding:7px 10px;font-size:11px;color:#164E63;">⚙️ プロセス指標（エンゲージメント等）</div>
+              <div style="background:#ECFEFF;border-radius:8px;padding:7px 10px;font-size:11px;color:#164E63;">📤 アウトカム指標（定着率・離職率等）</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ターゲット -->
+        <div style="background:#F9FAFB;border-radius:10px;padding:12px 16px;font-size:12px;color:var(--text-sub);line-height:1.8;">
+          <strong style="color:var(--text);">主要ターゲット：</strong>上場企業・IPO準備企業・ESG経営に取り組む中堅〜大手企業（B to B）
         </div>
       </div>
 
@@ -1969,24 +2121,43 @@
         <div style="background:linear-gradient(135deg,#FEE2E2,#FFF1F2);border:2px solid #FCA5A5;border-radius:12px;padding:20px 24px;margin-bottom:20px;">
           <p style="font-size:14px;font-weight:900;color:#991B1B;margin-bottom:8px;">🚨 Mihoのパソコンにアクセスできない場合</p>
           <p style="font-size:13px;color:#B91C1C;line-height:1.8;margin-bottom:12px;">パソコンは不要です。必要なものは<strong>Googleアカウントのログイン情報</strong>と<strong>GitHubアカウント情報</strong>のみ。すべてブラウザから操作できます。</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-            <div style="background:white;border-radius:8px;padding:14px;">
-              <div style="font-size:12px;font-weight:800;color:#991B1B;margin-bottom:8px;">🔑 まず入手すべき2つの鍵</div>
-              <ul class="feature-list" style="font-size:12px;">
-                <li><span class="icon">1️⃣</span>Googleアカウント：<code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;">miho.shinohe@remenow.com</code></li>
-                <li><span class="icon">2️⃣</span>GitHubアカウント：<code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;">shinomiho</code></li>
-              </ul>
-              <p style="font-size:11px;color:#B91C1C;margin-top:8px;">→ パスワードはパスワードマネージャーまたは信頼できる第三者から入手</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+
+            <div style="background:white;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="background:#DC2626;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">1</div>
+              <div style="flex:1;">
+                <div style="font-size:13px;font-weight:800;color:#991B1B;margin-bottom:4px;">Googleアカウントのパスワードを入手する</div>
+                <div style="font-size:12px;color:#B91C1C;margin-bottom:6px;">メール：<code style="background:#FEF2F2;padding:1px 5px;border-radius:3px;">miho.shinohe@remenow.com</code></div>
+                <div style="font-size:11px;color:#7F1D1D;background:#FEF2F2;border-radius:6px;padding:6px 10px;">パスワードマネージャーまたは信頼できる第三者から取得。これで GAS・スプレッドシート・Google Drive にすべてアクセスできます。</div>
+              </div>
             </div>
-            <div style="background:white;border-radius:8px;padding:14px;">
-              <div style="font-size:12px;font-weight:800;color:#991B1B;margin-bottom:8px;">✅ これだけでできること</div>
-              <ul class="feature-list" style="font-size:12px;">
-                <li><span class="icon">🔧</span>GASの閲覧・編集・再デプロイ</li>
-                <li><span class="icon">📊</span>スプレッドシートのデータ確認</li>
-                <li><span class="icon">💻</span>GitHubからコードをダウンロード</li>
-                <li><span class="icon">🤖</span>Claude Codeで修正・更新</li>
-              </ul>
+
+            <div style="text-align:center;font-size:16px;color:#FCA5A5;line-height:1;">↓</div>
+
+            <div style="background:white;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="background:#DC2626;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">2</div>
+              <div style="flex:1;">
+                <div style="font-size:13px;font-weight:800;color:#991B1B;margin-bottom:4px;">GitHubアカウントのパスワードを入手する</div>
+                <div style="font-size:12px;color:#B91C1C;margin-bottom:6px;">ユーザー名：<code style="background:#FEF2F2;padding:1px 5px;border-radius:3px;">shinomiho</code></div>
+                <div style="font-size:11px;color:#7F1D1D;background:#FEF2F2;border-radius:6px;padding:6px 10px;">これで公式サイト・AI診断システムのコードを確認・ダウンロード・更新できます。</div>
+              </div>
             </div>
+
+            <div style="text-align:center;font-size:16px;color:#FCA5A5;line-height:1;">↓</div>
+
+            <div style="background:white;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="background:#059669;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">3</div>
+              <div style="flex:1;">
+                <div style="font-size:13px;font-weight:800;color:#065F46;margin-bottom:8px;">ブラウザだけで確認・操作できること</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                  <div style="background:#F0FDF4;border-radius:6px;padding:7px 10px;font-size:11px;color:#047857;">🔧 GASの閲覧・編集・再デプロイ</div>
+                  <div style="background:#F0FDF4;border-radius:6px;padding:7px 10px;font-size:11px;color:#047857;">📊 スプレッドシートのデータ確認</div>
+                  <div style="background:#F0FDF4;border-radius:6px;padding:7px 10px;font-size:11px;color:#047857;">💻 GitHubからコードを取得</div>
+                  <div style="background:#F0FDF4;border-radius:6px;padding:7px 10px;font-size:11px;color:#047857;">🤖 Claude Codeで修正・更新</div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
