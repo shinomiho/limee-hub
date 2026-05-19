@@ -2529,13 +2529,172 @@
         </div>
       </div>
 
+      <!-- このシステムでできること -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
+        <div style="background:linear-gradient(135deg,#FFF7ED,#FFEDD5);border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:32px;margin-bottom:8px;">⏱️</div>
+          <div style="font-size:12px;font-weight:800;color:#9A3412;">最短1日で納品</div>
+          <div style="font-size:11px;color:#C2410C;margin-top:4px;line-height:1.5;">ヒアリング→サイト生成→公開まで<br>ほぼ全自動</div>
+        </div>
+        <div style="background:linear-gradient(135deg,#FFF7ED,#FFEDD5);border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:32px;margin-bottom:8px;">🎨</div>
+          <div style="font-size:12px;font-weight:800;color:#9A3412;">3業種テンプレ</div>
+          <div style="font-size:11px;color:#C2410C;margin-top:4px;line-height:1.5;">士業・コーチング・飲食に<br>最適化済みデザイン</div>
+        </div>
+        <div style="background:linear-gradient(135deg,#FFF7ED,#FFEDD5);border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:32px;margin-bottom:8px;">🤖</div>
+          <div style="font-size:12px;font-weight:800;color:#9A3412;">コード不要</div>
+          <div style="font-size:11px;color:#C2410C;margin-top:4px;line-height:1.5;">Claude Codeへの指示一発で<br>サイト完成</div>
+        </div>
+      </div>
+
+      <!-- 制作フロー STEP図 -->
       <div class="section">
-        <div class="section-title">🌐 ウェブサイト制作システム</div>
+        <div class="section-title">📋 制作フロー（受注から公開まで）</div>
+        <div style="overflow-x:auto;">
+          <div style="display:flex;align-items:flex-start;gap:0;min-width:700px;padding:16px 4px 8px;">
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#EA580C;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 1</div>
+              <div style="border:2px solid #EA580C;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#FFF7ED;">
+                <div style="font-size:28px;margin-bottom:6px;">📨</div>
+                <div style="font-size:12px;font-weight:800;color:#9A3412;line-height:1.4;margin-bottom:4px;">ヒアリングURL送付</div>
+                <div style="font-size:10px;color:#C2410C;line-height:1.5;margin-bottom:8px;">intake.html をメール・LINEで送るだけ</div>
+                <div style="background:#FED7AA;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#9A3412;display:inline-block;">✋ Mihoが送付</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:32px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#6B7280;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+              <div style="border:2px solid #6B7280;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#F9FAFB;">
+                <div style="font-size:28px;margin-bottom:6px;">📝</div>
+                <div style="font-size:12px;font-weight:800;color:#374151;line-height:1.4;margin-bottom:4px;">クライアントが回答</div>
+                <div style="font-size:10px;color:#6B7280;line-height:1.5;margin-bottom:8px;">業種・会社情報・希望デザインなど入力</div>
+                <div style="background:#E5E7EB;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#374151;display:inline-block;">👤 クライアント</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:32px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">送信後即座</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 3</div>
+              <div style="border:2px solid #2563EB;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#EFF6FF;">
+                <div style="font-size:28px;margin-bottom:6px;">⚙️</div>
+                <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">GASがJSON自動生成</div>
+                <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:8px;">回答をDriveに保存・Mihoにメール通知</div>
+                <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 完全自動</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:32px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#7C3AED;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 4</div>
+              <div style="border:2px solid #7C3AED;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#F5F3FF;">
+                <div style="font-size:28px;margin-bottom:6px;">🤖</div>
+                <div style="font-size:12px;font-weight:800;color:#5B21B6;line-height:1.4;margin-bottom:4px;">Claude Codeでサイト生成</div>
+                <div style="font-size:10px;color:#7C3AED;line-height:1.5;margin-bottom:8px;">JSON＋テンプレートから完成サイトを自動構築</div>
+                <div style="background:#EDE9FE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#5B21B6;display:inline-block;">🤖 Claude Codeが実行</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:32px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:120px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
+              <div style="border:2px solid #2563EB;border-radius:12px;padding:16px 10px 12px;width:100%;margin-top:8px;background:#EFF6FF;">
+                <div style="font-size:28px;margin-bottom:6px;">🚀</div>
+                <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">GitHub Pagesで公開</div>
+                <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:8px;">push → 即日公開。カスタムドメインも対応</div>
+                <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 自動デプロイ</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 3業種テンプレート -->
+      <div class="section">
+        <div class="section-title">🎨 3業種テンプレート — 受注したら業種に合ったテンプレートを選ぶ</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+
+          <!-- 士業・コンサル -->
+          <div style="background:white;border:2px solid #4F46E5;border-radius:14px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#EEF2FF,#E0E7FF);padding:20px 16px;text-align:center;">
+              <div style="font-size:40px;margin-bottom:8px;">⚖️</div>
+              <div style="font-size:14px;font-weight:900;color:#3730A3;">士業・コンサル</div>
+              <div style="font-size:11px;color:#6366F1;margin-top:4px;">弁護士・税理士・社労士・コンサル</div>
+            </div>
+            <div style="padding:14px 16px;">
+              <div style="display:inline-block;background:#D1FAE5;border:1px solid #6EE7B7;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:800;color:#065F46;margin-bottom:10px;">✅ 完成済み</div>
+              <ul class="feature-list" style="font-size:11px;">
+                <li><span class="icon">📄</span>9ページ構成</li>
+                <li><span class="icon">🎯</span>実績・信頼感を前面に出すデザイン</li>
+                <li><span class="icon">📩</span>無料相談CTAボタン付き</li>
+              </ul>
+              <div style="font-size:10px;color:var(--text-sub);margin-top:10px;background:#F5F3FF;border-radius:6px;padding:6px 8px;">📁 template-consul/</div>
+            </div>
+          </div>
+
+          <!-- コーチング・スクール -->
+          <div style="background:white;border:2px solid #0891B2;border-radius:14px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#ECFEFF,#CFFAFE);padding:20px 16px;text-align:center;">
+              <div style="font-size:40px;margin-bottom:8px;">🎓</div>
+              <div style="font-size:14px;font-weight:900;color:#164E63;">コーチング・スクール</div>
+              <div style="font-size:11px;color:#0891B2;margin-top:4px;">コーチ・講師・塾・オンライン教室</div>
+            </div>
+            <div style="padding:14px 16px;">
+              <div style="display:inline-block;background:#D1FAE5;border:1px solid #6EE7B7;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:800;color:#065F46;margin-bottom:10px;">✅ 完成済み</div>
+              <ul class="feature-list" style="font-size:11px;">
+                <li><span class="icon">📄</span>9ページ構成</li>
+                <li><span class="icon">🎯</span>変化・成長ストーリーを訴求するデザイン</li>
+                <li><span class="icon">📩</span>体験セッションCTAボタン付き</li>
+              </ul>
+              <div style="font-size:10px;color:var(--text-sub);margin-top:10px;background:#ECFEFF;border-radius:6px;padding:6px 8px;">📁 template-coach/</div>
+            </div>
+          </div>
+
+          <!-- 飲食・小売 -->
+          <div style="background:white;border:2px dashed #D1D5DB;border-radius:14px;overflow:hidden;opacity:0.85;">
+            <div style="background:linear-gradient(135deg,#FFF7ED,#FFEDD5);padding:20px 16px;text-align:center;">
+              <div style="font-size:40px;margin-bottom:8px;">🍽️</div>
+              <div style="font-size:14px;font-weight:900;color:#9A3412;">飲食・小売</div>
+              <div style="font-size:11px;color:#C2410C;margin-top:4px;">カフェ・レストラン・ショップ・EC</div>
+            </div>
+            <div style="padding:14px 16px;">
+              <div style="display:inline-block;background:#FEF3C7;border:1px solid #FDE68A;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:800;color:#92400E;margin-bottom:10px;">⏳ 構築予定</div>
+              <ul class="feature-list" style="font-size:11px;color:#6B7280;">
+                <li><span class="icon">📄</span>9ページ構成（予定）</li>
+                <li><span class="icon">🎯</span>写真映え・メニュー・アクセス重視</li>
+                <li><span class="icon">📩</span>予約・問い合わせCTA</li>
+              </ul>
+              <div style="font-size:10px;color:var(--text-sub);margin-top:10px;background:#FFF7ED;border-radius:6px;padding:6px 8px;">📁 template-food/（未作成）</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ツール -->
+      <div class="section">
+        <div class="section-title">🔧 制作ツール</div>
         <div class="grid">
           <div class="card">
             <div class="card-header"><div class="card-icon">📋</div><div><div class="card-title">クライアントヒアリングフォーム</div><div class="card-sub">クライアントに送るWebフォーム</div></div></div>
             <ul class="feature-list">
-              <li><span class="icon">✅</span>6ステップ・全項目バリデーション付き</li>
+              <li><span class="icon">✅</span>業種選択（Step 0）あり → 適切なテンプレートへ</li>
               <li><span class="icon">✅</span>送信後GASが自動でJSON生成・通知メール</li>
               <li><span class="icon">✅</span>モバイル対応</li>
             </ul>
@@ -2550,43 +2709,6 @@
               <li><span class="icon">✅</span>パスワード保護</li>
             </ul>
             <a href="https://shinomiho.github.io/web-production/admin.html" target="_blank" class="link-btn">管理画面を開く ↗</a>
-          </div>
-          <div class="card">
-            <div class="card-header"><div class="card-icon">📁</div><div><div class="card-title">テンプレート</div><div class="card-sub">remenow.tokyoベースのHTMLテンプレート</div></div></div>
-            <ul class="feature-list">
-              <li><span class="icon">✅</span>8ページ（プレースホルダ化済み）</li>
-              <li><span class="icon">✅</span>ブランドカラー・フォント変更対応</li>
-              <li><span class="icon">✅</span>GitHub Pagesで即公開可能</li>
-            </ul>
-            <a href="https://github.com/shinomiho/web-production" target="_blank" class="link-btn">GitHubを開く ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">📋 制作フロー</div>
-        <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:24px;">
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div style="display:flex;align-items:center;gap:14px;padding:12px;background:#F0FDF4;border-radius:8px;">
-              <div style="background:#0D9488;color:white;font-weight:800;font-size:13px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-              <div><div style="font-size:13px;font-weight:700;">クライアントにヒアリングフォームURLを送る</div><div style="font-size:12px;color:var(--text-sub);">intake.html のURLをメール・LINEで共有するだけ</div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;padding:12px;background:#F0FDF4;border-radius:8px;">
-              <div style="background:#0D9488;color:white;font-weight:800;font-size:13px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-              <div><div style="font-size:13px;font-weight:700;">GASが自動でJSONを生成・Driveに保存</div><div style="font-size:12px;color:var(--text-sub);">Mihoさんにメール通知。管理画面でステータス確認</div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;padding:12px;background:#F0FDF4;border-radius:8px;">
-              <div style="background:#0D9488;color:white;font-weight:800;font-size:13px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-              <div><div style="font-size:13px;font-weight:700;">管理画面でJSONを確認・ダウンロード</div><div style="font-size:12px;color:var(--text-sub);">内容を確認し、new-client-site/ フォルダに配置</div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;padding:12px;background:#F0FDF4;border-radius:8px;">
-              <div style="background:#0D9488;color:white;font-weight:800;font-size:13px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-              <div><div style="font-size:13px;font-weight:700;">Claude Codeを起動してプロンプトを実行</div><div style="font-size:12px;color:var(--text-sub);">template/ → output/ にサイトが自動生成される</div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;padding:12px;background:#F0FDF4;border-radius:8px;">
-              <div style="background:#0D9488;color:white;font-weight:800;font-size:13px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
-              <div><div style="font-size:13px;font-weight:700;">GitHubにpush → 公開完了</div><div style="font-size:12px;color:var(--text-sub);">GitHub Pagesで即日公開。カスタムドメインも設定可能</div></div>
-            </div>
           </div>
         </div>
       </div>
