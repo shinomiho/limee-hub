@@ -243,7 +243,7 @@
     <button class="tab-btn" onclick="switchTab('brain')">🧠 マイブレイン</button>
     <button class="tab-btn" onclick="switchTab('handover')">📖 引き継ぎガイド</button>
     <button class="tab-btn" onclick="switchTab('webpro')">🌐 Web制作</button>
-    <button class="tab-btn" onclick="switchTab('remepost')">📱 Reme Post</button>
+    <button class="tab-btn" onclick="switchTab('remepost')">📱 リミーPost</button>
   </div>
 
   <!-- 構造図パネル -->
@@ -2766,68 +2766,74 @@
     <div class="container">
 
       <!-- バナー -->
-      <div style="background:linear-gradient(135deg,#c8a89a,#a07060);border-radius:14px;padding:24px 28px;color:white;margin-bottom:24px;">
-        <div style="font-size:22px;font-weight:900;margin-bottom:4px;">Reme Post（あなたのもうひとりの私）</div>
-        <div style="font-size:13px;opacity:0.85;letter-spacing:.08em;margin-bottom:10px;">SNS言葉サポートサービス</div>
-        <div style="font-size:13px;opacity:0.9;line-height:1.8;max-width:700px;">「自分らしく生きる」を発信したい40〜60代女性経営者向け。月1回30分話すだけで、毎朝8時に本人の言葉で投稿が届く。上限5〜10名。</div>
+      <div style="background:linear-gradient(135deg,#6b3a7f,#3d3567);border-radius:14px;padding:24px 28px;color:white;margin-bottom:24px;">
+        <div style="font-size:22px;font-weight:900;margin-bottom:4px;">リミーPost（自走型SaaS + コミュニティ）</div>
+        <div style="font-size:13px;opacity:0.85;letter-spacing:.08em;margin-bottom:10px;">少数精鋭の40〜60代女性経営者向けSNS自動投稿ツール</div>
+        <div style="font-size:13px;opacity:0.9;line-height:1.8;max-width:760px;">クライアントが自分のGoogleドライブにマスターテンプレートをコピー → 自分でAPI設定 → 毎朝8時に Instagram + Threads 自動投稿。Miho稼働ゼロで回る設計。本業（リミーAI診断）の横に置けるサブ事業。</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;">
-          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">📷 Instagram 完全自動投稿</span>
-          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">月額 ¥30,000〜¥80,000</span>
-          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">初期費用 ¥50,000</span>
-          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">GAS + Claude AI</span>
+          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">📷 Instagram + 🧵 Threads 自動投稿</span>
+          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">月額 ¥39,800〜（初月半額）</span>
+          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">👥 リミーCommunity 込み</span>
+          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">🤖 AI画像生成（Pollinations.ai）</span>
+          <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;">💬 リミーちゃん24時間サポート</span>
         </div>
+      </div>
+
+      <!-- 大方針メモ（2026-05-31転換） -->
+      <div style="background:#FEF3C7;border:1px solid #FBBF24;border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:13px;color:#92400E;line-height:1.8;">
+        <strong>⚠️ ビジネスモデル転換（2026-05-31）：</strong>代行サービス → <strong>自走型SaaS</strong> へ。intake.html / お試し投稿 / Facebook招待→トークン発行 等の旧フローは廃止。クライアントが自分でマスターテンプレートをコピーし、自分でAPIキー取得・SNS連携。Miho稼働ゼロ。本業（リミーAI診断）の負荷にならない設計。
       </div>
 
       <!-- クイックアクセス -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
-        <a href="https://shinomiho.github.io/reme-post/admin.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#c8a89a;color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">🛠️ 管理画面</a>
-        <a href="https://shinomiho.github.io/reme-post/sales.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">💼 営業LP</a>
-        <a href="https://shinomiho.github.io/reme-post/intake.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">✍️ 申し込みフォーム</a>
-        <a href="https://shinomiho.github.io/reme-post/guide.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">📖 導入ガイド</a>
-        <a href="https://shinomiho.github.io/reme-post/modify.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">✏️ 調整リクエスト</a>
-        <a href="https://docs.google.com/spreadsheets/d/1Q-vEycSQpDaO4UYu1bqEG0cPtM37B7NtuIRS_NHhR4E/edit" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">📊 スプレッドシート</a>
+        <a href="https://shinomiho.github.io/reme-post/sales.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#6b3a7f;color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">💼 営業LP（最新）</a>
+        <a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">📋 マスターテンプレート</a>
+        <a href="https://line.me/R/ti/p/@615xhhhf" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">📱 公式LINE</a>
         <a href="https://script.google.com/home" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">⚙️ GASエディタ</a>
+        <a href="https://github.com/shinomiho/reme-post" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">💻 GitHub</a>
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#F3F4F6;border:1.5px dashed #9CA3AF;border-radius:8px;font-size:13px;font-weight:700;color:#6B7280;" title="準備中">💳 Stripe（準備中）</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#F3F4F6;border:1.5px dashed #9CA3AF;border-radius:8px;font-size:13px;font-weight:700;color:#6B7280;" title="準備中">💬 Discord（準備中）</span>
       </div>
 
-      <!-- サービス全体フロー -->
+      <!-- 自走型セットアップフロー（新モデル） -->
       <div class="section">
-        <div class="section-title">サービス全体フロー</div>
+        <div class="section-title">自走型セットアップフロー（クライアント自身が30分で完了）</div>
         <div style="background:white;border-radius:14px;border:1px solid #E5E7EB;padding:24px;overflow-x:auto;">
           <div style="display:flex;align-items:stretch;gap:0;min-width:840px;">
 
-            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #F59E0B;position:relative;">
-              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#D97706;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 1</div>
-              <div style="font-size:22px;margin:4px 0 8px;">📅</div>
-              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">Zoom相談<br>（30分）</div>
-              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">sales.htmlから<br>Spir予約</div>
-              <div style="background:#FEF3C7;color:#92400E;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">見込み客</div>
+            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #6b3a7f;position:relative;">
+              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#6b3a7f;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 1</div>
+              <div style="font-size:22px;margin:4px 0 8px;">💳</div>
+              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">Stripe決済<br>（1分）</div>
+              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">STANDARD<br>¥19,900初月</div>
+              <div style="background:#E9D5FF;color:#6b3a7f;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">クライアント</div>
             </div>
             <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;flex-shrink:0;font-size:18px;color:#C4B5FD;">→</div>
 
-            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #F59E0B;position:relative;">
-              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#D97706;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 2</div>
-              <div style="font-size:22px;margin:4px 0 8px;">✍️</div>
-              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">らしさシート<br>入力</div>
-              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">intake.html<br>（URL個別送付）</div>
-              <div style="background:#FEF3C7;color:#92400E;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">クライアント</div>
+            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #6b3a7f;position:relative;">
+              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#6b3a7f;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 2</div>
+              <div style="font-size:22px;margin:4px 0 8px;">📋</div>
+              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">マスター<br>テンプレコピー</div>
+              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">自分のドライブへ<br>「コピーを作成」</div>
+              <div style="background:#E9D5FF;color:#6b3a7f;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">クライアント</div>
             </div>
             <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;flex-shrink:0;font-size:18px;color:#C4B5FD;">→</div>
 
-            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #c8a89a;position:relative;">
-              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#c8a89a;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 3</div>
-              <div style="font-size:22px;margin:4px 0 8px;">🤖</div>
-              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">お試し投稿<br>3本生成→メール</div>
-              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">admin.htmlで<br>ボタン1つ</div>
-              <div style="background:#f0e8e3;color:#8a6b60;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">Miho</div>
+            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #6b3a7f;position:relative;">
+              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#6b3a7f;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 3</div>
+              <div style="font-size:22px;margin:4px 0 8px;">🔑</div>
+              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">API設定<br>＋らしさ入力</div>
+              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">動画ガイド＋<br>リミーちゃん補助</div>
+              <div style="background:#E9D5FF;color:#6b3a7f;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">クライアント</div>
             </div>
             <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;flex-shrink:0;font-size:18px;color:#C4B5FD;">→</div>
 
-            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #c8a89a;position:relative;">
-              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#c8a89a;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 4</div>
-              <div style="font-size:22px;margin:4px 0 8px;">🔗</div>
-              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">Instagram<br>連携設定</div>
-              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">Facebook招待<br>→ トークン発行</div>
-              <div style="background:#f0e8e3;color:#8a6b60;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">Miho</div>
+            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #6b3a7f;position:relative;">
+              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#6b3a7f;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 4</div>
+              <div style="font-size:22px;margin:4px 0 8px;">✅</div>
+              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">テスト投稿<br>（5分）</div>
+              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">メニューから<br>ワンクリック</div>
+              <div style="background:#E9D5FF;color:#6b3a7f;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">クライアント</div>
             </div>
             <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;flex-shrink:0;font-size:18px;color:#C4B5FD;">→</div>
 
@@ -2835,358 +2841,185 @@
               <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#059669;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 5</div>
               <div style="font-size:22px;margin:4px 0 8px;">🤖</div>
               <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">毎朝8時<br>自動投稿</div>
-              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">Claude AIが<br>文章生成・配信</div>
+              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">IG+Threads<br>＋AI画像生成</div>
               <div style="background:#D1FAE5;color:#065F46;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">完全自動</div>
             </div>
-            <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;flex-shrink:0;font-size:18px;color:#C4B5FD;">→</div>
-
-            <div style="flex-shrink:0;width:130px;background:white;border-radius:12px;padding:16px 10px 12px;text-align:center;border:2px solid #3B82F6;position:relative;">
-              <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#1E40AF;color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;">STEP 6</div>
-              <div style="font-size:22px;margin:4px 0 8px;">🎙️</div>
-              <div style="font-size:11px;font-weight:800;color:#111827;margin-bottom:4px;line-height:1.4;">月1音声<br>インタビュー</div>
-              <div style="font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px;">スタッフが<br>30分ヒアリング</div>
-              <div style="background:#DBEAFE;color:#1E40AF;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;display:inline-block;">スタッフ</div>
-            </div>
 
           </div>
         </div>
+        <div style="background:#ECFDF5;border:1px solid #6EE7B7;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:12px;color:#065F46;line-height:1.7;">
+          <strong>💡 Miho稼働ゼロ：</strong>全てクライアントが自分でやる。困ったら「リミーちゃん（AI）」が24時間応答。それでもダメな10人に1人だけ <strong>PROFESSIONAL（¥69,800）</strong> で代行サポート。
+        </div>
       </div>
 
-      <!-- Miho作業フロー：新規クライアント -->
+      <!-- Miho稼働サマリー（新モデル） -->
       <div class="section">
-        <div class="section-title">📋 Miho作業フロー — 新規クライアント対応（12ステップ）</div>
+        <div class="section-title">🎯 Miho稼働 — ほぼゼロ（自走型なので）</div>
+        <div style="background:#F0FDF4;border:1px solid #6EE7B7;border-radius:12px;padding:20px 24px;margin-bottom:16px;">
+          <div style="font-size:13px;color:#065F46;line-height:1.9;">
+            <strong style="font-size:14px;">本業（リミーAI診断）の横に置ける副業構造。</strong><br>
+            旧モデルの「Zoom相談 → intake.html個別送付 → お試し投稿 → Facebook招待 → トークン発行」のMiho手作業フローは<strong>全て廃止</strong>。クライアントが自分でやる設計に転換。
+          </div>
+        </div>
         <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;overflow:hidden;">
-
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">1</div>
+            <div style="width:26px;height:26px;border-radius:50%;background:#10B981;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
             <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">Zoom30分ヒアリングを実施</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">見込み客がsales.htmlからSpirで予約してくる。気に入ったら次へ。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#FEF3C7;color:#92400E;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">Miho</span>
-                <a href="https://app.spirinc.com/t/BaVcJLzp1EBNlPmMopnQj/as/nEkvuC6zy3wU2bD10nCV0/confirm" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">📅 Spir ↗</a>
-              </div>
+              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">マスターテンプレートの保守（月1〜2回程度）</div>
+              <div style="font-size:12px;color:#6B7280;line-height:1.7;">機能追加・バグ修正があれば本体スプレッドシートを更新。新規クライアントは最新版をコピーする。</div>
             </div>
           </div>
-
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">2</div>
+            <div style="width:26px;height:26px;border-radius:50%;background:#10B981;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
             <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">intake.html のURLをメール or LINEで個別送付</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">サイト上には公開していない（相談ファースト運用）。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#FEF3C7;color:#92400E;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">Miho</span>
-                <a href="https://shinomiho.github.io/reme-post/intake.html" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">✍️ intake.html ↗</a>
-              </div>
+              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">リミーCommunity 月1ライブ登壇（60分）</div>
+              <div style="font-size:12px;color:#6B7280;line-height:1.7;">1人起業・SNS運用・売上アップ等のテーマで登壇。録画して欠席者にも提供。メンバーDayは場所提供のみで参加不要。</div>
             </div>
           </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;background:#F0FDF4;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#059669;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">3</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">GASがclientsシートに自動登録 + ウェルカムメール自動送信</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">クライアントがフォームを送信すると自動で完了。status = setup。Mihoに通知メールも届く。</div>
-              <span style="background:#D1FAE5;color:#065F46;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">完全自動</span>
-            </div>
-          </div>
-
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">4</div>
+            <div style="width:26px;height:26px;border-radius:50%;background:#10B981;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
             <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">admin.html「お試し投稿」ボタンで3本生成 → メール送付</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">クライアント行の「お試し投稿」ボタンをクリック → Claude AIが30〜60秒で3本生成 → メールテンプレートをコピーしてメール送付。OKが出るまで返信で調整。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#FEF3C7;color:#92400E;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">Miho</span>
-                <a href="https://shinomiho.github.io/reme-post/admin.html" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">🛠️ admin.html ↗</a>
-              </div>
+              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">PROFESSIONALプラン契約者の個別相談（10人に1人）</div>
+              <div style="font-size:12px;color:#6B7280;line-height:1.7;">¥69,800プランの月1回30分相談。基本はSTANDARD（自走）に誘導するので発生は稀。</div>
             </div>
           </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">5</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">guide.html のURLをクライアントに送付</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">「導入ガイドをご確認ください」と伝えて送る。STEP 04（Facebook設定）を実施してもらう。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#FEF3C7;color:#92400E;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">Miho</span>
-                <a href="https://shinomiho.github.io/reme-post/guide.html" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">📖 guide.html ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;background:#FFFBEB;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#B45309;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">6</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">クライアントがFacebookページで「編集者」招待を送ってくる</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">「Facebookページ設定 → ページの役割」で miho.shinohe@remenow.com を「編集者」として追加。完了したらメール連絡が来る。</div>
-              <span style="background:#FEF3C7;color:#92400E;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">クライアント対応</span>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#7C3AED;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">7</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">Facebookの通知から招待を承認する</div>
-              <span style="background:#EDE9FE;color:#5B21B6;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">Miho</span>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#7C3AED;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">8</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">Graph API Explorerでページアクセストークンを発行</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">対象のFacebookページを選択 → 「Generate Access Token」でトークン発行。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#EDE9FE;color:#5B21B6;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">Miho</span>
-                <a href="https://developers.facebook.com/tools/explorer/" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">🔧 Graph API Explorer ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#7C3AED;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">9</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">Access Token Debuggerでlong-lived token（60日有効）に変換</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#EDE9FE;color:#5B21B6;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">Miho</span>
-                <a href="https://developers.facebook.com/tools/debug/accesstoken/" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">🔍 Token Debugger ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#7C3AED;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">10</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">スプレッドシートに ig_access_token（R列）・ig_account_id（S列）を入力</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">ig_account_idはGraph API Explorerで確認。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#EDE9FE;color:#5B21B6;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">Miho</span>
-                <a href="https://docs.google.com/spreadsheets/d/1Q-vEycSQpDaO4UYu1bqEG0cPtM37B7NtuIRS_NHhR4E/edit" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">📊 スプレッドシート ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#7C3AED;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">11</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">T列（status）を setup → active に変更</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">これで翌朝8時から自動投稿が開始される。</div>
-              <span style="background:#EDE9FE;color:#5B21B6;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">Miho</span>
-            </div>
-          </div>
-
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#7C3AED;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">12</div>
+            <div style="width:26px;height:26px;border-radius:50%;background:#10B981;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
             <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">クライアントへ「明日朝8時から配信開始します」と連絡</div>
-              <span style="background:#EDE9FE;color:#5B21B6;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">Miho</span>
+              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">公式LINE/メール返信（営業日2〜3日以内）</div>
+              <div style="font-size:12px;color:#6B7280;line-height:1.7;">商品相談・JV相談・契約検討者へのコメント。「緊急対応はお受けしません」と明記済みでプレッシャー回避。</div>
             </div>
           </div>
-
+        </div>
+        <div style="background:#FEF3C7;border:1px solid #FBBF24;border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:#92400E;line-height:1.7;">
+          <strong>⚠️ 旧モデル時のMiho 12ステップ手作業フロー・月次定期作業・トークン更新作業は廃止：</strong> クライアントがマスターテンプレ内で自分のAPIキー・SNSトークンを管理。Mihoは触らない。
         </div>
       </div>
 
-      <!-- 月次定期作業 -->
+      <!-- クライアントが触るページ・ツール（新モデル） -->
       <div class="section">
-        <div class="section-title">🔄 月次定期作業フロー</div>
-        <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;overflow:hidden;">
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#1E40AF;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">1</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">スタッフが月1インタビューを実施（Zoom or 電話・30分）</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">今月感じたこと・お客様エピソード・伝えたかったことを聞く。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#DBEAFE;color:#1E40AF;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">スタッフ</span>
-                <a href="https://app.spirinc.com/t/BaVcJLzp1EBNlPmMopnQj/as/nEkvuC6zy3wU2bD10nCV0/confirm" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">📅 Spir ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#1E40AF;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">2</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">文字起こしをadmin.htmlの「文字起こし入力」タブに保存</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">クライアントを選んで月を入力し、録音の文字起こしを貼り付け→保存。翌朝から投稿生成の素材として使われる。</div>
-              <div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap;">
-                <span style="background:#DBEAFE;color:#1E40AF;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;">スタッフ</span>
-                <a href="https://shinomiho.github.io/reme-post/admin.html" target="_blank" style="font-size:11px;font-weight:700;color:#4F46E5;text-decoration:none;background:#EEF2FF;padding:2px 8px;border-radius:5px;">🛠️ admin.html ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;background:#F0FDF4;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#059669;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">3</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">毎朝8時にGASが投稿を自動生成・配信（毎日）</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">Claude AIがらしさシート＋文字起こしから投稿文を生成 → Instagram Graph APIで自動投稿 → post_logシートに記録。</div>
-              <span style="background:#D1FAE5;color:#065F46;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">完全自動</span>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#1E40AF;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">4</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">admin.htmlの「投稿チェック」タブで週1確認</div>
-              <div style="font-size:12px;color:#6B7280;line-height:1.7;">調整リクエストが来たら対応（月3回まで無料）。</div>
-              <span style="background:#DBEAFE;color:#1E40AF;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">スタッフ</span>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:#F0FDF4;">
-            <div style="width:26px;height:26px;border-radius:50%;background:#059669;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">5</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">毎月1日：月次レポートが全クライアントへ自動送信</div>
-              <span style="background:#D1FAE5;color:#065F46;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;display:inline-block;">完全自動</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- トークン更新 -->
-      <div class="section">
-        <div class="section-title">⚠️ Instagramトークン期限切れ対応（約2ヶ月に1回）</div>
-        <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#92400E;line-height:1.8;">
-          long-lived tokenは<strong>約60日で失効</strong>します。GASからエラーメール（miho.shinohe@remenow.com宛）が届いたらすぐに対応してください。
-        </div>
-        <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;overflow:hidden;">
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-            <div style="flex:1;font-size:12px;color:#374151;">エラーメールでどのクライアントか確認</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-            <div style="flex:1;font-size:12px;color:#374151;">Graph API Explorerで新しいトークンを発行 <a href="https://developers.facebook.com/tools/explorer/" target="_blank" style="color:#4F46E5;font-weight:700;">↗</a></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-            <div style="flex:1;font-size:12px;color:#374151;">Token Debuggerでlong-lived tokenに変換 <a href="https://developers.facebook.com/tools/debug/accesstoken/" target="_blank" style="color:#4F46E5;font-weight:700;">↗</a></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 18px;">
-            <div style="width:24px;height:24px;border-radius:50%;background:#D97706;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-            <div style="flex:1;font-size:12px;color:#374151;">スプレッドシートのR列（ig_access_token）を上書き更新 → 翌朝自動再開 <a href="https://docs.google.com/spreadsheets/d/1Q-vEycSQpDaO4UYu1bqEG0cPtM37B7NtuIRS_NHhR4E/edit" target="_blank" style="color:#4F46E5;font-weight:700;">↗</a></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- クライアントが触るページ -->
-      <div class="section">
-        <div class="section-title">👤 クライアントが触るページ（4つだけ）</div>
+        <div class="section-title">👤 クライアントが触るもの（3つ）</div>
         <div class="url-card">
           <div class="url-item" style="cursor:default;align-items:flex-start;">
             <span class="url-item-icon">💼</span>
             <div style="flex:1;">
-              <div class="url-item-title">sales.html — 営業LP</div>
-              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">「無料相談を予約する」→ Spirカレンダー。このページからは申し込みできない（相談ファースト）。</div>
+              <div class="url-item-title">sales.html — 営業LP（最新刷新版）</div>
+              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">価値訴求（時給換算機会損失）・差別化（vs Buffer/サロン）・3プラン・コミュニティ・FAQ・お問い合わせ。Stripe決済ボタン（準備中）からそのまま申込予定。</div>
             </div>
           </div>
           <div class="url-item" style="cursor:default;align-items:flex-start;">
-            <span class="url-item-icon">✍️</span>
+            <span class="url-item-icon">📋</span>
             <div style="flex:1;">
-              <div class="url-item-title">intake.html — お申し込みフォーム（個別送付のみ）</div>
-              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">5ステップでらしさシートを入力。送信→GASが自動登録→ウェルカムメール自動送信。サイトに公開しない。</div>
+              <div class="url-item-title">マスターテンプレート（Googleスプレッドシート）</div>
+              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">契約後にクライアントが「コピーを作成」で自分のドライブへ複製。7シート自動生成・コンテナバインドGAS同梱。クライアント側で API設定・らしさシート入力・テスト投稿・自動投稿ON。<a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" style="color:#4F46E5;font-weight:700;">テンプレ ↗</a></div>
             </div>
           </div>
           <div class="url-item" style="cursor:default;align-items:flex-start;">
-            <span class="url-item-icon">📖</span>
+            <span class="url-item-icon">💬</span>
             <div style="flex:1;">
-              <div class="url-item-title">guide.html — 導入ガイド（契約後に渡す）</div>
-              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">STEP 01〜07まで全手順を書いており、このページ1枚で完結。Zoom予約・intake.html・インタビュー予約ボタン埋め込み済み。</div>
-            </div>
-          </div>
-          <div class="url-item" style="cursor:default;align-items:flex-start;">
-            <span class="url-item-icon">✏️</span>
-            <div style="flex:1;">
-              <div class="url-item-title">modify.html — お言葉の調整リクエスト（稼働中にいつでも）</div>
-              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">送信→GASがmodify_requestsシートに記録→Miho宛にメール通知。月3回まで無料。</div>
+              <div class="url-item-title">リミーちゃん（AIチャットボット）</div>
+              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">sales.html右下に常駐。操作・設定・トラブルの一次対応。Anthropic Claude Haiku 4.5。24時間応答。Miho稼働ゼロでサポート提供。</div>
             </div>
           </div>
         </div>
+        <div style="background:#FEE2E2;border:1px solid #FCA5A5;border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:#991B1B;line-height:1.7;">
+          <strong>⚠️ 廃止：</strong> intake.html（個別送付フォーム）・modify.html（調整リクエスト）・admin.html の代行用機能。新モデルではクライアントがマスターテンプレ内で全て自己管理。
+        </div>
       </div>
 
-      <!-- admin.html 5タブ -->
+      <!-- マスターテンプレートメニュー（クライアント側操作） -->
       <div class="section">
-        <div class="section-title">🛠️ admin.html の5タブ（PW: REME2026）</div>
+        <div class="section-title">📋 マスターテンプレートのメニュー（クライアント自身が操作）</div>
         <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;overflow:hidden;">
           <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#7C3AED;min-width:100px;padding-top:1px;">① クライアント一覧</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">clientsシートの一覧。名前クリックでらしさシート・プラン・SNS設定の詳細確認。ステータスでフィルター可。「お試し投稿」ボタンでAI生成→メールテンプレート表示。</div>
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">① 初期セットアップ</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">profile / personality / post_log / modify_requests / interview_transcripts / kpi / kpi_account の7シートを自動生成。</div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#7C3AED;min-width:100px;padding-top:1px;">② 文字起こし入力</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">月1インタビュー後に使う。クライアント選択→月入力→文字起こし貼り付け→保存。翌朝から投稿生成の素材として使われる。</div>
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">② API設定</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">ANTHROPIC_API_KEY / IG_ACCESS_TOKEN / IG_ACCOUNT_ID / THREADS_ACCESS_TOKEN / THREADS_USER_ID をダイアログ入力。</div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#7C3AED;min-width:100px;padding-top:1px;">③ 投稿チェック</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">直近20件の投稿履歴。OKまたは「コメントする」でメモ。スタッフの最終チェック用。</div>
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">③ 今日の投稿プレビュー</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">投稿せず生成のみ。クライアントが自分で内容確認できる。</div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#7C3AED;min-width:100px;padding-top:1px;">④ 今日のプレビュー</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">配信前に今日の投稿を確認できる。</div>
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">④ テスト投稿</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">実際にIG/Threadsへ投稿。リトライ機能あり（最大5回・別画像で再試行）。</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">⑤ 投稿スタイル調整</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">「もっとやわらかく」等の自然言語要望をAIがprofileに自動反映。</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">⑥ KPI分析</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">いいね・コメント・フォロワー前日/前週/前月比を表示。</div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;">
-            <div style="font-size:11px;font-weight:800;color:#7C3AED;min-width:100px;padding-top:1px;">⑤ SNS連携ガイド</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">新規クライアントへのFacebook設定依頼テキストをコピーしてLINEやメールで送るだけ。</div>
-          </div>
-        </div>
-        <div style="margin-top:10px;text-align:right;">
-          <a href="https://shinomiho.github.io/reme-post/admin.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#7C3AED;color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">🛠️ 管理画面を開く ↗</a>
-        </div>
-      </div>
-
-      <!-- 契約・請求・入金 -->
-      <div class="section">
-        <div class="section-title">💰 契約・請求・入金</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-          <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:18px;">
-            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">契約管理（GMOサイン）</div>
-            <div style="font-size:12px;color:#374151;line-height:1.9;">
-              ① GMOサインで締結<br>
-              ② PDF → Drive「✅ 締結済」フォルダに保存<br>
-              ③ 1時間以内に台帳へ自動登録<br>
-              ④ 台帳に終了日を手入力（60日前に自動通知）
-            </div>
-            <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;">
-              <a href="https://www.gmo-sign.com/" target="_blank" class="link-btn">GMOサイン ↗</a>
-              <a href="https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8" target="_blank" class="link-btn">契約書台帳 ↗</a>
-            </div>
-          </div>
-          <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:18px;">
-            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">月次請求フロー</div>
-            <div style="font-size:12px;color:#374151;line-height:1.9;">
-              ① 毎月25日ごろ請求書作成<br>
-              ② メールで送付（支払期限：月初5日）<br>
-              ③ 入金確認 → billingシートに「入金済み」記録<br>
-              ④ 10日過ぎても未入金ならリマインド
-            </div>
-            <div style="margin-top:12px;font-size:11px;color:#6B7280;">ライト¥30,000 / スタンダード¥50,000 / プレミアム¥80,000（税抜）</div>
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">⑦ 自動投稿ON/OFF</div>
+            <div style="font-size:12px;color:#374151;line-height:1.7;">毎朝8時のトリガー管理。ON時は完全自動運用。</div>
           </div>
         </div>
       </div>
 
-      <!-- システム設定 -->
+      <!-- プラン・課金（Stripe自動） -->
       <div class="section">
-        <div class="section-title">⚙️ システム設定</div>
+        <div class="section-title">💰 プラン・課金（Stripe Checkout 予定）</div>
+        <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px;margin-bottom:16px;">
+          <div style="background:linear-gradient(160deg,#fff,#f5edf0);border-radius:12px;border:2px solid #6b3a7f;padding:16px;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#6b3a7f;color:white;font-size:9px;font-weight:800;padding:2px 10px;border-radius:99px;">主力 9割</div>
+            <div style="font-size:11px;font-weight:800;color:#6b3a7f;letter-spacing:.1em;margin-bottom:4px;">STANDARD</div>
+            <div style="font-size:18px;font-weight:900;color:#111827;margin-bottom:2px;">¥39,800<span style="font-size:11px;color:#6B7280;">/月</span></div>
+            <div style="font-size:10px;color:#6B7280;line-height:1.6;margin-bottom:8px;">初月¥19,900・SNS自動投稿全機能＋コミュニティ</div>
+          </div>
+          <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:16px;">
+            <div style="font-size:11px;font-weight:800;color:#6B7280;letter-spacing:.1em;margin-bottom:4px;">PROFESSIONAL</div>
+            <div style="font-size:18px;font-weight:900;color:#111827;margin-bottom:2px;">¥69,800<span style="font-size:11px;color:#6B7280;">/月</span></div>
+            <div style="font-size:10px;color:#6B7280;line-height:1.6;margin-bottom:8px;">10人に1人向け。代行＋API代行＋月1相談</div>
+          </div>
+          <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:16px;">
+            <div style="font-size:11px;font-weight:800;color:#6B7280;letter-spacing:.1em;margin-bottom:4px;">ENTERPRISE</div>
+            <div style="font-size:18px;font-weight:900;color:#111827;margin-bottom:2px;">¥150,000<span style="font-size:11px;color:#6B7280;">〜/月</span></div>
+            <div style="font-size:10px;color:#6B7280;line-height:1.6;margin-bottom:8px;">法人・JV・ホワイトラベル・複数アカウント</div>
+          </div>
+          <div style="background:white;border-radius:12px;border:1px dashed #9CA3AF;padding:16px;">
+            <div style="font-size:11px;font-weight:800;color:#6B7280;letter-spacing:.1em;margin-bottom:4px;">卒業生プラン</div>
+            <div style="font-size:18px;font-weight:900;color:#111827;margin-bottom:2px;">¥4,980<span style="font-size:11px;color:#6B7280;">/月</span></div>
+            <div style="font-size:10px;color:#6B7280;line-height:1.6;margin-bottom:8px;">6ヶ月以上利用者限定・コミュニティのみ</div>
+          </div>
+        </div>
+        <div style="background:#FEF3C7;border:1px solid #FBBF24;border-radius:10px;padding:12px 16px;font-size:12px;color:#92400E;line-height:1.8;">
+          <strong>📌 Stripe Checkout（準備中）：</strong>サブスク自動化。月次請求書作成・GMO電子署名・billingシート手入力は廃止予定。Stripe Webhook → スプレッドシート自動記録の設計予定。
+        </div>
+      </div>
+
+      <!-- システム構成（新モデル） -->
+      <div class="section">
+        <div class="section-title">⚙️ システム構成（マスターテンプレ + チャットボットGAS）</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:18px;">
-            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">GASトリガー</div>
+            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">マスターテンプレート（クライアント側）</div>
             <div style="font-size:12px;color:#374151;line-height:1.9;">
-              <strong>dailyPost</strong> — 日タイマー・午前8時<br>
-              <strong>runMonthlyReports</strong> — 月タイマー・1日・午前9時<br>
-              <strong>resetMonthlyCount</strong> — 月タイマー・1日・午前0時
+              <strong>形式</strong>：コンテナバインドGAS<br>
+              <strong>各クライアントが自分のドライブにコピー</strong><br>
+              <strong>APIキー</strong>：クライアント自身が取得（PROFESSIONALのみMiho代行）<br>
+              <strong>トリガー</strong>：dailyPost（毎朝8時）はクライアント側で設定
             </div>
-            <div style="margin-top:10px;font-size:11px;color:#6B7280;">GASエディタ → 時計アイコン → トリガーを追加</div>
+            <div style="margin-top:10px;font-size:11px;color:#6B7280;">📋 ローカル：/Users/mihomatuo/reme-post/master-template/コード.gs</div>
           </div>
           <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:18px;">
-            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">スクリプトプロパティ</div>
+            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">リミーちゃんチャットボット（Miho側・共通）</div>
             <div style="font-size:12px;color:#374151;line-height:1.9;">
-              <strong>ANTHROPIC_API_KEY</strong><br>
-              <strong>SPREADSHEET_ID</strong>：1Q-vEycSQpDa...<br>
-              <strong>NOTIFY_EMAIL</strong>：miho.shinohe@remenow.com<br>
-              <strong>ADMIN_SECRET</strong>：REME2026
+              <strong>形式</strong>：スタンドアロンGAS<br>
+              <strong>モデル</strong>：claude-haiku-4-5-20251001<br>
+              <strong>エンドポイント</strong>：doPost（sales.htmlから fetch）<br>
+              <strong>API</strong>：ANTHROPIC_API_KEY（Mihoのスクリプトプロパティ）
             </div>
+            <div style="margin-top:10px;font-size:11px;color:#6B7280;">💻 ローカル：/Users/mihomatuo/reme-post/chatbot.js + chatbot-api.gs</div>
           </div>
+        </div>
+        <div style="background:#FEE2E2;border:1px solid #FCA5A5;border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:#991B1B;line-height:1.7;">
+          <strong>⚠️ 廃止：</strong>Miho側中央スプレッドシート（旧 1Q-vEycSQpDa...）・runMonthlyReports・resetMonthlyCount トリガー。新モデルでは各クライアント独立運用。
         </div>
       </div>
 
@@ -3204,24 +3037,14 @@
             <div><div class="url-item-title">クライアント向け導入ガイド</div><div class="url-item-url">https://shinomiho.github.io/reme-post/guide.html</div></div>
             <span class="url-arrow">↗</span>
           </a>
-          <a href="https://shinomiho.github.io/reme-post/modify.html" target="_blank" class="url-item">
-            <span class="url-item-icon">✏️</span>
-            <div><div class="url-item-title">お言葉の調整リクエスト</div><div class="url-item-url">https://shinomiho.github.io/reme-post/modify.html</div></div>
+          <a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" class="url-item">
+            <span class="url-item-icon">📋</span>
+            <div><div class="url-item-title">マスターテンプレート（クライアント配布用）</div><div class="url-item-url">https://docs.google.com/spreadsheets/d/1nTgSrAS.../edit</div></div>
             <span class="url-arrow">↗</span>
           </a>
-          <a href="https://shinomiho.github.io/reme-post/intake.html" target="_blank" class="url-item">
-            <span class="url-item-icon">✍️</span>
-            <div><div class="url-item-title">クライアント登録フォーム（個別送付用）</div><div class="url-item-url">https://shinomiho.github.io/reme-post/intake.html</div></div>
-            <span class="url-arrow">↗</span>
-          </a>
-          <a href="https://shinomiho.github.io/reme-post/admin.html" target="_blank" class="url-item">
-            <span class="url-item-icon">🛠️</span>
-            <div><div class="url-item-title">管理画面（PW: REME2026）</div><div class="url-item-url">https://shinomiho.github.io/reme-post/admin.html</div></div>
-            <span class="url-arrow">↗</span>
-          </a>
-          <a href="https://docs.google.com/spreadsheets/d/1Q-vEycSQpDaO4UYu1bqEG0cPtM37B7NtuIRS_NHhR4E/edit" target="_blank" class="url-item">
-            <span class="url-item-icon">📊</span>
-            <div><div class="url-item-title">Reme Post スプレッドシート</div><div class="url-item-url">clients / post_log / modify_requests / billing</div></div>
+          <a href="https://line.me/R/ti/p/@615xhhhf" target="_blank" class="url-item">
+            <span class="url-item-icon">📱</span>
+            <div><div class="url-item-title">リミーPost 公式LINE</div><div class="url-item-url">@615xhhhf</div></div>
             <span class="url-arrow">↗</span>
           </a>
           <a href="https://script.google.com/home" target="_blank" class="url-item">
