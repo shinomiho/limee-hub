@@ -1534,14 +1534,14 @@
           <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">新しい契約が決まったら会社名・金額を入力して登録。Sheetsに自動追加。</div>
         </div>
         <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:22px;margin-bottom:6px;">🧾</div>
-          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">② 請求追加</div>
-          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">案件を選んで金額を確認→追加。請求管理シートに自動記録。</div>
+          <div style="font-size:22px;margin-bottom:6px;">📄</div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">② 契約書・書類発行</div>
+          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">案件＋書類種別を選んでPDF発行。契約書・見積書も同じ仕組みで発行できる。</div>
         </div>
         <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:22px;margin-bottom:6px;">📄</div>
-          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">③ 書類PDF発行</div>
-          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">案件＋書類種別を選んで発行。会社名・金額が自動入力されたPDFが完成。</div>
+          <div style="font-size:22px;margin-bottom:6px;">🧾</div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:4px;">③ 請求追加</div>
+          <div style="font-size:11px;color:var(--text-sub);line-height:1.6;">契約書を交わしたら金額を確認→追加。請求管理シートに自動記録。</div>
         </div>
         <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
           <div style="font-size:22px;margin-bottom:6px;">💰</div>
@@ -1613,9 +1613,49 @@
         <div id="result-add-case" class="op-result"></div>
       </div>
 
-      <!-- 2. 請求追加 -->
+      <!-- 2. 契約書・書類PDF発行 -->
+      <div class="op-section">
+        <div class="op-title">📄 契約書・書類PDF発行（Driveに自動保存）</div>
+        <div style="font-size:12px;color:var(--text-sub);margin-bottom:10px;line-height:1.7;">
+          ※ 案件登録後、最初にここで<strong>契約書PDF</strong>を発行→お客様と取り交わし→そのあとに「請求を追加」へ進むのが基本フローです。
+        </div>
+        <div style="margin-bottom:12px;">
+          <button onclick="loadCasesForPDF()" class="op-btn-sm">🔄 案件一覧を読み込む</button>
+          <span id="cases-pdf-msg" style="font-size:12px;color:var(--text-sub);margin-left:8px;"></span>
+        </div>
+        <div class="op-form three">
+          <div class="form-group">
+            <label class="form-label">案件ID *</label>
+            <select id="pdf-case-select" class="form-select">
+              <option value="">← まず「案件一覧を読み込む」を押す</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">書類種別 *</label>
+            <select id="pdf-type" class="form-select">
+              <option value="contract">📝 業務委託契約書</option>
+              <option value="service">🔄 サービス利用契約書（サブスク）</option>
+              <option value="consult">💼 コンサルティング契約書</option>
+              <option value="sales">🛒 売買契約書</option>
+              <option value="quote">📋 見積書</option>
+              <option value="invoice">📄 請求書</option>
+            </select>
+          </div>
+          <div class="form-group" style="justify-content:flex-end;">
+            <label class="form-label">&nbsp;</label>
+            <button onclick="submitGeneratePDF()" class="op-btn" id="btn-gen-pdf">✨ PDFを発行する</button>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-sub);margin-top:8px;">※ 発行したPDFは「リミー 発行書類 / 会社名」フォルダに自動保存されます</div>
+        <div id="result-gen-pdf" class="op-result"></div>
+      </div>
+
+      <!-- 3. 請求追加 -->
       <div class="op-section">
         <div class="op-title">🧾 請求を追加する</div>
+        <div style="font-size:12px;color:var(--text-sub);margin-bottom:10px;line-height:1.7;">
+          ※ 契約書を交わしたあとに使うステップです。月次・スポット請求どちらも対応。
+        </div>
         <div style="margin-bottom:12px;">
           <button onclick="loadCasesForInvoice()" class="op-btn-sm">🔄 案件一覧を読み込む</button>
           <span id="cases-load-msg" style="font-size:12px;color:var(--text-sub);margin-left:8px;"></span>
@@ -1646,40 +1686,6 @@
         </div>
         <button onclick="submitAddInvoice()" class="op-btn" id="btn-add-invoice">🧾 請求を追加する</button>
         <div id="result-add-invoice" class="op-result"></div>
-      </div>
-
-      <!-- 3. 書類PDF発行 -->
-      <div class="op-section">
-        <div class="op-title">📄 書類PDF発行（Driveに自動保存）</div>
-        <div style="margin-bottom:12px;">
-          <button onclick="loadCasesForPDF()" class="op-btn-sm">🔄 案件一覧を読み込む</button>
-          <span id="cases-pdf-msg" style="font-size:12px;color:var(--text-sub);margin-left:8px;"></span>
-        </div>
-        <div class="op-form three">
-          <div class="form-group">
-            <label class="form-label">案件ID *</label>
-            <select id="pdf-case-select" class="form-select">
-              <option value="">← まず「案件一覧を読み込む」を押す</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">書類種別 *</label>
-            <select id="pdf-type" class="form-select">
-              <option value="invoice">📄 請求書</option>
-              <option value="quote">📋 見積書</option>
-              <option value="contract">📝 業務委託契約書</option>
-              <option value="service">🔄 サービス利用契約書（サブスク）</option>
-              <option value="consult">💼 コンサルティング契約書</option>
-              <option value="sales">🛒 売買契約書</option>
-            </select>
-          </div>
-          <div class="form-group" style="justify-content:flex-end;">
-            <label class="form-label">&nbsp;</label>
-            <button onclick="submitGeneratePDF()" class="op-btn" id="btn-gen-pdf">✨ PDFを発行する</button>
-          </div>
-        </div>
-        <div style="font-size:12px;color:var(--text-sub);margin-top:8px;">※ 発行したPDFは「リミー 発行書類 / 会社名」フォルダに自動保存されます</div>
-        <div id="result-gen-pdf" class="op-result"></div>
       </div>
 
       <!-- 4. 売上・入金サマリー -->
