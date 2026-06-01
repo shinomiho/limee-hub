@@ -244,7 +244,7 @@
     <button class="tab-btn" onclick="switchTab('operations')">💼 管理操作</button>
     <button class="tab-btn" onclick="switchTab('brain')">🧠 マイブレイン</button>
     <button class="tab-btn" onclick="switchTab('handover')">📖 引き継ぎガイド</button>
-    <button class="tab-btn" onclick="switchTab('webpro')">🌐 Web制作</button>
+    <button class="tab-btn" onclick="switchTab('webpro')">🎨 リミーStudio</button>
     <button class="tab-btn" onclick="switchTab('remepost')">📱 リミーPost</button>
   </div>
 
@@ -268,29 +268,29 @@
         <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">STEP 1 ／ 30秒で理解</div>
         <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 14px;">🌱 リミーって何？</h2>
         <p style="font-size:14px;color:#374151;line-height:1.9;margin:0 0 14px;">
-          リミー（Rimee）は、<strong>入社後90日に特化した採用後支援HRテック</strong>です。<br>
-          AI診断・人的資本KPI設計・ESG経営支援などを、企業の人事課題に合わせて提供しています。
+          リミーは、<strong>入社後90日に特化した採用後支援HRテック</strong>を軸に、複数の事業を展開しています。<br>
+          代表：四戸美穂／屋号：リミー
         </p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;font-size:12px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;font-size:12px;">
           <div style="background:#EEF2FF;padding:12px;border-radius:8px;text-align:center;">
             <div style="font-size:22px;margin-bottom:4px;">🧠</div>
-            <div style="font-weight:700;color:#3730A3;">リミーAI診断</div>
-            <div style="color:#6B7280;font-size:11px;margin-top:2px;">入社90日・5軸スコア</div>
+            <div style="font-weight:700;color:#3730A3;">リミー診断</div>
+            <div style="color:#6B7280;font-size:11px;margin-top:2px;">入社90日・5軸AI診断</div>
           </div>
           <div style="background:#F0FDF4;padding:12px;border-radius:8px;text-align:center;">
             <div style="font-size:22px;margin-bottom:4px;">📱</div>
             <div style="font-weight:700;color:#065F46;">リミーPost</div>
-            <div style="color:#6B7280;font-size:11px;margin-top:2px;">SNS自動投稿ツール</div>
+            <div style="color:#6B7280;font-size:11px;margin-top:2px;">SNS自動投稿サービス</div>
+          </div>
+          <div style="background:#FFF7ED;padding:12px;border-radius:8px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">🎨</div>
+            <div style="font-weight:700;color:#EA580C;">リミーStudio</div>
+            <div style="color:#6B7280;font-size:11px;margin-top:2px;">Webサイト自動制作</div>
           </div>
           <div style="background:#FFFBEB;padding:12px;border-radius:8px;text-align:center;">
             <div style="font-size:22px;margin-bottom:4px;">💼</div>
-            <div style="font-weight:700;color:#92400E;">コンサル</div>
+            <div style="font-weight:700;color:#92400E;">経営コンサル</div>
             <div style="color:#6B7280;font-size:11px;margin-top:2px;">人的資本KPI・ESG</div>
-          </div>
-          <div style="background:#FCE7F3;padding:12px;border-radius:8px;text-align:center;">
-            <div style="font-size:22px;margin-bottom:4px;">🌐</div>
-            <div style="font-weight:700;color:#9D174D;">公式サイト</div>
-            <div style="color:#6B7280;font-size:11px;margin-top:2px;">remenow.tokyo</div>
           </div>
         </div>
       </div>
@@ -420,7 +420,7 @@
             <span style="font-size:18px;flex-shrink:0;">📖</span><div><strong>引き継ぎガイド</strong>：新担当者がスムーズに引き継ぐ用の詳細マニュアル</div>
           </a>
           <a href="javascript:void(0)" onclick="switchTab('webpro')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
-            <span style="font-size:18px;flex-shrink:0;">🌐</span><div><strong>Web制作</strong>：クライアントサイト自動構築システムの管理</div>
+            <span style="font-size:18px;flex-shrink:0;">🎨</span><div><strong>リミーStudio</strong>：クライアントサイト自動構築サービス（旧Web制作）の管理</div>
           </a>
           <a href="javascript:void(0)" onclick="switchTab('remepost')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
             <span style="font-size:18px;flex-shrink:0;">📱</span><div><strong>リミーPost</strong>：SNS自動投稿サービスの管理画面</div>
@@ -894,51 +894,60 @@
               </div>
             </div>
 
-            <!-- SNS自動投稿 -->
-            <div style="flex:1.4;display:flex;flex-direction:column;align-items:center;">
+            <!-- 📱 リミーPost（SNS自動投稿サービス） -->
+            <div style="flex:1.2;display:flex;flex-direction:column;align-items:center;">
               <div style="width:2px;height:2px;background:#C7D2FE;"></div>
               <div class="vline vline-sm"></div>
-              <div class="tree-node system">📱 SNS自動投稿<br><span style="font-size:10px;font-weight:400;">毎朝8時自動実行</span></div>
+              <div class="tree-node system">📱 リミーPost<br><span style="font-size:10px;font-weight:400;">SNS自動投稿サービス</span></div>
               <div class="vline vline-sm"></div>
-              <div class="tree-node done">🧠 Claude AI<br>コンテンツ自動生成</div>
+              <a href="https://shinomiho.github.io/reme-post/sales.html" target="_blank" class="tree-node done">💼 sales.html<br>LP＋Stripe決済</a>
+              <div class="vline vline-sm"></div>
+              <a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" class="tree-node done">📋 マスターテンプレ<br>クライアント自走</a>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node done">🧠 Claude AI<br>投稿文＋画像自動生成</div>
               <div class="vline vline-sm"></div>
               <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">
-                <a href="https://www.linkedin.com/in/miho-shinohe/" target="_blank" class="tree-node done">💼 LinkedIn<br>個人・会社</a>
-                <a href="https://www.instagram.com/shinomiho_reme_hrtech/" target="_blank" class="tree-node done">📸 Instagram<br>Reels</a>
+                <a href="https://www.instagram.com/shinomiho_reme_hrtech/" target="_blank" class="tree-node done">📸 Instagram</a>
                 <a href="https://www.threads.net/@shinomiho_reme_hrtech" target="_blank" class="tree-node done">🧵 Threads</a>
-                <div class="tree-node done">💚 LINE公式<br>一斉配信</div>
-                <div class="tree-node manual">📝 note<br>🖐️手動投稿</div>
               </div>
               <div class="vline vline-sm"></div>
-              <div class="tree-node done">🎙️ Stand.FM台本<br>カレンダー自動保存</div>
-              <div class="vline vline-sm"></div>
-              <div class="tree-node progress">🎵 ElevenLabs<br>AI音声生成 🔄再学習中</div>
-              <div class="vline vline-sm"></div>
-              <div style="display:flex;gap:8px;">
-                <div class="tree-node manual">📻 Stand.FM<br>🖐️手動投稿</div>
-                <div class="tree-node progress">🎵 Spotify<br>⏳自動配信 設定中</div>
-              </div>
+              <div class="tree-node done">💬 リミーちゃん<br>24h AIサポート</div>
             </div>
 
-            <!-- 経営管理 -->
-            <div style="flex:0.8;display:flex;flex-direction:column;align-items:center;">
+            <!-- 🎨 リミーStudio（Webサイト自動制作サービス） -->
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:2px;height:2px;background:#C7D2FE;"></div>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node system">🎨 リミーStudio<br><span style="font-size:10px;font-weight:400;">Webサイト自動制作サービス</span></div>
+              <div class="vline vline-sm"></div>
+              <a href="https://shinomiho.github.io/web-production/intake.html" target="_blank" class="tree-node done">📝 intake.html<br>ヒアリングフォーム</a>
+              <div class="vline vline-sm"></div>
+              <a href="https://shinomiho.github.io/web-production/admin.html" target="_blank" class="tree-node done">🔐 admin.html<br>制作管理画面</a>
+              <div class="vline vline-sm"></div>
+              <div class="tree-node done">🤖 サイト自動構築<br>Claude AI</div>
+              <div class="vline vline-sm"></div>
+              <a href="https://github.com/shinomiho/web-production" target="_blank" class="tree-node done">💻 GitHubリポ<br>web-production</a>
+            </div>
+
+            <!-- 💼 経営コンサル（受注事業） -->
+            <div style="flex:0.9;display:flex;flex-direction:column;align-items:center;">
               <div style="width:100%;height:2px;background:#C7D2FE;"></div>
               <div class="vline vline-sm"></div>
-              <div class="tree-node system">📋 経営管理</div>
+              <div class="tree-node system">💼 経営コンサル<br><span style="font-size:10px;font-weight:400;">人的資本KPI設計・ESG</span></div>
               <div class="vline vline-sm"></div>
               <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
-                <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="tree-node done">📊 案件・請求台帳<br>limee-bizops</a>
+                <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="tree-node done">📊 案件・請求台帳<br>顧客管理-CS</a>
                 <div class="tree-node done">✍️ GMOサイン<br>電子署名（月5件無料）</div>
-                <a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" class="tree-node done">📂 契約書管理フォルダ<br>Drive（締結済・交渉中）</a>
+                <a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" class="tree-node done">📂 契約書管理フォルダ<br>収入／支出</a>
                 <a href="https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8" target="_blank" class="tree-node done">📋 契約書台帳<br>自動登録・期限アラート</a>
               </div>
             </div>
 
-            <!-- Webサイト -->
+            <!-- 🌐 公式サイト・自社マーケ -->
             <div style="flex:0.8;display:flex;flex-direction:column;align-items:center;">
               <div style="width:100%;height:2px;background:#C7D2FE;"></div>
               <div class="vline vline-sm"></div>
-              <div class="tree-node system">🌐 Webサイト・リンク</div>
+              <div class="tree-node system">🌐 公式サイト<br><span style="font-size:10px;font-weight:400;">remenow.tokyo</span></div>
               <div class="vline vline-sm"></div>
               <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
                 <a href="https://remenow.tokyo/" target="_blank" class="tree-node done">🏠 remenow.tokyo<br>公式サイト</a>
