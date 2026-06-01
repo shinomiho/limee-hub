@@ -1210,9 +1210,18 @@
               <li><span class="icon">✅</span>請求書・見積書・契約書に対応</li>
               <li><span class="icon">✅</span><code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:11px;">{{会社名}}</code> <code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:11px;">{{金額}}</code> <code style="background:#F3F4F6;padding:1px 5px;border-radius:3px;font-size:11px;">{{請求番号}}</code> を自動置換</li>
               <li><span class="icon">✅</span>PDFは「リミー 発行書類」フォルダに自動保存</li>
-              <li><span class="icon">✅</span>振込先：楽天銀行 ポルカ支店（普通 3528987 シノヘ ミホ）</li>
-              <li><span class="icon">✅</span>適格請求書発行事業者登録番号：T5810769837394</li>
+              <li><span class="icon">✅</span>振込先・適格請求書発行事業者登録番号（T5810769837394）：請求書テンプレに直接記載済み</li>
+              <li><span class="icon">🔄</span><strong>2026-06-01 更新：</strong>列幅・フォントバランス修正、振込先・登録番号反映</li>
             </ul>
+            <div style="background:#F0FDF4;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:11px;color:#065F46;font-weight:700;">
+              📄 テンプレDocs直リンク：
+              <a href="https://docs.google.com/document/d/1NXZOoynHhItaEOppdTciK0k6STzdMN7G4bpZ_lOqJ9w/edit" target="_blank" style="color:#047857;">請求書 ↗</a> /
+              <a href="https://docs.google.com/document/d/1Pk8hlz1_IMmA1km-vXg9Bz9iUfPgm74jD5ihfLC-Go4/edit" target="_blank" style="color:#047857;">見積書 ↗</a> /
+              <a href="https://docs.google.com/document/d/1WNGZhNwytVrlYRt-GwydHG9E3L_4feiT2Zm3mj5-efI/edit" target="_blank" style="color:#047857;">業務委託契約書 ↗</a> /
+              <a href="https://docs.google.com/document/d/1ijMvdNvoCAhMiOgxNmR7fWD8z50AZxBjK_aKAfttr28/edit" target="_blank" style="color:#047857;">サービス利用 ↗</a> /
+              <a href="https://docs.google.com/document/d/1K1ywDDsxIuNLaTxRuKuGcdcvWYHFpDe78kgfhBC0OXE/edit" target="_blank" style="color:#047857;">売買 ↗</a> /
+              <a href="https://docs.google.com/document/d/1u6shi0X6JwPOWGXFxE6cmT7OsbUMF6m3xf7S9YYUZcw/edit" target="_blank" style="color:#047857;">コンサル ↗</a>
+            </div>
             <div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:11px;color:#92400E;font-weight:700;">
               📝 テンプレートをGoogle Docsで作成 → DriveのファイルIDをスクリプトプロパティ「INVOICE_TEMPLATE_ID」に設定
             </div>
@@ -2077,8 +2086,24 @@
         </div>
 
         <!-- ターゲット -->
-        <div style="background:#F9FAFB;border-radius:10px;padding:12px 16px;font-size:12px;color:var(--text-sub);line-height:1.8;">
+        <div style="background:#F9FAFB;border-radius:10px;padding:12px 16px;font-size:12px;color:var(--text-sub);line-height:1.8;margin-bottom:16px;">
           <strong style="color:var(--text);">主要ターゲット：</strong>上場企業・IPO準備企業・ESG経営に取り組む中堅〜大手企業（B to B）
+        </div>
+
+        <!-- 事業者情報（請求書・契約書発行に必要な情報） -->
+        <div style="background:white;border:2px solid #1E3A5F;border-radius:12px;padding:18px 22px;">
+          <div style="font-size:13px;font-weight:900;color:#1E3A5F;margin-bottom:12px;">📑 事業者情報（請求書・契約書発行用）</div>
+          <table style="width:100%;font-size:12px;line-height:1.9;border-collapse:collapse;">
+            <tr><td style="padding:4px 0;color:#6B7280;width:36%;">会社名</td><td style="padding:4px 0;color:#111827;font-weight:700;">Rimee Inc.（リミー）</td></tr>
+            <tr><td style="padding:4px 0;color:#6B7280;">代表者</td><td style="padding:4px 0;color:#111827;font-weight:700;">Miho Shinohe（四戸美穂 / シノヘ ミホ）</td></tr>
+            <tr><td style="padding:4px 0;color:#6B7280;">Email</td><td style="padding:4px 0;color:#111827;font-weight:700;">miho.shinohe@remenow.com</td></tr>
+            <tr><td style="padding:4px 0;color:#6B7280;">Web</td><td style="padding:4px 0;color:#111827;font-weight:700;"><a href="https://remenow.tokyo" target="_blank" style="color:var(--primary);">remenow.tokyo ↗</a></td></tr>
+            <tr><td style="padding:4px 0;color:#6B7280;">適格請求書発行事業者登録番号</td><td style="padding:4px 0;color:#111827;font-weight:700;font-family:monospace;">T5810769837394</td></tr>
+            <tr><td style="padding:4px 0;color:#6B7280;vertical-align:top;">振込先口座</td><td style="padding:4px 0;color:#111827;font-weight:700;">楽天銀行 ポルカ支店（口座番号は<a href="https://docs.google.com/document/d/1NXZOoynHhItaEOppdTciK0k6STzdMN7G4bpZ_lOqJ9w/edit" target="_blank" style="color:var(--primary);">請求書テンプレDocs ↗</a>に直接記載）</td></tr>
+          </table>
+          <div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;margin-top:12px;font-size:11px;color:#92400E;font-weight:700;">
+            ⚠️ 口座情報はセキュリティ上、公開URLには直接記載していません。請求書テンプレDocsを開いて確認してください（Googleアカウント認証必要）。
+          </div>
         </div>
       </div>
 
