@@ -1555,6 +1555,41 @@
         </div>
       </div>
 
+      <!-- 📚 反映先・保管場所リンク（常時表示） -->
+      <div style="background:#FAFAFA;border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:0.5px;">📌 反映先・保管場所（クリックで開く）</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
+          <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" style="display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--border);padding:10px 14px;border-radius:8px;text-decoration:none;color:var(--text);font-size:12px;">
+            📊 <div><div style="font-weight:700;">案件・請求台帳</div><div style="color:var(--text-sub);font-size:11px;">案件・請求・経費が記録される</div></div>
+          </a>
+          <a href="https://drive.google.com/drive/folders/search?q=%E3%83%AA%E3%83%9F%E3%83%BC+%E7%99%BA%E8%A1%8C%E6%9B%B8%E9%A1%9E" target="_blank" style="display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--border);padding:10px 14px;border-radius:8px;text-decoration:none;color:var(--text);font-size:12px;">
+            📂 <div><div style="font-weight:700;">発行書類フォルダ</div><div style="color:var(--text-sub);font-size:11px;">PDFが「会社名」別に保存</div></div>
+          </a>
+          <a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" style="display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--border);padding:10px 14px;border-radius:8px;text-decoration:none;color:var(--text);font-size:12px;">
+            📋 <div><div style="font-weight:700;">契約書管理フォルダ</div><div style="color:var(--text-sub);font-size:11px;">締結済PDFの保管・期限通知</div></div>
+          </a>
+          <a href="https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8" target="_blank" style="display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--border);padding:10px 14px;border-radius:8px;text-decoration:none;color:var(--text);font-size:12px;">
+            📑 <div><div style="font-weight:700;">契約書台帳</div><div style="color:var(--text-sub);font-size:11px;">取引先・終了日を一覧管理</div></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 👥 ケース別ガイド（新規／既存／金額変更） -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+        <div style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:10px;padding:14px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#3730A3;margin-bottom:6px;">🆕 新規顧客のとき</div>
+          <div style="font-size:11px;color:#4338CA;line-height:1.7;">① 下の「新規案件登録」で会社名・金額・契約日を入力<br>② 「② 契約書発行」で契約書PDF発行<br>③ 締結後に「③ 請求追加」</div>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:14px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#065F46;margin-bottom:6px;">🔁 既存顧客に追加請求</div>
+          <div style="font-size:11px;color:#047857;line-height:1.7;">① 「③ 請求追加」で「🔄 案件一覧を読み込む」を押す<br>② 既存の案件IDを選択<br>③ 今回の金額を入れて「請求追加」<br>※ 案件登録は不要！</div>
+        </div>
+        <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:10px;padding:14px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#92400E;margin-bottom:6px;">💱 同じ取引先で次回金額が変わる</div>
+          <div style="font-size:11px;color:#B45309;line-height:1.7;">「③ 請求追加」で<strong>新しい金額を入力するだけでOK</strong>。<br>請求のたびに金額は自由に変更可能（請求管理シートに別レコードで記録）。<br>契約書は再発行不要（補足必要なら覚書PDFを「② 契約書発行」で作成）</div>
+        </div>
+      </div>
+
       <!-- セットアップバナー -->
       <div class="op-setup-banner" id="setup-banner">
         <p style="font-size:13px;font-weight:800;color:#92400E;margin-bottom:8px;">⚙️ 初回セットアップ：GAS Web App URLの設定が必要です</p>
