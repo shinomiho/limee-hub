@@ -235,7 +235,8 @@
 
   <!-- タブ -->
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('links')">📚 リンク集</button>
+    <button class="tab-btn active" onclick="switchTab('welcome')">🏠 はじめての方</button>
+    <button class="tab-btn" onclick="switchTab('links')">📚 リンク集</button>
     <button class="tab-btn" onclick="switchTab('structure')">🗺️ 構造図</button>
     <button class="tab-btn" onclick="switchTab('customers')">🏢 お客様</button>
     <button class="tab-btn" onclick="switchTab('jv')">🤝 JV</button>
@@ -248,8 +249,209 @@
   </div>
 
   <!-- 構造図パネル -->
+  <!-- ===== 🏠 はじめての方タブ（オンボーディング） ===== -->
+  <div id="tab-welcome" class="tab-panel active">
+    <div class="container">
+
+      <!-- ヒーロー -->
+      <div style="background:linear-gradient(135deg,#4F46E5,#7C3AED);color:white;border-radius:16px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:10px;">👋</div>
+        <h1 style="font-size:24px;font-weight:900;margin:0 0 8px;letter-spacing:0.5px;">ようこそ、リミー コントロールセンターへ</h1>
+        <p style="font-size:14px;opacity:0.9;line-height:1.8;margin:0;max-width:540px;margin-left:auto;margin-right:auto;">
+          このページはリミー（代表：四戸美穂）の<strong>業務管理ハブ</strong>です。<br>
+          初めての方も、ここを開けば「今日やること」がすぐ分かります。
+        </p>
+      </div>
+
+      <!-- ① リミーって何？ -->
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:20px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">STEP 1 ／ 30秒で理解</div>
+        <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 14px;">🌱 リミーって何？</h2>
+        <p style="font-size:14px;color:#374151;line-height:1.9;margin:0 0 14px;">
+          リミー（Rimee）は、<strong>入社後90日に特化した採用後支援HRテック</strong>です。<br>
+          AI診断・人的資本KPI設計・ESG経営支援などを、企業の人事課題に合わせて提供しています。
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;font-size:12px;">
+          <div style="background:#EEF2FF;padding:12px;border-radius:8px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">🧠</div>
+            <div style="font-weight:700;color:#3730A3;">リミーAI診断</div>
+            <div style="color:#6B7280;font-size:11px;margin-top:2px;">入社90日・5軸スコア</div>
+          </div>
+          <div style="background:#F0FDF4;padding:12px;border-radius:8px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">📱</div>
+            <div style="font-weight:700;color:#065F46;">リミーPost</div>
+            <div style="color:#6B7280;font-size:11px;margin-top:2px;">SNS自動投稿ツール</div>
+          </div>
+          <div style="background:#FFFBEB;padding:12px;border-radius:8px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">💼</div>
+            <div style="font-weight:700;color:#92400E;">コンサル</div>
+            <div style="color:#6B7280;font-size:11px;margin-top:2px;">人的資本KPI・ESG</div>
+          </div>
+          <div style="background:#FCE7F3;padding:12px;border-radius:8px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">🌐</div>
+            <div style="font-weight:700;color:#9D174D;">公式サイト</div>
+            <div style="color:#6B7280;font-size:11px;margin-top:2px;">remenow.tokyo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ② 今やりたいことは？ -->
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:20px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">STEP 2 ／ クリックで該当タブへ</div>
+        <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 14px;">🎯 今、何をしたいですか？</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+
+          <a href="javascript:void(0)" onclick="switchTab('operations')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#4F46E5';this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
+            <div style="font-size:22px;margin-bottom:6px;">🆕</div>
+            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">新規顧客が決まった</div>
+            <div style="font-size:11px;color:#6B7280;line-height:1.6;">案件登録→契約書→請求書の流れを進める</div>
+            <div style="margin-top:8px;font-size:11px;color:#4F46E5;font-weight:700;">→ 💼 管理操作タブへ</div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="switchTab('operations')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#10B981';this.style.background='#F0FDF4';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
+            <div style="font-size:22px;margin-bottom:6px;">🧾</div>
+            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">既存顧客に請求を出したい</div>
+            <div style="font-size:11px;color:#6B7280;line-height:1.6;">既存案件IDを選んで金額入力→請求書PDFが完成</div>
+            <div style="margin-top:8px;font-size:11px;color:#10B981;font-weight:700;">→ 💼 管理操作タブへ</div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="switchTab('operations')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#F59E0B';this.style.background='#FFFBEB';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
+            <div style="font-size:22px;margin-bottom:6px;">💰</div>
+            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">入金確認・経費記録</div>
+            <div style="font-size:11px;color:#6B7280;line-height:1.6;">売上サマリーで入金チェック、経費は同タブの最下部</div>
+            <div style="margin-top:8px;font-size:11px;color:#F59E0B;font-weight:700;">→ 💼 管理操作タブへ</div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="switchTab('customers')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#10B981';this.style.background='#F0FDF4';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
+            <div style="font-size:22px;margin-bottom:6px;">🏢</div>
+            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">既存お客様のフォローをしたい</div>
+            <div style="font-size:11px;color:#6B7280;line-height:1.6;">月次オペレーション全体フローと自動化の確認</div>
+            <div style="margin-top:8px;font-size:11px;color:#10B981;font-weight:700;">→ 🏢 お客様タブへ</div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="switchTab('jv')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#7C3AED';this.style.background='#F5F3FF';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
+            <div style="font-size:22px;margin-bottom:6px;">🤝</div>
+            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">JV・紹介案件を扱いたい</div>
+            <div style="font-size:11px;color:#6B7280;line-height:1.6;">パートナー契約・収益分配・紹介料の管理</div>
+            <div style="margin-top:8px;font-size:11px;color:#7C3AED;font-weight:700;">→ 🤝 JVタブへ</div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="switchTab('links')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#0284C7';this.style.background='#F0F9FF';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
+            <div style="font-size:22px;margin-bottom:6px;">📚</div>
+            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">スプシ・フォルダを開きたい</div>
+            <div style="font-size:11px;color:#6B7280;line-height:1.6;">全URLが用途別に1箇所集約済み</div>
+            <div style="margin-top:8px;font-size:11px;color:#0284C7;font-weight:700;">→ 📚 リンク集タブへ</div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ③ 全体のしくみ -->
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:20px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">STEP 3 ／ 5分で全体把握</div>
+        <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 14px;">🔄 業務の流れ（顧客との取引）</h2>
+
+        <div style="display:flex;gap:8px;overflow-x:auto;padding:8px 0 12px;align-items:stretch;">
+          <div style="flex:1;min-width:140px;background:#EEF2FF;border-left:4px solid #4F46E5;border-radius:8px;padding:14px 12px;text-align:center;">
+            <div style="font-size:10px;font-weight:800;color:#4F46E5;letter-spacing:1px;margin-bottom:4px;">① 案件決定</div>
+            <div style="font-size:22px;margin:4px 0;">🤝</div>
+            <div style="font-size:11px;color:#374151;line-height:1.5;">お客様と契約に合意</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:16px;">→</div>
+          <div style="flex:1;min-width:140px;background:#EEF2FF;border-left:4px solid #4F46E5;border-radius:8px;padding:14px 12px;text-align:center;">
+            <div style="font-size:10px;font-weight:800;color:#4F46E5;letter-spacing:1px;margin-bottom:4px;">② 案件登録</div>
+            <div style="font-size:22px;margin:4px 0;">📋</div>
+            <div style="font-size:11px;color:#374151;line-height:1.5;">管理操作タブで会社・金額を登録</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:16px;">→</div>
+          <div style="flex:1;min-width:140px;background:#F0FDF4;border-left:4px solid #10B981;border-radius:8px;padding:14px 12px;text-align:center;">
+            <div style="font-size:10px;font-weight:800;color:#10B981;letter-spacing:1px;margin-bottom:4px;">③ 契約書発行</div>
+            <div style="font-size:22px;margin:4px 0;">📄</div>
+            <div style="font-size:11px;color:#374151;line-height:1.5;">PDFを発行→GMOサインで締結</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:16px;">→</div>
+          <div style="flex:1;min-width:140px;background:#FFFBEB;border-left:4px solid #F59E0B;border-radius:8px;padding:14px 12px;text-align:center;">
+            <div style="font-size:10px;font-weight:800;color:#F59E0B;letter-spacing:1px;margin-bottom:4px;">④ 請求書発行</div>
+            <div style="font-size:22px;margin:4px 0;">🧾</div>
+            <div style="font-size:11px;color:#374151;line-height:1.5;">月末締めで自動／手動どちらもOK</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:16px;">→</div>
+          <div style="flex:1;min-width:140px;background:#FCE7F3;border-left:4px solid #DB2777;border-radius:8px;padding:14px 12px;text-align:center;">
+            <div style="font-size:10px;font-weight:800;color:#DB2777;letter-spacing:1px;margin-bottom:4px;">⑤ 入金確認</div>
+            <div style="font-size:22px;margin:4px 0;">💰</div>
+            <div style="font-size:11px;color:#374151;line-height:1.5;">入金されたらステータス更新</div>
+          </div>
+        </div>
+
+        <div style="background:#F9FAFB;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:12px;color:#6B7280;line-height:1.7;">
+          💡 <strong>ほとんどの作業は「💼 管理操作」タブで完結</strong>します。お客様情報の確認や月次フローは「🏢 お客様」タブを見てください。
+        </div>
+      </div>
+
+      <!-- ④ 各タブの役割 -->
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:20px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">STEP 4 ／ 索引</div>
+        <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 14px;">📑 各タブの役割（タップで移動）</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px;font-size:12px;">
+          <a href="javascript:void(0)" onclick="switchTab('links')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">📚</span><div><strong>リンク集</strong>：全URL（スプシ・Drive・GAS・公開サイト）の一覧</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('structure')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">🗺️</span><div><strong>構造図</strong>：リミー全体システムの繋がりを図示</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('customers')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">🏢</span><div><strong>お客様</strong>：月次オペレーション全体フロー・自動化の状況</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('jv')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">🤝</span><div><strong>JV</strong>：JVパートナー一覧・連絡先・分配率</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('jvops')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">⚙️</span><div><strong>JV運用設計</strong>：JVの仕組み詳細（収益分配ロジック等）</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('operations')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">💼</span><div><strong>管理操作</strong>：日常業務の操作画面（案件・請求・PDF・経費）</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('brain')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">🧠</span><div><strong>マイブレイン</strong>：Mihoのタスク管理・メモ</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('handover')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">📖</span><div><strong>引き継ぎガイド</strong>：新担当者がスムーズに引き継ぐ用の詳細マニュアル</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('webpro')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">🌐</span><div><strong>Web制作</strong>：クライアントサイト自動構築システムの管理</div>
+          </a>
+          <a href="javascript:void(0)" onclick="switchTab('remepost')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;">📱</span><div><strong>リミーPost</strong>：SNS自動投稿サービスの管理画面</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ⑤ 困ったら -->
+      <div style="background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border-radius:14px;padding:22px 28px;border:1px solid #FCD34D;">
+        <h2 style="font-size:16px;font-weight:800;color:#92400E;margin:0 0 12px;">🆘 困ったら</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;font-size:12px;">
+          <div style="background:white;border-radius:8px;padding:12px 14px;">
+            <div style="font-weight:800;color:#92400E;margin-bottom:4px;">📧 メール</div>
+            <div style="color:#374151;"><a href="mailto:miho.shinohe@remenow.com" style="color:#4F46E5;text-decoration:none;">miho.shinohe@remenow.com</a></div>
+          </div>
+          <div style="background:white;border-radius:8px;padding:12px 14px;">
+            <div style="font-weight:800;color:#92400E;margin-bottom:4px;">📖 引き継ぎガイド</div>
+            <div style="color:#374151;">「📖 引き継ぎガイド」タブに詳細手順あり</div>
+          </div>
+          <div style="background:white;border-radius:8px;padding:12px 14px;">
+            <div style="font-weight:800;color:#92400E;margin-bottom:4px;">📚 リンク集</div>
+            <div style="color:#374151;">URLが見つからない時はリンク集タブを先に確認</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ===== 📚 リンク集タブ（全URL一元管理） ===== -->
-  <div id="tab-links" class="tab-panel active">
+  <div id="tab-links" class="tab-panel">
     <div class="container">
 
       <div style="background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border-radius:12px;padding:18px 22px;margin-bottom:24px;border-left:4px solid #4F46E5;">
