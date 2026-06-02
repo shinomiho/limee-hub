@@ -294,54 +294,152 @@
         </div>
       </div>
 
-      <!-- ② 今やりたいことは？ -->
+      <!-- ② 今やりたいことは？（やりたいこと×必要リンク） -->
+      <style>
+        .quick-card { display:block; background:#F9FAFB; border:1.5px solid #E5E7EB; border-radius:12px; padding:18px 18px 16px; text-decoration:none; color:#1F2937; transition:all .15s; }
+        .quick-card-emoji { font-size:24px; margin-bottom:8px; }
+        .quick-card-title { font-weight:900; font-size:15px; margin-bottom:6px; }
+        .quick-card-desc { font-size:12px; color:#6B7280; line-height:1.6; margin-bottom:12px; }
+        .quick-card-steps { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; padding-left:16px; border-left:2px solid #E5E7EB; }
+        .quick-card-step { font-size:12px; color:#374151; line-height:1.6; }
+        .quick-card-step strong { color:#1F2937; font-weight:800; }
+        .quick-card-links { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+        .link-chip { display:inline-flex; align-items:center; gap:4px; padding:5px 11px; border-radius:6px; font-size:11px; font-weight:700; text-decoration:none; border:1px solid; line-height:1.4; }
+        .link-chip-indigo { background:#EEF2FF; color:#4F46E5; border-color:#C7D2FE; }
+        .link-chip-green { background:#F0FDF4; color:#059669; border-color:#A7F3D0; }
+        .link-chip-amber { background:#FFFBEB; color:#B45309; border-color:#FDE68A; }
+        .link-chip-purple { background:#F5F3FF; color:#6D28D9; border-color:#DDD6FE; }
+        .link-chip-rose { background:#FFF1F2; color:#BE123C; border-color:#FECDD3; }
+        .link-chip-sky { background:#F0F9FF; color:#0369A1; border-color:#BAE6FD; }
+        .link-chip:hover { transform:translateY(-1px); }
+        .quick-card-tab { font-size:11px; font-weight:700; }
+      </style>
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:20px;">
-        <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">STEP 2 ／ クリックで該当タブへ</div>
-        <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 14px;">🎯 今、何をしたいですか？</h2>
+        <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">STEP 2 ／ 今やりたいこと別の手順とリンク</div>
+        <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 6px;">🎯 何をしたいですか？</h2>
+        <p style="font-size:12px;color:#6B7280;margin:0 0 14px;">各カードの中に「手順」と「使うリンク」が入ってます。クリップ風のリンクを押せば直接スプシやテンプレを開けます。</p>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;">
 
-          <a href="javascript:void(0)" onclick="switchTab('operations')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#4F46E5';this.style.background='#EEF2FF';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
-            <div style="font-size:22px;margin-bottom:6px;">🆕</div>
-            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">新規顧客が決まった</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">案件登録→契約書→請求書の流れを進める</div>
-            <div style="margin-top:8px;font-size:11px;color:#4F46E5;font-weight:700;">→ 💼 案件・請求業務タブへ</div>
-          </a>
+          <!-- 🆕 新規顧客が決まった -->
+          <div class="quick-card" style="border-color:#C7D2FE;background:#FAFBFF;">
+            <div class="quick-card-emoji">🆕</div>
+            <div class="quick-card-title">新規顧客が決まった</div>
+            <div class="quick-card-desc">案件登録→契約書→請求書の3ステップ</div>
+            <div class="quick-card-steps">
+              <div class="quick-card-step">① <strong>案件台帳に登録</strong>（会社名・金額）</div>
+              <div class="quick-card-step">② <strong>契約書PDFを発行</strong>→GMOサインで締結</div>
+              <div class="quick-card-step">③ <strong>請求書PDFを発行</strong>（月末締めで自動）</div>
+            </div>
+            <div class="quick-card-links">
+              <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="link-chip link-chip-indigo">📋 案件台帳</a>
+              <a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" class="link-chip link-chip-indigo">📂 契約書フォルダ</a>
+              <a href="https://www.gmo-sign.com/" target="_blank" class="link-chip link-chip-indigo">🖋 GMOサイン</a>
+            </div>
+            <a href="javascript:void(0)" onclick="switchTab('operations')" class="quick-card-tab" style="color:#4F46E5;text-decoration:underline;">→ 💼 案件・請求業務タブで詳しい操作を見る</a>
+          </div>
 
-          <a href="javascript:void(0)" onclick="switchTab('operations')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#10B981';this.style.background='#F0FDF4';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
-            <div style="font-size:22px;margin-bottom:6px;">🧾</div>
-            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">既存顧客に請求を出したい</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">既存案件IDを選んで金額入力→請求書PDFが完成</div>
-            <div style="margin-top:8px;font-size:11px;color:#10B981;font-weight:700;">→ 💼 案件・請求業務タブへ</div>
-          </a>
+          <!-- 🧾 既存顧客に請求 -->
+          <div class="quick-card" style="border-color:#A7F3D0;background:#F9FEFB;">
+            <div class="quick-card-emoji">🧾</div>
+            <div class="quick-card-title">既存顧客に請求を出したい</div>
+            <div class="quick-card-desc">案件IDを選んで金額入力→PDF完成</div>
+            <div class="quick-card-steps">
+              <div class="quick-card-step">① <strong>案件台帳で案件IDを確認</strong></div>
+              <div class="quick-card-step">② <strong>請求台帳に金額を入力</strong></div>
+              <div class="quick-card-step">③ 自動で <strong>請求書PDF</strong> がDriveに作成される</div>
+            </div>
+            <div class="quick-card-links">
+              <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="link-chip link-chip-green">📋 案件・請求台帳</a>
+              <a href="https://drive.google.com/drive/u/0/" target="_blank" class="link-chip link-chip-green">📂 発行書類Drive</a>
+            </div>
+            <a href="javascript:void(0)" onclick="switchTab('operations')" class="quick-card-tab" style="color:#059669;text-decoration:underline;">→ 💼 案件・請求業務タブへ</a>
+          </div>
 
-          <a href="javascript:void(0)" onclick="switchTab('operations')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#F59E0B';this.style.background='#FFFBEB';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
-            <div style="font-size:22px;margin-bottom:6px;">💰</div>
-            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">入金確認・経費記録</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">売上サマリーで入金チェック、経費は同タブの最下部</div>
-            <div style="margin-top:8px;font-size:11px;color:#F59E0B;font-weight:700;">→ 💼 案件・請求業務タブへ</div>
-          </a>
+          <!-- 💰 入金確認・経費記録 -->
+          <div class="quick-card" style="border-color:#FDE68A;background:#FFFEF7;">
+            <div class="quick-card-emoji">💰</div>
+            <div class="quick-card-title">入金確認・経費記録</div>
+            <div class="quick-card-desc">売上サマリーで入金チェック、経費を入力</div>
+            <div class="quick-card-steps">
+              <div class="quick-card-step">① <strong>売上サマリー</strong>で振込確認</div>
+              <div class="quick-card-step">② 入金済みは <strong>請求台帳でステータス更新</strong></div>
+              <div class="quick-card-step">③ <strong>経費台帳</strong>に領収書情報を入力</div>
+            </div>
+            <div class="quick-card-links">
+              <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="link-chip link-chip-amber">📋 案件・請求台帳</a>
+              <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit#gid=0" target="_blank" class="link-chip link-chip-amber">💸 経費シート</a>
+            </div>
+            <a href="javascript:void(0)" onclick="switchTab('operations')" class="quick-card-tab" style="color:#B45309;text-decoration:underline;">→ 💼 案件・請求業務タブへ</a>
+          </div>
 
-          <a href="javascript:void(0)" onclick="switchTab('customers')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#10B981';this.style.background='#F0FDF4';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
-            <div style="font-size:22px;margin-bottom:6px;">🏢</div>
-            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">既存お客様のフォローをしたい</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">月次オペレーション全体フローと自動化の確認</div>
-            <div style="margin-top:8px;font-size:11px;color:#10B981;font-weight:700;">→ 🏢 お客様タブへ</div>
-          </a>
+          <!-- 🏢 既存お客様フォロー -->
+          <div class="quick-card" style="border-color:#A7F3D0;background:#F9FEFB;">
+            <div class="quick-card-emoji">🏢</div>
+            <div class="quick-card-title">既存お客様のフォロー</div>
+            <div class="quick-card-desc">月次オペレーション・診断データの確認</div>
+            <div class="quick-card-steps">
+              <div class="quick-card-step">① <strong>AI診断 admin</strong>で診断データを確認</div>
+              <div class="quick-card-step">② <strong>KPIダッシュボード</strong>で集計を見る</div>
+              <div class="quick-card-step">③ 月次レポートは <strong>毎月1日・15日に自動配信</strong></div>
+            </div>
+            <div class="quick-card-links">
+              <a href="https://shinomiho.github.io/onboarding-diagnosis/admin.html" target="_blank" class="link-chip link-chip-green">🧠 診断 admin</a>
+              <a href="https://shinomiho.github.io/onboarding-diagnosis/kpi.html" target="_blank" class="link-chip link-chip-green">📊 KPI</a>
+            </div>
+            <a href="javascript:void(0)" onclick="switchTab('customers')" class="quick-card-tab" style="color:#059669;text-decoration:underline;">→ 🏢 お客様タブへ</a>
+          </div>
 
-          <a href="javascript:void(0)" onclick="switchTab('jv')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#7C3AED';this.style.background='#F5F3FF';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
-            <div style="font-size:22px;margin-bottom:6px;">🤝</div>
-            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">JV・紹介案件を扱いたい</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">パートナー契約・収益分配・紹介料の管理</div>
-            <div style="margin-top:8px;font-size:11px;color:#7C3AED;font-weight:700;">→ 🤝 JVタブへ</div>
-          </a>
+          <!-- 🤝 JV・紹介案件 -->
+          <div class="quick-card" style="border-color:#DDD6FE;background:#FAFAFF;">
+            <div class="quick-card-emoji">🤝</div>
+            <div class="quick-card-title">JV・紹介案件を扱いたい</div>
+            <div class="quick-card-desc">パートナー契約・収益分配・紹介料</div>
+            <div class="quick-card-steps">
+              <div class="quick-card-step">① <strong>JVロイヤリティシート</strong>で報酬計算</div>
+              <div class="quick-card-step">② <strong>JV契約書テンプレ</strong>から作成</div>
+              <div class="quick-card-step">③ 紹介料の支払いは支出側請求書で</div>
+            </div>
+            <div class="quick-card-links">
+              <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="link-chip link-chip-purple">💰 JVシート</a>
+              <a href="javascript:void(0)" onclick="switchTab('jv')" class="link-chip link-chip-purple">📝 JV契約書</a>
+            </div>
+            <a href="javascript:void(0)" onclick="switchTab('jv')" class="quick-card-tab" style="color:#6D28D9;text-decoration:underline;">→ 🤝 JV・パートナータブへ</a>
+          </div>
 
-          <a href="javascript:void(0)" onclick="switchTab('links')" style="display:block;background:#F9FAFB;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 18px;text-decoration:none;color:#1F2937;transition:all .15s;" onmouseover="this.style.borderColor='#0284C7';this.style.background='#F0F9FF';" onmouseout="this.style.borderColor='#E5E7EB';this.style.background='#F9FAFB';">
-            <div style="font-size:22px;margin-bottom:6px;">📚</div>
-            <div style="font-weight:800;font-size:14px;margin-bottom:4px;">スプシ・フォルダを開きたい</div>
-            <div style="font-size:11px;color:#6B7280;line-height:1.6;">全URLが用途別に1箇所集約済み</div>
-            <div style="margin-top:8px;font-size:11px;color:#0284C7;font-weight:700;">→ 📚 リンク集タブへ</div>
-          </a>
+          <!-- 📱 リミーPostのクライアント -->
+          <div class="quick-card" style="border-color:#FECDD3;background:#FFF8F9;">
+            <div class="quick-card-emoji">📱</div>
+            <div class="quick-card-title">リミーPostの新規クライアント</div>
+            <div class="quick-card-desc">セットアップ手順をクライアントに送る</div>
+            <div class="quick-card-steps">
+              <div class="quick-card-step">① <strong>セットアップガイドURL</strong>をクライアントに送る</div>
+              <div class="quick-card-step">② クライアントがMake.com登録→IG連携（12分）</div>
+              <div class="quick-card-step">③ <strong>Webhook URL</strong>をLINEで受け取って設定</div>
+            </div>
+            <div class="quick-card-links">
+              <a href="https://shinomiho.github.io/reme-post/setup-guide.html" target="_blank" class="link-chip link-chip-rose">🛠️ セットアップガイド</a>
+              <a href="https://shinomiho.github.io/reme-post/sales.html" target="_blank" class="link-chip link-chip-rose">💼 営業LP</a>
+              <a href="https://line.me/R/ti/p/@615xhhhf" target="_blank" class="link-chip link-chip-rose">📱 公式LINE</a>
+            </div>
+            <a href="javascript:void(0)" onclick="switchTab('remepost')" class="quick-card-tab" style="color:#BE123C;text-decoration:underline;">→ 📱 リミーPostタブへ</a>
+          </div>
+
+          <!-- 📚 とにかくリンクを開きたい -->
+          <div class="quick-card" style="border-color:#BAE6FD;background:#F8FBFF;">
+            <div class="quick-card-emoji">📚</div>
+            <div class="quick-card-title">スプシ・Drive・GASを開きたい</div>
+            <div class="quick-card-desc">全URLが用途別に1箇所集約</div>
+            <div class="quick-card-steps">
+              <div class="quick-card-step">下にスクロールで <strong>「種別リンク」</strong> セクションあり</div>
+              <div class="quick-card-step">もっと詳しいときは <strong>📚 リンク集タブ</strong></div>
+            </div>
+            <div class="quick-card-links">
+              <a href="#section-bulk-links" class="link-chip link-chip-sky">⬇️ このページ下の種別リンク</a>
+              <a href="javascript:void(0)" onclick="switchTab('links')" class="link-chip link-chip-sky">📚 リンク集タブ</a>
+            </div>
+            <a href="javascript:void(0)" onclick="switchTab('links')" class="quick-card-tab" style="color:#0369A1;text-decoration:underline;">→ 📚 リンク集タブへ</a>
+          </div>
 
         </div>
       </div>
@@ -424,6 +522,87 @@
           <a href="javascript:void(0)" onclick="switchTab('remepost')" style="text-decoration:none;color:#1F2937;display:flex;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid #E5E7EB;background:white;align-items:flex-start;">
             <span style="font-size:18px;flex-shrink:0;">📱</span><div><strong>リミーPost</strong>：SNS自動投稿サービスの管理画面</div>
           </a>
+        </div>
+      </div>
+
+      <!-- ★ 種別リンク（ジャンルごとの一覧） -->
+      <div id="section-bulk-links" style="background:white;border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:20px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#9CA3AF;font-weight:700;margin-bottom:6px;">よく使うリンク</div>
+        <h2 style="font-size:18px;font-weight:800;color:#1F2937;margin:0 0 6px;">🗂️ 種別ごとのURL一覧</h2>
+        <p style="font-size:12px;color:#6B7280;margin:0 0 18px;">スプシ・Drive・GAS・公開サイト・外部サービスを種類別にまとめました。タップで新タブで開きます。</p>
+
+        <!-- 📊 スプレッドシート -->
+        <div style="margin-bottom:18px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:900;color:#065F46;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid #A7F3D0;">
+            <span>📊</span><span>スプレッドシート（数字・台帳・データ）</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <a href="https://docs.google.com/spreadsheets/d/13eED5merdHI3fS6EQEZRn6GQ0KZfC-mlqe22NpCoX6A/edit" target="_blank" class="link-chip link-chip-green">案件・請求台帳（limee-bizops）</a>
+            <a href="https://docs.google.com/spreadsheets/d/1z8t4o2EemRvrB7GZGC44TXD9o8FyKq5pmXK4hhWbRM8" target="_blank" class="link-chip link-chip-green">契約書台帳</a>
+            <a href="https://docs.google.com/spreadsheets/d/13CWd0stdBrfNoCuikfP2bVuvJWcJ0Xj_UzyExCOm34c/edit" target="_blank" class="link-chip link-chip-green">AI診断データ（responses）</a>
+            <a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" class="link-chip link-chip-green">リミーPostマスターテンプレ</a>
+            <a href="https://docs.google.com/spreadsheets/d/1b06wFoZvyUr4kaXJURAN7Qe5r6iTRQRYPuOnlQuJz8U/edit" target="_blank" class="link-chip link-chip-green">メール登録</a>
+          </div>
+        </div>
+
+        <!-- 📁 Driveフォルダ -->
+        <div style="margin-bottom:18px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:900;color:#92400E;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid #FDE68A;">
+            <span>📁</span><span>Googleドライブ（書類・テンプレ）</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <a href="https://drive.google.com/drive/folders/15ywBcUuJW7PfSa8cpm7w-tIoP6jfVrSP" target="_blank" class="link-chip link-chip-amber">📋 契約書管理</a>
+            <a href="https://drive.google.com/drive/folders/1y-ETnWPUxffBeeDX9FotXufQ4FztElhA" target="_blank" class="link-chip link-chip-amber">✅ 締結済</a>
+            <a href="https://drive.google.com/drive/u/0/" target="_blank" class="link-chip link-chip-amber">📂 書類テンプレート（リミー）</a>
+            <a href="https://drive.google.com/drive/u/0/" target="_blank" class="link-chip link-chip-amber">📂 Drive トップ</a>
+          </div>
+        </div>
+
+        <!-- ⚙️ GAS -->
+        <div style="margin-bottom:18px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:900;color:#4338CA;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid #C7D2FE;">
+            <span>⚙️</span><span>GAS（自動化スクリプト）</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <a href="https://script.google.com/home" target="_blank" class="link-chip link-chip-indigo">⚙️ GAS全プロジェクト</a>
+            <a href="https://script.google.com/home/projects/1-eWdPRO5hqQ4X9K4a_1-3r-9WF4b7sNdIZX0gSC2-pBMHclQnubF7SoC/edit" target="_blank" class="link-chip link-chip-indigo">🧠 リミーAI診断</a>
+            <a href="https://script.google.com/home/projects/1jG7K-i2s6oOoJDex7yeT2R6p8fqEvzREg1rlKJuTggLHM3wAHb4GWvhE/edit" target="_blank" class="link-chip link-chip-indigo">📱 リミーPost</a>
+            <a href="https://script.google.com/home/projects/1kWqpYwUyRRNdjGO9-cHrloLhgwCuNR-5-ph2hyHCKc4T4iv1eAbgoZV6/edit" target="_blank" class="link-chip link-chip-indigo">📢 SNS自動投稿（リミー本体）</a>
+          </div>
+        </div>
+
+        <!-- 🌐 公開サイト -->
+        <div style="margin-bottom:18px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:900;color:#6D28D9;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid #DDD6FE;">
+            <span>🌐</span><span>公開サイト・LP・ダッシュボード</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <a href="https://remenow.tokyo/" target="_blank" class="link-chip link-chip-purple">🌐 remenow.tokyo</a>
+            <a href="https://shinomiho.github.io/onboarding-diagnosis/admin.html" target="_blank" class="link-chip link-chip-purple">🧠 AI診断 admin</a>
+            <a href="https://shinomiho.github.io/onboarding-diagnosis/kpi.html" target="_blank" class="link-chip link-chip-purple">📊 KPIダッシュボード</a>
+            <a href="https://shinomiho.github.io/reme-post/sales.html" target="_blank" class="link-chip link-chip-purple">📱 リミーPost 営業LP</a>
+            <a href="https://shinomiho.github.io/reme-post/setup-guide.html" target="_blank" class="link-chip link-chip-purple">🛠️ リミーPost セットアップガイド</a>
+            <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="link-chip link-chip-purple">🎯 採用リスク診断</a>
+          </div>
+        </div>
+
+        <!-- 🔑 外部アカウント -->
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:900;color:#BE123C;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid #FECDD3;">
+            <span>🔑</span><span>外部サービス（ログイン先）</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <a href="https://dashboard.stripe.com/" target="_blank" class="link-chip link-chip-rose">💳 Stripe</a>
+            <a href="https://www.gmo-sign.com/" target="_blank" class="link-chip link-chip-rose">🖋 GMOサイン</a>
+            <a href="https://www.make.com/" target="_blank" class="link-chip link-chip-rose">🔧 Make.com</a>
+            <a href="https://console.anthropic.com/" target="_blank" class="link-chip link-chip-rose">🤖 Anthropic Console</a>
+            <a href="https://line.me/R/ti/p/@615xhhhf" target="_blank" class="link-chip link-chip-rose">📱 リミーPost 公式LINE</a>
+            <a href="https://github.com/shinomiho" target="_blank" class="link-chip link-chip-rose">💻 GitHub（shinomiho）</a>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;font-size:12px;color:#6B7280;background:#F9FAFB;border-radius:8px;padding:10px 14px;line-height:1.7;">
+          💡 もっと細かい用途別の一覧は <a href="javascript:void(0)" onclick="switchTab('links')" style="color:#4F46E5;font-weight:700;">📚 リンク集タブ</a> に整理してあります。
         </div>
       </div>
 
