@@ -238,6 +238,7 @@
     <button class="tab-btn active" onclick="switchTab('welcome')">🏠 ホーム</button>
     <button class="tab-btn" onclick="switchTab('customers')">🏢 お客様・JV</button>
     <button class="tab-btn" onclick="switchTab('operations')">💼 案件・請求業務</button>
+    <button class="tab-btn" onclick="switchTab('onboarding')">🧠 リミーAI診断</button>
     <button class="tab-btn" onclick="switchTab('webpro')">🎨 リミーStudio</button>
     <button class="tab-btn" onclick="switchTab('remepost')">📱 リミーPost</button>
     <button class="tab-btn" onclick="switchTab('links')">📚 リンク集</button>
@@ -3213,6 +3214,250 @@
   </div>
 
   <!-- ===== Web制作タブ ===== -->
+  <!-- リミーAI診断パネル -->
+  <div id="tab-onboarding" class="tab-panel">
+    <div class="container">
+
+      <!-- ヘッダー -->
+      <div style="background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:14px;padding:20px 26px;color:white;margin-bottom:20px;">
+        <div style="font-size:11px;letter-spacing:2px;opacity:0.7;font-weight:700;margin-bottom:4px;">🧠 RIMEE AI DIAGNOSIS</div>
+        <div style="font-size:18px;font-weight:900;margin-bottom:6px;">入社90日サポート診断システム（本業・最重要）</div>
+        <div style="font-size:13px;opacity:0.85;line-height:1.7;">25問診断・6因子＋アウトカム・AIレポート自動生成・月次配信・人的資本KPI蓄積。Mihoさん稼働は企業紹介と契約のみ。</div>
+      </div>
+
+      <!-- ★ まず読んで！全体の流れ -->
+      <div style="background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1.5px solid #A5B4FC;border-radius:14px;padding:22px 26px;margin-bottom:24px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#4338CA;font-weight:900;margin-bottom:8px;">📌 初めての方はまずこれ</div>
+        <div style="font-size:15px;font-weight:900;color:#1F2937;margin-bottom:12px;">企業を1社受け入れる5ステップ</div>
+        <div style="display:flex;align-items:stretch;gap:0;overflow-x:auto;padding-bottom:4px;">
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #A5B4FC;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#4338CA;letter-spacing:1px;margin-bottom:4px;">① 紹介</div>
+            <div style="font-size:18px;margin:4px 0;">🤝</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">企業にサービス紹介<br>→ 登録URLを送る</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:14px;padding:0 4px;">→</div>
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #6EE7B7;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#059669;letter-spacing:1px;margin-bottom:4px;">② 企業登録</div>
+            <div style="font-size:18px;margin:4px 0;">🏢</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">企業が自己登録<br>→ URL自動発行</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:14px;padding:0 4px;">→</div>
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #FBA5C5;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#DB2777;letter-spacing:1px;margin-bottom:4px;">③ 従業員追加</div>
+            <div style="font-size:18px;margin:4px 0;">👥</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">企業が管理画面で<br>従業員登録</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:14px;padding:0 4px;">→</div>
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #93C5FD;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#2563EB;letter-spacing:1px;margin-bottom:4px;">④ 診断回答</div>
+            <div style="font-size:18px;margin:4px 0;">📝</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">25問回答<br>→ AIレポート送信</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:14px;padding:0 4px;">→</div>
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #FCD34D;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#B45309;letter-spacing:1px;margin-bottom:4px;">⑤ 自動運用</div>
+            <div style="font-size:18px;margin:4px 0;">✨</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">月次レポート＋KPI<br>蓄積を全自動</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;font-size:12px;color:#6B7280;line-height:1.7;">
+          💡 Mihoさんが触るのは「企業紹介＋契約」だけ。あとは全部自動です。
+        </div>
+      </div>
+
+      <!-- ★ 必要なURL（統一カードテンプレート・縦並び） -->
+      <div class="url-block-wrap">
+
+        <!-- 🅐 クライアント向け（顧客企業＋従業員） -->
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#4F46E5;">🅐 CLIENT</span>
+            <div>
+              <div class="url-block-title">クライアント向けURL（顧客企業＆従業員）</div>
+              <div class="url-block-sub">企業へ送る・企業が触る・従業員が回答する</div>
+            </div>
+          </div>
+
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/register.html?token=REME2026" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#E0E7FF;color:#4338CA;">🏢</div>
+            <div class="url-row-body">
+              <div class="url-row-title">① 企業登録URL</div>
+              <div class="url-row-desc">企業に送る → 企業が自己登録 → URL自動発行＋ウェルカムメール</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/guide.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#F0FDF4;color:#059669;">📖</div>
+            <div class="url-row-body">
+              <div class="url-row-title">② 企業向け導入ガイド</div>
+              <div class="url-row-desc">STEP1〜3の流れ・FAQ・PDF保存可能</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/company-admin.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#FCE7F3;color:#DB2777;">👥</div>
+            <div class="url-row-body">
+              <div class="url-row-title">③ 企業従業員管理画面</div>
+              <div class="url-row-desc">?code=LIMEE_XXXXXX で企業ごとアクセス・従業員追加／招待</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/index.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#DBEAFE;color:#2563EB;">📝</div>
+            <div class="url-row-body">
+              <div class="url-row-title">④ 診断フォーム（従業員回答用）</div>
+              <div class="url-row-desc">?code=LIMEE_XXXXXX で企業を識別・25問・6因子＋アウトカム</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+        </div>
+
+        <!-- 🅑 運営者向け（しのみほ専用） -->
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#7C3AED;">🅑 ADMIN</span>
+            <div>
+              <div class="url-block-title">運営者向けURL（しのみほ専用）</div>
+              <div class="url-block-sub">全企業横断管理・KPI分析・GAS保守</div>
+            </div>
+          </div>
+
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/admin.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#EDE9FE;color:#7C3AED;">🔐</div>
+            <div class="url-row-body">
+              <div class="url-row-title">① 全体管理画面</div>
+              <div class="url-row-desc">会社登録・URL発行・回答閲覧・全社横断KPI（PW保護）</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/onboarding-diagnosis/kpi.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#DBEAFE;color:#2563EB;">📊</div>
+            <div class="url-row-body">
+              <div class="url-row-title">② KPIダッシュボード</div>
+              <div class="url-row-desc">3層KPI（インプット／プロセス／アウトカム）・会社別比較</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://script.google.com/home/projects/1-eWdPRO5hqQ4X9K4a_1-3r-9WF4b7sNdIZX0gSC2-pBMHclQnubF7SoC/edit" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#E5E7EB;color:#374151;">⚙️</div>
+            <div class="url-row-body">
+              <div class="url-row-title">③ GAS エディタ（apps-script.gs）</div>
+              <div class="url-row-desc">診断ロジック・月次レポート・リマインド・バックアップ</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://github.com/shinomiho/onboarding-diagnosis" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#F3F4F6;color:#111827;">💻</div>
+            <div class="url-row-body">
+              <div class="url-row-title">④ GitHub リポジトリ</div>
+              <div class="url-row-desc">全HTML・JS・GASコードの管理</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 🟡 次にやること -->
+      <div class="section">
+        <div class="section-title">🟡 次にやること</div>
+        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:12px;padding:20px 24px;">
+          <ol style="font-size:14px;color:#78350F;line-height:2;padding-left:24px;margin:0;">
+            <li><strong>チーム単位管理者登録</strong>：1社複数チーム・複数管理者の表示・集計を会社名でまとめる対応</li>
+            <li><strong>専門家の実名・URL設定</strong>：薬剤師・理学療法士のメタ情報をGAS getConfig で確定</li>
+            <li><strong>リミーちゃんキャラ導入</strong>：リミーPost側完成待ち（クライアントUI・ヘルプチャットで統一）</li>
+            <li><strong>ログイン履歴機能</strong>：将来フェーズ（Firebase/Supabase検討）</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ━━━━━━━━━━ 参考情報の境界線 ━━━━━━━━━━ -->
+      <div style="margin:40px 0 20px;display:flex;align-items:center;gap:14px;">
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#9CA3AF);"></div>
+        <div style="font-size:11px;font-weight:900;color:#6B7280;letter-spacing:.2em;">📊 参考情報</div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,#9CA3AF,transparent);"></div>
+      </div>
+
+      <!-- ✅ 動作確認済み -->
+      <div class="section">
+        <div class="section-title">✅ 完成済み機能</div>
+        <div style="background:#F0FDF4;border:1.5px solid #6EE7B7;border-radius:12px;padding:20px 24px;">
+          <ul style="font-size:13px;color:#065F46;line-height:2;padding-left:24px;margin:0;">
+            <li>✅ <strong>25問診断フォーム</strong>（6因子＋アウトカム1因子・5点スケール・2026-06-03に6因子刷新）</li>
+            <li>✅ <strong>AIレポート生成</strong>（Claude Sonnet 4.6・本人向け＋マネージャー向け）</li>
+            <li>✅ <strong>メール自動送信</strong>（本人・マネージャー・Miho・要介入アラート）</li>
+            <li>✅ <strong>企業自己登録</strong>（register.html・トークン認証・ウェルカムメール）</li>
+            <li>✅ <strong>従業員管理画面</strong>（company-admin.html・追加／削除／再送）</li>
+            <li>✅ <strong>導入ガイド</strong>（guide.html・PDF保存可）</li>
+            <li>✅ <strong>月次レポート自動配信</strong>（毎月1日・15日・コンサル介入バナー付き）</li>
+            <li>✅ <strong>アクションチェック</strong>（管理者向け・毎月5日／20日リマインド）</li>
+            <li>✅ <strong>3層KPIダッシュボード</strong>（インプット／プロセス／アウトカム・会社別比較・管理者別実施率推移）</li>
+            <li>✅ <strong>月次バックアップ</strong>（毎月1日 0〜1時・apps-script.gs実装済み）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 📐 3層KPI構造 -->
+      <div class="section">
+        <div class="section-title">📐 人的資本開示 3層KPI構造（2026-06-03再設計）</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+          <div style="background:white;border:1.5px solid #6EE7B7;border-radius:12px;padding:16px;">
+            <div style="font-size:11px;font-weight:900;color:#059669;letter-spacing:.1em;margin-bottom:6px;">🟢 インプット</div>
+            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:6px;">6因子スコア</div>
+            <div style="font-size:11px;color:#374151;line-height:1.7;">A:業務負荷／B:業務適応／C:関係性共有度／D:心理的安全性／E:自己調整感／<strong>F:行動の変化</strong>（独自）</div>
+          </div>
+          <div style="background:white;border:1.5px solid #93C5FD;border-radius:12px;padding:16px;">
+            <div style="font-size:11px;font-weight:900;color:#2563EB;letter-spacing:.1em;margin-bottom:6px;">🔵 プロセス</div>
+            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:6px;">アクション実施率</div>
+            <div style="font-size:11px;color:#374151;line-height:1.7;">マネージャーが実施したマネジメント行動の率。アクションチェックフォームから蓄積。</div>
+          </div>
+          <div style="background:white;border:1.5px solid #FCD34D;border-radius:12px;padding:16px;">
+            <div style="font-size:11px;font-weight:900;color:#B45309;letter-spacing:.1em;margin-bottom:6px;">🟡 アウトカム</div>
+            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:6px;">G:継続定着意思</div>
+            <div style="font-size:11px;color:#374151;line-height:1.7;">Q24〜Q28から自動算出＋要注意アラート発生率＋実離職率（手動）</div>
+          </div>
+        </div>
+        <div style="background:#FEF3C7;border:1px solid #FBBF24;border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:#92400E;line-height:1.7;">
+          <strong>⚠️ リスク判定の閾値：</strong>E(自己調整感)・F(行動の変化)・G(継続定着意思)のいずれかが <strong>2.5未満</strong> で要介入アラート
+        </div>
+      </div>
+
+      <!-- 🎯 Mihoさん運用 -->
+      <div class="section">
+        <div class="section-title">🎯 Mihoさんの運用フロー（完成形）</div>
+        <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;overflow:hidden;">
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
+            <div style="width:26px;height:26px;border-radius:50%;background:#4F46E5;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">1</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">企業へ <code>register.html?token=REME2026</code> を送る</div>
+              <div style="font-size:12px;color:#6B7280;line-height:1.7;">既存顧客へのアップセル or 新規アプローチ。あとは企業が自己登録するだけ。</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-bottom:1px solid #F3F4F6;">
+            <div style="width:26px;height:26px;border-radius:50%;background:#10B981;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">2</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">企業に従業員管理画面URLを渡す</div>
+              <div style="font-size:12px;color:#6B7280;line-height:1.7;"><code>company-admin.html?code=LIMEE_XXXXXX</code>を共有 → 企業が従業員追加＋招待。</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;">
+            <div style="width:26px;height:26px;border-radius:50%;background:#7C3AED;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">3</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:3px;">あとは全自動：いつでも管理画面で状況確認</div>
+              <div style="font-size:12px;color:#6B7280;line-height:1.7;">診断・レポート送信・月次配信・リマインド・KPI蓄積、全部自動。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <div id="tab-webpro" class="tab-panel">
     <div class="container">
 
@@ -3408,54 +3653,63 @@
         </div>
       </div>
 
-      <!-- ツール -->
-      <div class="section">
-        <div class="section-title">🔧 制作ツール</div>
-        <div class="grid">
-          <div class="card">
-            <div class="card-header"><div class="card-icon">📋</div><div><div class="card-title">クライアントヒアリングフォーム</div><div class="card-sub">クライアントに送るWebフォーム</div></div></div>
-            <ul class="feature-list">
-              <li><span class="icon">✅</span>業種選択（Step 0）あり → 適切なテンプレートへ</li>
-              <li><span class="icon">✅</span>送信後GASが自動でJSON生成・通知メール</li>
-              <li><span class="icon">✅</span>モバイル対応</li>
-            </ul>
-            <a href="https://shinomiho.github.io/web-production/intake.html" target="_blank" class="link-btn">フォームを開く ↗</a>
-            <button class="link-btn" style="border:none;cursor:pointer;" onclick="navigator.clipboard.writeText('https://shinomiho.github.io/web-production/intake.html').then(()=>alert('URLをコピーしました'))">URLをコピー</button>
+      <!-- ★ 必要なURL（統一カードテンプレート） -->
+      <div class="url-block-wrap">
+        <!-- 🅐 クライアント向け -->
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#EA580C;">🅐 CLIENT</span>
+            <div>
+              <div class="url-block-title">クライアント向けURL</div>
+              <div class="url-block-sub">受注時にクライアントへ送るもの</div>
+            </div>
           </div>
-          <div class="card">
-            <div class="card-header"><div class="card-icon">🛠️</div><div><div class="card-title">制作管理画面</div><div class="card-sub">回答確認・ステータス管理・JSON確認</div></div></div>
-            <ul class="feature-list">
-              <li><span class="icon">✅</span>クライアント一覧・ステータス追跡</li>
-              <li><span class="icon">✅</span>client_input.jsonダウンロード</li>
-              <li><span class="icon">✅</span>パスワード保護</li>
-            </ul>
-            <a href="https://shinomiho.github.io/web-production/admin.html" target="_blank" class="link-btn">管理画面を開く ↗</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="section">
-        <div class="section-title">🔗 関連URL</div>
-        <div class="url-card">
-          <a href="https://shinomiho.github.io/web-production/intake.html" target="_blank" class="url-item">
-            <span class="url-item-icon">📋</span>
-            <div><div class="url-item-title">クライアントヒアリングフォーム</div><div class="url-item-url">https://shinomiho.github.io/web-production/intake.html</div></div>
-            <span class="url-arrow">↗</span>
+          <a href="https://shinomiho.github.io/web-production/intake.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#FFEDD5;color:#9A3412;">📋</div>
+            <div class="url-row-body">
+              <div class="url-row-title">① ヒアリングフォーム</div>
+              <div class="url-row-desc">業種・会社情報・希望デザイン入力</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
           </a>
-          <a href="https://shinomiho.github.io/web-production/admin.html" target="_blank" class="url-item">
-            <span class="url-item-icon">🛠️</span>
-            <div><div class="url-item-title">制作管理画面（PW: WEBPRO2026）</div><div class="url-item-url">https://shinomiho.github.io/web-production/admin.html</div></div>
-            <span class="url-arrow">↗</span>
+        </div>
+
+        <!-- 🅑 運営者向け -->
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#7C3AED;">🅑 ADMIN</span>
+            <div>
+              <div class="url-block-title">運営者向けURL（しのみほ専用）</div>
+              <div class="url-block-sub">案件管理・サイト生成・公開</div>
+            </div>
+          </div>
+
+          <a href="https://shinomiho.github.io/web-production/admin.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#EDE9FE;color:#7C3AED;">🛠️</div>
+            <div class="url-row-body">
+              <div class="url-row-title">① 制作管理画面</div>
+              <div class="url-row-desc">回答確認・ステータス・JSONダウンロード（PW: WEBPRO2026）</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
           </a>
-          <a href="https://shinomiho.github.io/web-production/" target="_blank" class="url-item">
-            <span class="url-item-icon">🌐</span>
-            <div><div class="url-item-title">Web制作コントロールセンター（PW: REME2026）</div><div class="url-item-url">https://shinomiho.github.io/web-production/</div></div>
-            <span class="url-arrow">↗</span>
+
+          <a href="https://shinomiho.github.io/web-production/" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#DBEAFE;color:#2563EB;">🌐</div>
+            <div class="url-row-body">
+              <div class="url-row-title">② コントロールセンター</div>
+              <div class="url-row-desc">リミーStudio 全体管理（PW: REME2026）</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
           </a>
-          <a href="https://github.com/shinomiho/web-production" target="_blank" class="url-item">
-            <span class="url-item-icon">📁</span>
-            <div><div class="url-item-title">GitHubリポジトリ（テンプレート一式）</div><div class="url-item-url">https://github.com/shinomiho/web-production</div></div>
-            <span class="url-arrow">↗</span>
+
+          <a href="https://github.com/shinomiho/web-production" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#F3F4F6;color:#111827;">📁</div>
+            <div class="url-row-body">
+              <div class="url-row-title">③ GitHub リポジトリ</div>
+              <div class="url-row-desc">3業種テンプレート＋生成コードの管理</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
           </a>
         </div>
       </div>
@@ -3515,8 +3769,7 @@
 
       <!-- ★ 必要なURL（カテゴリ別・統一カード型） -->
       <style>
-        .url-block-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px;}
-        @media(max-width:880px){.url-block-wrap{grid-template-columns:1fr;}}
+        .url-block-wrap{display:flex;flex-direction:column;gap:18px;margin-bottom:24px;}
         .url-block{background:white;border:1.5px solid #E5E7EB;border-radius:14px;padding:18px 20px;}
         .url-block-head{display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-bottom:10px;border-bottom:1.5px solid #F3F4F6;}
         .url-block-badge{display:inline-block;padding:2px 10px;border-radius:6px;font-size:10px;font-weight:900;letter-spacing:.1em;color:white;}
