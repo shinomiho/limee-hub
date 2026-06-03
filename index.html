@@ -3549,31 +3549,43 @@
         </div>
       </div>
 
-      <!-- ✅ 動作確認済み＋残TODO（旧自走型フロー図から置換・2026-06-03） -->
+      <!-- 🟡 残TODO（次のアクション） -->
       <div class="section">
-        <div class="section-title">✅ 動作確認済み（Make経由モデル稼働中）</div>
-
-        <div style="background:#F0FDF4;border:1.5px solid #6EE7B7;border-radius:12px;padding:20px 24px;margin-bottom:16px;">
-          <div style="font-size:13px;font-weight:900;color:#065F46;margin-bottom:10px;">💚 本番稼働中の機能</div>
-          <ul style="font-size:13px;color:#065F46;line-height:2;padding-left:24px;margin:0;">
-            <li>✅ <strong>intake.html → clients スプシ自動登録</strong>（テスト4件成功）</li>
-            <li>✅ <strong>通知メール</strong>（しのみほ宛・優先度マーク・testPostForClient案内付き）</li>
-            <li>✅ <strong>dailyPost トリガー</strong>（毎朝7時・各 webhook_url にPOST）</li>
-            <li>✅ <strong>testPostForClient</strong>（個別テスト・dailyPost全員投稿事故を防止）</li>
-            <li>✅ <strong>Make経由 IG投稿</strong>（テスト成功・Pollinations以外の画像なら本番OK）</li>
-            <li>✅ <strong>お試し体験</strong>（LP上で無料1本生成・リード獲得）</li>
-            <li>✅ <strong>Stripe決済</strong>（STANDARD/PROFESSIONAL 動作確認済み）</li>
-          </ul>
-        </div>
-
+        <div class="section-title">🟡 次にやること（優先順）</div>
         <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:12px;padding:20px 24px;">
-          <div style="font-size:13px;font-weight:900;color:#92400E;margin-bottom:10px;">🟡 残TODO（優先順）</div>
-          <ol style="font-size:13px;color:#78350F;line-height:2;padding-left:24px;margin:0;">
-            <li><strong>初の本物クライアント受入</strong>（営業活動）</li>
-            <li><strong>Stripe Webhook</strong> → 自動で plan を clients に反映（現在は手動入力）</li>
+          <ol style="font-size:14px;color:#78350F;line-height:2;padding-left:24px;margin:0;">
+            <li><strong>初の本物クライアント受入</strong>（営業活動）— 全自動化済みなので営業だけ</li>
+            <li><strong>Stripe Webhook</strong> 設定（解約自動paused化）</li>
             <li><strong>Pollinations 画像</strong>の人物排除問題（Google Drive 経由案など）</li>
             <li><strong>月次レポート</strong>自動配信（任意）</li>
+            <li><strong>Threads対応</strong>（インスタで実績作ってから判断・保留中）</li>
           </ol>
+        </div>
+      </div>
+
+      <!-- ━━━━━━━━━━ 参考情報の境界線 ━━━━━━━━━━ -->
+      <div style="margin:40px 0 20px;display:flex;align-items:center;gap:14px;">
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#9CA3AF);"></div>
+        <div style="font-size:11px;font-weight:900;color:#6B7280;letter-spacing:.2em;">📊 参考情報</div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,#9CA3AF,transparent);"></div>
+      </div>
+
+      <!-- ✅ 動作確認済み（参考：現在のシステム状態） -->
+      <div class="section">
+        <div class="section-title">✅ 動作確認済み（Make経由モデル稼働中）</div>
+        <div style="background:#F0FDF4;border:1.5px solid #6EE7B7;border-radius:12px;padding:20px 24px;">
+          <ul style="font-size:13px;color:#065F46;line-height:2;padding-left:24px;margin:0;">
+            <li>✅ <strong>sales.html → Stripe決済</strong>（welcome.htmlリダイレクト設定済）</li>
+            <li>✅ <strong>welcome.html</strong>（決済後の3STEPウェルカム案内）</li>
+            <li>✅ <strong>intake.html → clients スプシ自動登録</strong>（らしさシート＋Webhook URL）</li>
+            <li>✅ <strong>通知メール</strong>（新規申込／自動onboarding／Stripe解約）</li>
+            <li>✅ <strong>dailyPost トリガー</strong>（毎朝7時・自動onboarding＋active全員投稿）</li>
+            <li>✅ <strong>自動 active 化</strong>（pending → テスト投稿成功 → active 自動遷移）</li>
+            <li>✅ <strong>Stripe 解約Webhook</strong> → 自動 paused 化（doPost実装済）</li>
+            <li>✅ <strong>webhook-update.html</strong>（needs_help向け Webhook URL 後送信フォーム）</li>
+            <li>✅ <strong>Make経由 IG投稿</strong>（テスト成功）</li>
+            <li>✅ <strong>お試し体験</strong>（LP上で無料1本生成・リード獲得）</li>
+          </ul>
         </div>
       </div>
 
@@ -3622,71 +3634,7 @@
         </div>
       </div>
 
-      <!-- クライアントが触るページ・ツール（新モデル） -->
-      <div class="section">
-        <div class="section-title">👤 クライアントが触るもの（3つ）</div>
-        <div class="url-card">
-          <div class="url-item" style="cursor:default;align-items:flex-start;">
-            <span class="url-item-icon">💼</span>
-            <div style="flex:1;">
-              <div class="url-item-title">sales.html — 営業LP（最新刷新版）</div>
-              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">価値訴求（時給換算機会損失）・差別化（vs Buffer/サロン）・3プラン・コミュニティ・FAQ・お問い合わせ。<strong>Stripe本番決済稼働中</strong>（STANDARD/PROFESSIONAL）・規約同意フォーム実装済（2026-05-31）。</div>
-            </div>
-          </div>
-          <div class="url-item" style="cursor:default;align-items:flex-start;">
-            <span class="url-item-icon">📋</span>
-            <div style="flex:1;">
-              <div class="url-item-title">マスターテンプレート（Googleスプレッドシート）</div>
-              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">契約後にクライアントが「コピーを作成」で自分のドライブへ複製。7シート自動生成・コンテナバインドGAS同梱。クライアント側で API設定・らしさシート入力・テスト投稿・自動投稿ON。<a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" style="color:#4F46E5;font-weight:700;">テンプレ ↗</a></div>
-            </div>
-          </div>
-          <div class="url-item" style="cursor:default;align-items:flex-start;">
-            <span class="url-item-icon">💬</span>
-            <div style="flex:1;">
-              <div class="url-item-title">リミーちゃん（AIチャットボット）</div>
-              <div style="font-size:11px;color:#6B7280;margin-top:4px;line-height:1.7;">sales.html右下に常駐。操作・設定・トラブルの一次対応。Anthropic Claude Haiku 4.5。24時間応答。Miho稼働ゼロでサポート提供。</div>
-            </div>
-          </div>
-        </div>
-        <div style="background:#EFF6FF;border:1px solid #93C5FD;border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:#1E40AF;line-height:1.7;">
-          <strong>📝 intake.html（らしさシート＋Webhook URL）が中心ハブ：</strong> Make経由モデル（2026-06-03〜）でクライアント情報・Webhook URL を1つのフォームで受け取り、clients スプシに自動登録。modify.html は当面非公開。
-        </div>
-      </div>
 
-      <!-- マスターテンプレートメニュー（クライアント側操作） -->
-      <div class="section">
-        <div class="section-title">📋 マスターテンプレートのメニュー（クライアント自身が操作）</div>
-        <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;overflow:hidden;">
-          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">① 初期セットアップ</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">profile / personality / post_log / modify_requests / interview_transcripts / kpi / kpi_account の7シートを自動生成。</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">② API設定</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">ANTHROPIC_API_KEY / IG_ACCESS_TOKEN / IG_ACCOUNT_ID / THREADS_ACCESS_TOKEN / THREADS_USER_ID をダイアログ入力。</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">③ 今日の投稿プレビュー</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">投稿せず生成のみ。クライアントが自分で内容確認できる。</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">④ テスト投稿</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">実際にIG/Threadsへ投稿。リトライ機能あり（最大5回・別画像で再試行）。</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">⑤ 投稿スタイル調整</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">「もっとやわらかく」等の自然言語要望をAIがprofileに自動反映。</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #F3F4F6;">
-            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">⑥ KPI分析</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">いいね・コメント・フォロワー前日/前週/前月比を表示。</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;">
-            <div style="font-size:11px;font-weight:800;color:#6b3a7f;min-width:130px;padding-top:1px;">⑦ 自動投稿ON/OFF</div>
-            <div style="font-size:12px;color:#374151;line-height:1.7;">毎朝8時のトリガー管理。ON時は完全自動運用。</div>
-          </div>
-        </div>
-      </div>
 
       <!-- プラン・課金（Stripe自動） -->
       <div class="section">
@@ -3719,35 +3667,6 @@
         </div>
       </div>
 
-      <!-- システム構成（新モデル） -->
-      <div class="section">
-        <div class="section-title">⚙️ システム構成（マスターテンプレ + チャットボットGAS）</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:18px;">
-            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">マスターテンプレート（クライアント側）</div>
-            <div style="font-size:12px;color:#374151;line-height:1.9;">
-              <strong>形式</strong>：コンテナバインドGAS<br>
-              <strong>各クライアントが自分のドライブにコピー</strong><br>
-              <strong>APIキー</strong>：クライアント自身が取得（PROFESSIONALのみMiho代行）<br>
-              <strong>トリガー</strong>：dailyPost（毎朝8時）はクライアント側で設定
-            </div>
-            <div style="margin-top:10px;font-size:11px;color:#6B7280;">📋 ローカル：/Users/mihomatuo/reme-post/master-template/コード.gs</div>
-          </div>
-          <div style="background:white;border-radius:12px;border:1px solid #E5E7EB;padding:18px;">
-            <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">リミーちゃんチャットボット（Miho側・共通）</div>
-            <div style="font-size:12px;color:#374151;line-height:1.9;">
-              <strong>形式</strong>：スタンドアロンGAS<br>
-              <strong>モデル</strong>：claude-haiku-4-5-20251001<br>
-              <strong>エンドポイント</strong>：doPost（sales.htmlから fetch）<br>
-              <strong>API</strong>：ANTHROPIC_API_KEY（Mihoのスクリプトプロパティ）
-            </div>
-            <div style="margin-top:10px;font-size:11px;color:#6B7280;">💻 ローカル：/Users/mihomatuo/reme-post/chatbot.js + chatbot-api.gs</div>
-          </div>
-        </div>
-        <div style="background:#FEE2E2;border:1px solid #FCA5A5;border-radius:10px;padding:12px 16px;margin-top:14px;font-size:12px;color:#991B1B;line-height:1.7;">
-          <strong>⚠️ 廃止：</strong>Miho側中央スプレッドシート（旧 1Q-vEycSQpDa...）・runMonthlyReports・resetMonthlyCount トリガー。新モデルでは各クライアント独立運用。
-        </div>
-      </div>
 
       <!-- 関連URL -->
       <div class="section">
