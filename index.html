@@ -3513,39 +3513,158 @@
         </div>
       </div>
 
-      <!-- ★ 必要なURL（カテゴリ別） -->
-      <div style="margin-bottom:28px;">
-        <!-- A. クライアント向けURL -->
-        <div style="margin-bottom:16px;">
-          <div style="font-size:11px;font-weight:900;color:#DB2777;letter-spacing:1.5px;margin-bottom:8px;">🅐 クライアント向けURL（決済→自動でwelcomeへ）</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <a href="https://shinomiho.github.io/reme-post/sales.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#6b3a7f;color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">① 💼 営業LP（→Stripe）</a>
-            <a href="https://shinomiho.github.io/reme-post/welcome.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:linear-gradient(135deg,#06b6d4,#3b82f6);color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 0 14px rgba(6,182,212,0.3);">② 🎉 Welcomeページ（決済後自動表示）</a>
-            <a href="https://shinomiho.github.io/reme-post/intake.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:linear-gradient(135deg,#ec4899,#f43f5e);color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 0 14px rgba(236,72,153,0.3);">③ 📝 らしさシート</a>
-            <a href="https://shinomiho.github.io/reme-post/setup-guide.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:linear-gradient(135deg,#ff5ad2,#ff8a5a);color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 0 14px rgba(255,90,210,0.35);">④ 🛠️ Makeガイド</a>
-            <a href="https://line.me/R/ti/p/@615xhhhf" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#06C755;color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">📱 公式LINE</a>
+      <!-- ★ 必要なURL（カテゴリ別・統一カード型） -->
+      <style>
+        .url-block-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px;}
+        @media(max-width:880px){.url-block-wrap{grid-template-columns:1fr;}}
+        .url-block{background:white;border:1.5px solid #E5E7EB;border-radius:14px;padding:18px 20px;}
+        .url-block-head{display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-bottom:10px;border-bottom:1.5px solid #F3F4F6;}
+        .url-block-badge{display:inline-block;padding:2px 10px;border-radius:6px;font-size:10px;font-weight:900;letter-spacing:.1em;color:white;}
+        .url-block-title{font-size:13px;font-weight:900;color:#111827;}
+        .url-block-sub{font-size:11px;color:#6B7280;margin-top:2px;line-height:1.5;}
+        .url-row{display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:8px;text-decoration:none;color:inherit;transition:background .15s;}
+        .url-row:hover{background:#F9FAFB;}
+        .url-row + .url-row{border-top:1px solid #F3F4F6;}
+        .url-row-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+        .url-row-body{flex:1;min-width:0;}
+        .url-row-title{font-size:13px;font-weight:800;color:#111827;line-height:1.4;}
+        .url-row-desc{font-size:11px;color:#6B7280;margin-top:2px;line-height:1.5;}
+        .url-row-arrow{color:#9CA3AF;font-size:14px;}
+        .url-block-c{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;}
+        .url-chip-mini{display:flex;align-items:center;gap:6px;padding:9px 12px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;color:#111827;}
+        .url-chip-mini:hover{background:#F9FAFB;}
+        .url-chip-mini.disabled{background:#F3F4F6;border-style:dashed;border-color:#9CA3AF;color:#6B7280;cursor:not-allowed;}
+      </style>
+
+      <div class="url-block-wrap">
+        <!-- 🅐 クライアント向け -->
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#DB2777;">🅐 CLIENT</span>
+            <div>
+              <div class="url-block-title">クライアント向けURL</div>
+              <div class="url-block-sub">決済→自動でwelcomeへ</div>
+            </div>
           </div>
+
+          <a href="https://shinomiho.github.io/reme-post/sales.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#F3E8FF;color:#6b3a7f;">💼</div>
+            <div class="url-row-body">
+              <div class="url-row-title">① 営業LP（→Stripe）</div>
+              <div class="url-row-desc">商品紹介＋決済リンク</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/reme-post/welcome.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#CFFAFE;color:#0891B2;">🎉</div>
+            <div class="url-row-body">
+              <div class="url-row-title">② Welcomeページ</div>
+              <div class="url-row-desc">決済完了後に自動表示</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/reme-post/intake.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#FCE7F3;color:#DB2777;">📝</div>
+            <div class="url-row-body">
+              <div class="url-row-title">③ らしさシート</div>
+              <div class="url-row-desc">価値観＋Webhook URL入力</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/reme-post/setup-guide.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#FCE7F3;color:#EA580C;">🛠️</div>
+            <div class="url-row-body">
+              <div class="url-row-title">④ Make セットアップガイド</div>
+              <div class="url-row-desc">12分でWebhook URL取得</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://shinomiho.github.io/reme-post/webhook-update.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#FEF3C7;color:#92400E;">🔁</div>
+            <div class="url-row-body">
+              <div class="url-row-title">⑤ Webhook URL 後送信</div>
+              <div class="url-row-desc">Zoom後にクライアント自身で送信</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://line.me/R/ti/p/@615xhhhf" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#DCFCE7;color:#06C755;">📱</div>
+            <div class="url-row-body">
+              <div class="url-row-title">公式LINE</div>
+              <div class="url-row-desc">困った時の駆け込み</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
         </div>
 
-        <!-- B. しのみほ運営用 -->
-        <div style="margin-bottom:16px;">
-          <div style="font-size:11px;font-weight:900;color:#7C3AED;letter-spacing:1.5px;margin-bottom:8px;">🅑 しのみほ運営用（毎日／クライアント受入時）</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <a href="https://shinomiho.github.io/reme-post/admin-guide.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:linear-gradient(135deg,#7C3AED,#4F46E5);color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 0 14px rgba(124,58,237,0.35);">📖 運営マニュアル（しのみほ専用）</a>
-            <a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">📋 マスターテンプレ（しのみほ自身の運用）</a>
-            <a href="https://script.google.com/home/projects/1jG7K-i2s6oOoJDex7yeT2R6p8fqEvzREg1rlKJuTggLHM3wAHb4GWvhE/edit" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:#111827;">⚙️ GAS（dailyPost＋お試し体験）</a>
+        <!-- 🅑 運営者向け（同じテンプレート） -->
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#7C3AED;">🅑 ADMIN</span>
+            <div>
+              <div class="url-block-title">運営者向けURL（しのみほ専用）</div>
+              <div class="url-block-sub">毎日見るところ／クライアント受入時</div>
+            </div>
           </div>
-        </div>
 
-        <!-- C. 開発・管理 -->
-        <div>
-          <div style="font-size:11px;font-weight:900;color:#6B7280;letter-spacing:1.5px;margin-bottom:8px;">🅒 開発・管理</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <a href="https://github.com/shinomiho/reme-post" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;color:#111827;">💻 GitHub</a>
-            <a href="https://dashboard.stripe.com/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;color:#111827;">💳 Stripe Dashboard</a>
-            <a href="https://www.make.com/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:white;border:1.5px solid #E5E7EB;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;color:#111827;">🔧 Make.com</a>
-            <span style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#F3F4F6;border:1.5px dashed #9CA3AF;border-radius:8px;font-size:12px;font-weight:700;color:#6B7280;" title="準備中">💬 Discord（準備中）</span>
-          </div>
+          <a href="https://shinomiho.github.io/reme-post/admin-guide.html" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#EDE9FE;color:#7C3AED;">📖</div>
+            <div class="url-row-body">
+              <div class="url-row-title">① 運営マニュアル</div>
+              <div class="url-row-desc">受入フロー・ステータス管理・対応集</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://docs.google.com/spreadsheets/d/1nTgSrASAdANxYHImlClAOCjDpCm88M02DYdQrSqJ12U/edit" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#DBEAFE;color:#2563EB;">📋</div>
+            <div class="url-row-body">
+              <div class="url-row-title">② clients スプレッドシート</div>
+              <div class="url-row-desc">クライアントマスタ＋らしさシート保存先</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://script.google.com/home/projects/1jG7K-i2s6oOoJDex7yeT2R6p8fqEvzREg1rlKJuTggLHM3wAHb4GWvhE/edit" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#E5E7EB;color:#374151;">⚙️</div>
+            <div class="url-row-body">
+              <div class="url-row-title">③ GAS エディタ</div>
+              <div class="url-row-desc">dailyPost＋自動onboarding＋お試し体験</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://dashboard.stripe.com/" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#E0E7FF;color:#4338CA;">💳</div>
+            <div class="url-row-body">
+              <div class="url-row-title">④ Stripe Dashboard</div>
+              <div class="url-row-desc">決済確認・Webhook設定・解約処理</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://www.make.com/" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#FCE7F3;color:#9333EA;">🔧</div>
+            <div class="url-row-body">
+              <div class="url-row-title">⑤ Make.com Dashboard</div>
+              <div class="url-row-desc">しのみほ自身のテストMakeシナリオ</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://github.com/shinomiho/reme-post" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#F3F4F6;color:#111827;">💻</div>
+            <div class="url-row-body">
+              <div class="url-row-title">⑥ GitHub リポジトリ</div>
+              <div class="url-row-desc">全HTML・GASコードの管理</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
         </div>
       </div>
 
