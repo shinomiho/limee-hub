@@ -239,6 +239,7 @@
     <button class="tab-btn" onclick="switchTab('onboarding')">🧠 リミーAI診断</button>
     <button class="tab-btn" onclick="switchTab('webpro')">🎨 リミーStudio</button>
     <button class="tab-btn" onclick="switchTab('remepost')">📱 リミーPost</button>
+    <button class="tab-btn" onclick="switchTab('reme-ops')">💳 Re:Me OPS</button>
     <button class="tab-btn" onclick="switchTab('handover')">🧠 タスク・運用ガイド</button>
   </div>
 
@@ -1901,6 +1902,134 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ╔════ 💳 RE:ME OPS タブ ════╗ -->
+  <div id="tab-reme-ops" class="tab-panel">
+    <div class="container">
+
+      <div style="background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:14px;padding:20px 26px;color:white;margin-bottom:20px;">
+        <div style="font-size:11px;letter-spacing:2px;opacity:0.7;font-weight:700;margin-bottom:4px;">💳 RE:ME OPS</div>
+        <div style="font-size:18px;font-weight:900;margin-bottom:6px;">Stripe決済→freee自動仕訳・JV紹介料計算</div>
+        <div style="font-size:13px;opacity:0.85;line-height:1.7;">Cloudflare Worker上で稼働するマルチテナント基盤。各クライアントがセルフサーブで設定する5ステップウィザード付き。リミー自身もこのシステムを利用中。</div>
+      </div>
+
+      <!-- ★ 新規クライアント受け入れ手順 -->
+      <div style="background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1.5px solid #C4B5FD;border-radius:14px;padding:22px 26px;margin-bottom:24px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#4F46E5;font-weight:900;margin-bottom:8px;">📌 新規クライアント受け入れ手順</div>
+        <div style="font-size:15px;font-weight:900;color:#1F2937;margin-bottom:12px;">3ステップで完了</div>
+        <div style="display:flex;align-items:stretch;gap:0;overflow-x:auto;padding-bottom:4px;">
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #C4B5FD;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#4F46E5;letter-spacing:1px;margin-bottom:4px;">① クライアント発行</div>
+            <div style="font-size:18px;margin:4px 0;">📋</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">運営者ダッシュボードで<br>slug/表示名を入力→作成</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:14px;padding:0 4px;">→</div>
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #93C5FD;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#2563EB;letter-spacing:1px;margin-bottom:4px;">② URL送信</div>
+            <div style="font-size:18px;margin:4px 0;">📧</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">Gmail本文自動入力<br>→ クライアントに送信</div>
+          </div>
+          <div style="display:flex;align-items:center;color:#9CA3AF;font-size:14px;padding:0 4px;">→</div>
+          <div style="flex:1;min-width:140px;background:white;border:1.5px solid #86EFAC;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;font-weight:900;color:#16A34A;letter-spacing:1px;margin-bottom:4px;">③ クライアント設定</div>
+            <div style="font-size:18px;margin:4px 0;">✨</div>
+            <div style="font-size:11px;color:#4B5563;line-height:1.5;">freee連携→Stripeキー<br>→自動運用開始</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;font-size:12px;color:#6B7280;line-height:1.7;">
+          💡 詳細仕様・既知の制限は下の <strong style="color:#4F46E5;">仕様書</strong> から確認できます。
+        </div>
+      </div>
+
+      <!-- ★ URL集 -->
+      <div class="url-block-wrap">
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#4F46E5;">🅞 OPERATOR</span>
+            <div>
+              <div class="url-block-title">運営者向け（あなた）</div>
+              <div class="url-block-sub">クライアント発行・状況確認</div>
+            </div>
+          </div>
+
+          <a href="https://reme-ops.remeops.workers.dev/root" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#EEF2FF;color:#4F46E5;">💳</div>
+            <div class="url-row-body">
+              <div class="url-row-title">運営者ダッシュボード</div>
+              <div class="url-row-desc">新規クライアント発行・既存クライアント一覧</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://reme-ops.remeops.workers.dev/root/docs" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#DBEAFE;color:#1E40AF;">📘</div>
+            <div class="url-row-body">
+              <div class="url-row-title">仕様書・運用手順</div>
+              <div class="url-row-desc">システム概要・URL一覧・既知の制限</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+        </div>
+
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#059669;">🅡 REME</span>
+            <div>
+              <div class="url-block-title">リミー(自社)の管理画面</div>
+              <div class="url-block-sub">自分のStripe決済の状況確認</div>
+            </div>
+          </div>
+
+          <a href="https://reme-ops.remeops.workers.dev/c/reme/admin" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#D1FAE5;color:#065F46;">📊</div>
+            <div class="url-row-body">
+              <div class="url-row-title">リミー管理画面</div>
+              <div class="url-row-desc">決済・JV紹介料・freee仕訳の確認</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+        </div>
+
+        <div class="url-block">
+          <div class="url-block-head">
+            <span class="url-block-badge" style="background:#BE123C;">🅔 EXTERNAL</span>
+            <div>
+              <div class="url-block-title">関連する外部サービス</div>
+              <div class="url-block-sub">Stripe・freee側の管理</div>
+            </div>
+          </div>
+
+          <a href="https://dashboard.stripe.com/" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#FCE7F3;color:#BE185D;">💳</div>
+            <div class="url-row-body">
+              <div class="url-row-title">Stripeダッシュボード</div>
+              <div class="url-row-desc">webhook設定・決済履歴</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://accounts.secure.freee.co.jp/" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#DBEAFE;color:#1E40AF;">📒</div>
+            <div class="url-row-body">
+              <div class="url-row-title">freee会計</div>
+              <div class="url-row-desc">仕訳確認・勘定科目設定</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+
+          <a href="https://app.secure.freee.co.jp/developers/applications" target="_blank" class="url-row">
+            <div class="url-row-icon" style="background:#E0E7FF;color:#4338CA;">⚙️</div>
+            <div class="url-row-body">
+              <div class="url-row-title">freee開発者コンソール</div>
+              <div class="url-row-desc">Re:Me OPS アプリ設定・OAuth callback</div>
+            </div>
+            <div class="url-row-arrow">↗</div>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
 
