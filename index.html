@@ -1912,7 +1912,251 @@
       <div style="background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:14px;padding:20px 26px;color:white;margin-bottom:20px;">
         <div style="font-size:11px;letter-spacing:2px;opacity:0.7;font-weight:700;margin-bottom:4px;">💳 RE:ME OPS</div>
         <div style="font-size:18px;font-weight:900;margin-bottom:6px;">クライアントの売上を自動でfreeeに記録するしくみ</div>
-        <div style="font-size:13px;opacity:0.85;line-height:1.7;">クライアントごとに「Re:Me OPSのアカウント」を発行すると、そのクライアントのStripe決済が自動でfreeeに仕訳されるようになります。JV紹介料の計算も自動。</div>
+        <div style="font-size:13px;opacity:0.85;line-height:1.7;">クライアントごとに「Re:Me OPSのアカウント」を発行すると、そのクライアントのStripe/Univapay決済が自動でfreeeに仕訳されるようになります。JV紹介料の計算も自動。</div>
+      </div>
+
+      <!-- ★ 顧客企業の操作フロー（基準値2ケース） -->
+      <div style="font-size:13px;font-weight:900;color:#374151;margin:24px 0 12px;">🎯 顧客企業の実際の操作フロー（基準値2ケース）</div>
+
+      <!-- ケース1：UTAGE売上 -->
+      <div style="background:white;border:1.5px solid #C4B5FD;border-radius:14px;padding:20px 24px;margin-bottom:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <span style="background:#4F46E5;color:white;font-size:10px;font-weight:900;padding:3px 8px;border-radius:99px;">CASE 1</span>
+          <span style="font-size:15px;font-weight:900;color:#1F2937;">UTAGE → Univapay → freee（売上自動仕訳）</span>
+        </div>
+        <div style="font-size:12px;color:#6B7280;margin-bottom:14px;">受講生が決済 → 数秒後に freee に「売上高」として自動記帳されます。担当者の作業はゼロ。</div>
+
+        <div style="overflow-x:auto;">
+          <div style="display:flex;align-items:flex-start;gap:0;min-width:720px;padding:16px 4px 8px;">
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#6B7280;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 1</div>
+              <div style="border:2px solid #6B7280;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#F9FAFB;">
+                <div style="font-size:26px;margin-bottom:4px;">🎓</div>
+                <div style="font-size:12px;font-weight:800;color:#374151;line-height:1.4;margin-bottom:4px;">UTAGEで購入</div>
+                <div style="font-size:10px;color:#6B7280;line-height:1.5;margin-bottom:6px;">受講生が講座を申込</div>
+                <div style="background:#E5E7EB;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#374151;display:inline-block;">👤 受講生</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#EC4899;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+              <div style="border:2px solid #EC4899;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FDF2F8;">
+                <div style="font-size:26px;margin-bottom:4px;">💳</div>
+                <div style="font-size:12px;font-weight:800;color:#9D174D;line-height:1.4;margin-bottom:4px;">Univapayが決済</div>
+                <div style="font-size:10px;color:#BE185D;line-height:1.5;margin-bottom:6px;">カード処理＋通知発火</div>
+                <div style="background:#FCE7F3;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#9D174D;display:inline-block;">🤖 自動</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">数秒</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#4F46E5;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 3</div>
+              <div style="border:2px solid #4F46E5;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#EEF2FF;">
+                <div style="font-size:26px;margin-bottom:4px;">📥</div>
+                <div style="font-size:12px;font-weight:800;color:#312E81;line-height:1.4;margin-bottom:4px;">Re:Me OPS受信</div>
+                <div style="font-size:10px;color:#4F46E5;line-height:1.5;margin-bottom:6px;">Webhookで決済を検知</div>
+                <div style="background:#E0E7FF;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#312E81;display:inline-block;">🤖 自動</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#7C3AED;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 4</div>
+              <div style="border:2px solid #7C3AED;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#F5F3FF;">
+                <div style="font-size:26px;margin-bottom:4px;">🔀</div>
+                <div style="font-size:12px;font-weight:800;color:#5B21B6;line-height:1.4;margin-bottom:4px;">勘定科目振り分け</div>
+                <div style="font-size:10px;color:#7C3AED;line-height:1.5;margin-bottom:6px;">事前設定ルールで「売上高」へ</div>
+                <div style="background:#EDE9FE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#5B21B6;display:inline-block;">🤖 自動</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
+              <div style="border:2px solid #2563EB;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#EFF6FF;">
+                <div style="font-size:26px;margin-bottom:4px;">📒</div>
+                <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">freeeに自動記帳</div>
+                <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:6px;">「売上高」として計上</div>
+                <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 自動</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="background:#F5F3FF;border-left:3px solid #4F46E5;padding:10px 14px;font-size:12px;color:#4B5563;line-height:1.7;margin-top:12px;">
+          💡 担当者の作業：<strong>ゼロ</strong>。月末に管理画面の「freee仕訳」タブで一覧確認するだけ。万一エラーが出ても1時間ごとに自動リトライ。
+        </div>
+      </div>
+
+      <!-- ケース2：JV紹介料 -->
+      <div style="background:white;border:1.5px solid #FCD34D;border-radius:14px;padding:20px 24px;margin-bottom:24px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <span style="background:#D97706;color:white;font-size:10px;font-weight:900;padding:3px 8px;border-radius:99px;">CASE 2</span>
+          <span style="font-size:15px;font-weight:900;color:#1F2937;">JV・紹介料の発生 → 支払い</span>
+        </div>
+        <div style="font-size:12px;color:#6B7280;margin-bottom:14px;">パートナーへの紹介料発生時。担当者は3アクション（確認・入力・振込）。料率計算と仕訳は自動。</div>
+
+        <div style="overflow-x:auto;">
+          <div style="display:flex;align-items:flex-start;gap:0;min-width:720px;padding:16px 4px 8px;">
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 1</div>
+              <div style="border:2px solid #D97706;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FEF3C7;">
+                <div style="font-size:26px;margin-bottom:4px;">👀</div>
+                <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">JV発生確認</div>
+                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">パートナーからの案件成約</div>
+                <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ 担当者</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+              <div style="border:2px solid #D97706;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FEF3C7;">
+                <div style="font-size:26px;margin-bottom:4px;">⌨️</div>
+                <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">管理画面に入力</div>
+                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">パートナーと案件金額</div>
+                <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ 担当者</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#4F46E5;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 3</div>
+              <div style="border:2px solid #4F46E5;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#EEF2FF;">
+                <div style="font-size:26px;margin-bottom:4px;">🧮</div>
+                <div style="font-size:12px;font-weight:800;color:#312E81;line-height:1.4;margin-bottom:4px;">料率で自動計算</div>
+                <div style="font-size:10px;color:#4F46E5;line-height:1.5;margin-bottom:6px;">パートナー別ルールで算出</div>
+                <div style="background:#E0E7FF;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#312E81;display:inline-block;">🤖 自動</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 4</div>
+              <div style="border:2px solid #2563EB;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#EFF6FF;">
+                <div style="font-size:26px;margin-bottom:4px;">📒</div>
+                <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">freeeに自動記帳</div>
+                <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:6px;">「支払手数料」等で計上</div>
+                <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">🤖 自動</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">月末</div>
+            </div>
+
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:110px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
+              <div style="border:2px solid #D97706;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FEF3C7;">
+                <div style="font-size:26px;margin-bottom:4px;">💸</div>
+                <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">パートナーへ振込</div>
+                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">管理画面でリスト確認→振込</div>
+                <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ 担当者</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="background:#FEF3C7;border-left:3px solid #D97706;padding:10px 14px;font-size:12px;color:#4B5563;line-height:1.7;margin-top:12px;">
+          💡 担当者の作業：<strong>3ステップ</strong>（発生確認・金額入力・振込実行）。計算ミス・科目間違い・振込漏れリスクが激減。
+        </div>
+      </div>
+
+      <!-- ★ 現状の仕様サマリー -->
+      <div style="font-size:13px;font-weight:900;color:#374151;margin:24px 0 12px;">📊 現状の仕様サマリー（何ができる／何が未実装）</div>
+
+      <div style="background:white;border:1.5px solid #E5E7EB;border-radius:14px;padding:18px 20px;margin-bottom:16px;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:560px;">
+          <thead>
+            <tr style="background:#F9FAFB;">
+              <th style="text-align:left;padding:10px 12px;border-bottom:2px solid #E5E7EB;font-weight:900;color:#374151;">機能</th>
+              <th style="text-align:center;padding:10px 12px;border-bottom:2px solid #E5E7EB;font-weight:900;color:#374151;width:80px;">状況</th>
+              <th style="text-align:left;padding:10px 12px;border-bottom:2px solid #E5E7EB;font-weight:900;color:#374151;">補足</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">クライアント別の専用URL発行</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">/c/{slug}/admin で各社専用画面</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">オンボーディングウィザード（5ステップ）</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">クライアントが約15分でセルフセットアップ</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">freee連携（OAuth）</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">パスワードを預けない安全な認証</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">勘定科目の自動検出</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">「売上高」を自動で見つける</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">Stripe対応</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">制限付きAPIキーでwebhook自動作成</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">Univapay対応</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">手動webhook設定＋Authorization秘密値</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">売上の自動仕訳（freee）</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">即時記帳</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">障害時の自動リトライ（1時間ごと）</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">freee障害時も勝手に復旧</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">JV紹介料の料率計算</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">パートナー別料率管理</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">JV紹介料の自動記帳</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">支払手数料 / 外注費として計上</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">契約書発行（freeeサイン経由）</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">freeeサイン事前接続が必要</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">決済リンク発行</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#059669;font-weight:900;">✅</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">顧客に送る支払いURL</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">案件タブ（契約→決済の連動）</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#D97706;font-weight:900;">⚠️</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">未実装。現状は契約書と決済リンクが別ボタン</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#1F2937;">契約書連携のクライアント単位on/off</td><td style="text-align:center;padding:8px 12px;border-bottom:1px solid #F3F4F6;"><span style="color:#9CA3AF;font-weight:900;">❓</span></td><td style="padding:8px 12px;border-bottom:1px solid #F3F4F6;color:#6B7280;">⚙️設定変更ページで要確認</td></tr>
+            <tr><td style="padding:8px 12px;color:#1F2937;">商品別の勘定科目ルール</td><td style="text-align:center;padding:8px 12px;"><span style="color:#9CA3AF;font-weight:900;">❓</span></td><td style="padding:8px 12px;color:#6B7280;">現状は1科目運用前提。複数振分は要確認</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ★ やるべきこと（To-Do） -->
+      <div style="font-size:13px;font-weight:900;color:#374151;margin:24px 0 12px;">🎯 やるべきこと（次のアクション）</div>
+
+      <!-- 赤：必須 -->
+      <div style="background:#FEF2F2;border:1.5px solid #FCA5A5;border-radius:14px;padding:16px 20px;margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:900;color:#B91C1C;margin-bottom:10px;">🔴 新規クライアント本番運用開始前にやること</div>
+        <ul style="font-size:12px;color:#374151;line-height:1.9;padding-left:20px;margin:0;">
+          <li>そのクライアントが <strong>既存の電子署名サービスを使っているか確認</strong>（GMOサイン / CloudSign 等）</li>
+          <li>使っている場合：契約書タブは「使わなくてOK」と説明する（メール or Zoom）</li>
+          <li>⚙️設定変更ページに「契約書タブのon/off」設定があれば、offに設定</li>
+        </ul>
+      </div>
+
+      <!-- 黄：推奨 -->
+      <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:14px;padding:16px 20px;margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:900;color:#92400E;margin-bottom:10px;">🟡 運用開始後に検討すること</div>
+        <ul style="font-size:12px;color:#374151;line-height:1.9;padding-left:20px;margin:0;">
+          <li>商品別の勘定科目ルール／キャンセル返金の自動取消記帳 などの実装状況確認</li>
+          <li>運用ガイドの「契約書発行 ✓」表記を「✓ オプション（不使用も可）」に修正</li>
+        </ul>
+      </div>
+
+      <!-- 緑：プロダクト改善 -->
+      <div style="background:#ECFDF5;border:1.5px solid #6EE7B7;border-radius:14px;padding:16px 20px;margin-bottom:24px;">
+        <div style="font-size:13px;font-weight:900;color:#047857;margin-bottom:10px;">🟢 プロダクト全体の改善（中長期）</div>
+        <ul style="font-size:12px;color:#374151;line-height:1.9;padding-left:20px;margin:0;">
+          <li>クライアント単位で「契約書連携：使う / 使わない」設定を追加</li>
+          <li>営業LPの「契約書締結・決済・記帳一気通貫」表現を柔軟化（既存ツール継続も可と明記）</li>
+          <li>「案件タブ」実装（契約書→決済リンクの自動連動）</li>
+        </ul>
       </div>
 
       <!-- ★ 場面別ガイド -->
