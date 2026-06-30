@@ -1927,10 +1927,10 @@
           <span style="background:#4F46E5;color:white;font-size:10px;font-weight:900;padding:3px 8px;border-radius:99px;">CASE 1</span>
           <span style="font-size:15px;font-weight:900;color:#1F2937;">受講生への講座販売の流れ（UTAGE / Univapay 利用）</span>
         </div>
-        <div style="font-size:12px;color:#6B7280;margin-bottom:14px;">講座販売の通常フロー（契約 → 販売 → 決済 → 記帳 → 決算）。Re:Me OPS は「決済 → freee記帳」の手作業を代行します。</div>
+        <div style="font-size:12px;color:#6B7280;margin-bottom:14px;">受講生1人を獲得して入金〜記帳までの全プロセス。Re:Me OPS は STEP 4 の「決済受信→freee記帳」を代行します。</div>
 
         <div style="overflow-x:auto;">
-          <div style="display:flex;align-items:flex-start;gap:0;min-width:780px;padding:16px 4px 8px;">
+          <div style="display:flex;align-items:flex-start;gap:0;min-width:980px;padding:16px 4px 8px;">
 
             <!-- STEP 1 契約書 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
@@ -1938,7 +1938,7 @@
               <div style="border:2px solid #D97706;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FEF3C7;">
                 <div style="font-size:26px;margin-bottom:4px;">📝</div>
                 <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">契約書を発行・締結</div>
-                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">GMOサイン / freeeサイン等</div>
+                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">GMOサイン / freeeサイン等で受講生と契約</div>
                 <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ 担当者</div>
               </div>
             </div>
@@ -1947,13 +1947,28 @@
               <div style="font-size:18px;color:#9CA3AF;">→</div>
             </div>
 
-            <!-- STEP 2 決済受付 -->
+            <!-- STEP 2 UTAGE準備 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#EC4899;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#6B7280;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+              <div style="border:2px solid #6B7280;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#F9FAFB;">
+                <div style="font-size:26px;margin-bottom:4px;">🛍️</div>
+                <div style="font-size:12px;font-weight:800;color:#374151;line-height:1.4;margin-bottom:4px;">UTAGEに講座登録</div>
+                <div style="font-size:10px;color:#6B7280;line-height:1.5;margin-bottom:6px;">商品設定・受講URLを受講生に共有</div>
+                <div style="background:#E5E7EB;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#374151;display:inline-block;">✋ 担当者</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+            </div>
+
+            <!-- STEP 3 決済受付 -->
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#EC4899;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 3</div>
               <div style="border:2px solid #EC4899;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FDF2F8;">
                 <div style="font-size:26px;margin-bottom:4px;">💳</div>
                 <div style="font-size:12px;font-weight:800;color:#9D174D;line-height:1.4;margin-bottom:4px;">受講生が決済</div>
-                <div style="font-size:10px;color:#BE185D;line-height:1.5;margin-bottom:6px;">UTAGE → Univapay</div>
+                <div style="font-size:10px;color:#BE185D;line-height:1.5;margin-bottom:6px;">UTAGE → Univapay でカード処理</div>
                 <div style="background:#FCE7F3;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#9D174D;display:inline-block;">👤 受講生 + 🤖</div>
               </div>
             </div>
@@ -1963,9 +1978,9 @@
               <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
             </div>
 
-            <!-- STEP 3 ⭐ Re:Me OPS介入 -->
+            <!-- STEP 4 ⭐ Re:Me OPS介入 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:140px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#FBBF24;color:#7C2D12;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;box-shadow:0 2px 8px rgba(251,191,36,0.5);">⭐ STEP 3</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#FBBF24;color:#7C2D12;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;box-shadow:0 2px 8px rgba(251,191,36,0.5);">⭐ STEP 4</div>
               <div style="border:3px solid #7C3AED;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:linear-gradient(135deg,#4F46E5,#7C3AED);box-shadow:0 8px 24px rgba(124,58,237,0.3);">
                 <div style="font-size:26px;margin-bottom:4px;">🤖</div>
                 <div style="font-size:12px;font-weight:800;color:white;line-height:1.4;margin-bottom:4px;">決済受信→freee自動記帳</div>
@@ -1979,9 +1994,9 @@
               <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
             </div>
 
-            <!-- STEP 4 freee受領 -->
+            <!-- STEP 5 freee受領 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 4</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
               <div style="border:2px solid #2563EB;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#EFF6FF;">
                 <div style="font-size:26px;margin-bottom:4px;">📒</div>
                 <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">freeeで売上計上</div>
@@ -1995,13 +2010,13 @@
               <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">月末</div>
             </div>
 
-            <!-- STEP 5 月次決算 -->
+            <!-- STEP 6 月次決算 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#6B7280;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#6B7280;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 6</div>
               <div style="border:2px solid #6B7280;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#F9FAFB;">
                 <div style="font-size:26px;margin-bottom:4px;">📊</div>
                 <div style="font-size:12px;font-weight:800;color:#374151;line-height:1.4;margin-bottom:4px;">月次決算</div>
-                <div style="font-size:10px;color:#6B7280;line-height:1.5;margin-bottom:6px;">freeeで完結</div>
+                <div style="font-size:10px;color:#6B7280;line-height:1.5;margin-bottom:6px;">freeeで完結（突合・確認）</div>
                 <div style="background:#E5E7EB;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#374151;display:inline-block;">✋ 担当者 + 📒</div>
               </div>
             </div>
@@ -2010,7 +2025,12 @@
         </div>
 
         <div style="background:#F5F3FF;border-left:3px solid #7C3AED;padding:10px 14px;font-size:12px;color:#4B5563;line-height:1.7;margin-top:12px;">
-          💡 <strong>Re:Me OPS導入前は STEP 3 が手作業</strong>（freeeログイン→売上高選択→金額入力）。今は決済から数秒で自動記帳されるので、担当者の作業はゼロに。万一エラーが出ても1時間ごとに自動リトライ。
+          💡 <strong>Re:Me OPS導入前は STEP 4 が手作業</strong>（freeeログイン→売上高選択→金額入力）。今は決済から数秒で自動記帳。万一エラーが出ても1時間ごとに自動リトライ。
+        </div>
+
+        <div style="background:#FEF3C7;border-left:3px solid #D97706;padding:10px 14px;font-size:12px;color:#4B5563;line-height:1.7;margin-top:8px;">
+          ⚠️ <strong>STEP 1の契約書と STEP 3-5 の決済データは現状リンクされていません</strong>。Re:Me OPSは「決済データ」だけを見て記帳します。「どの契約のどの受講生の売上か」の突合は月末に担当者が手動でやる前提。<br>
+          <strong>将来構想（案件タブ）</strong>：管理画面の「契約書」タブから freeeサイン で契約書発行＋決済リンク発行をすると、その後の決済が自動でその案件に紐付く設計。ただし「案件タブ」は未実装。CCC様（GMOサイン）の場合はそもそも別建てで運用。
         </div>
       </div>
 
@@ -2020,30 +2040,47 @@
           <span style="background:#D97706;color:white;font-size:10px;font-weight:900;padding:3px 8px;border-radius:99px;">CASE 2</span>
           <span style="font-size:15px;font-weight:900;color:#1F2937;">パートナーへのJV・紹介料支払いの流れ</span>
         </div>
-        <div style="font-size:12px;color:#6B7280;margin-bottom:14px;">JV契約・案件成約・金額確定・記帳・振込の通常フロー。Re:Me OPS は「金額入力 → 料率計算 → freee記帳」の手作業を代行します。</div>
+        <div style="font-size:12px;color:#6B7280;margin-bottom:14px;">パートナー1社との契約締結〜案件発生〜記帳〜振込の全プロセス。Re:Me OPS は STEP 4 の「金額入力→料率計算→freee記帳」を代行します。STEP 1-2 は初回のみ、STEP 3-6 が案件ごとに繰り返し。</div>
 
         <div style="overflow-x:auto;">
-          <div style="display:flex;align-items:flex-start;gap:0;min-width:780px;padding:16px 4px 8px;">
+          <div style="display:flex;align-items:flex-start;gap:0;min-width:980px;padding:16px 4px 8px;">
 
-            <!-- STEP 1 JV契約 -->
+            <!-- STEP 1 JV契約締結 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
               <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 1</div>
+              <div style="position:absolute;top:-13px;right:-6px;background:#FBBF24;color:#7C2D12;border-radius:99px;padding:1px 6px;font-size:9px;font-weight:900;white-space:nowrap;">初回のみ</div>
               <div style="border:2px solid #D97706;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FEF3C7;">
                 <div style="font-size:26px;margin-bottom:4px;">📝</div>
                 <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">JV契約締結</div>
-                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">料率・振込先を取り決め</div>
+                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">GMOサイン等で料率・振込先を取り決め</div>
                 <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ 担当者</div>
               </div>
             </div>
 
             <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
               <div style="font-size:18px;color:#9CA3AF;">→</div>
-              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">初回のみ</div>
             </div>
 
-            <!-- STEP 2 案件成約・金額確定 -->
+            <!-- STEP 2 JVパートナー登録 -->
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:140px;">
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#7C3AED;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+              <div style="position:absolute;top:-13px;right:-6px;background:#FBBF24;color:#7C2D12;border-radius:99px;padding:1px 6px;font-size:9px;font-weight:900;white-space:nowrap;">初回のみ</div>
+              <div style="border:2px dashed #7C3AED;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#F5F3FF;">
+                <div style="font-size:26px;margin-bottom:4px;">📋</div>
+                <div style="font-size:12px;font-weight:800;color:#5B21B6;line-height:1.4;margin-bottom:4px;">JVパートナーを管理画面に登録</div>
+                <div style="font-size:10px;color:#7C3AED;line-height:1.5;margin-bottom:6px;">「JVパートナー」タブで料率・振込先口座を入力</div>
+                <div style="background:#EDE9FE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#5B21B6;display:inline-block;">✋ 担当者（管理画面）</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:26px;flex-shrink:0;min-width:28px;">
+              <div style="font-size:18px;color:#9CA3AF;">→</div>
+              <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">↓ 案件ごと</div>
+            </div>
+
+            <!-- STEP 3 案件成約・金額確定 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#6B7280;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 2</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#6B7280;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 3</div>
               <div style="border:2px solid #6B7280;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#F9FAFB;">
                 <div style="font-size:26px;margin-bottom:4px;">🤝</div>
                 <div style="font-size:12px;font-weight:800;color:#374151;line-height:1.4;margin-bottom:4px;">案件成約・金額確定</div>
@@ -2056,13 +2093,13 @@
               <div style="font-size:18px;color:#9CA3AF;">→</div>
             </div>
 
-            <!-- STEP 3 ⭐ Re:Me OPS介入 -->
+            <!-- STEP 4 ⭐ Re:Me OPS介入 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:140px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#FBBF24;color:#7C2D12;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;box-shadow:0 2px 8px rgba(251,191,36,0.5);">⭐ STEP 3</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#FBBF24;color:#7C2D12;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;box-shadow:0 2px 8px rgba(251,191,36,0.5);">⭐ STEP 4</div>
               <div style="border:3px solid #7C3AED;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:linear-gradient(135deg,#4F46E5,#7C3AED);box-shadow:0 8px 24px rgba(124,58,237,0.3);">
                 <div style="font-size:26px;margin-bottom:4px;">🤖</div>
                 <div style="font-size:12px;font-weight:800;color:white;line-height:1.4;margin-bottom:4px;">入力→計算→freee記帳</div>
-                <div style="font-size:10px;color:rgba(255,255,255,0.85);line-height:1.5;margin-bottom:6px;">金額入力1回で料率自動計算→自動記帳</div>
+                <div style="font-size:10px;color:rgba(255,255,255,0.85);line-height:1.5;margin-bottom:6px;">金額入力1回 → STEP 2の料率で自動計算 → 自動記帳</div>
                 <div style="background:white;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#5B21B6;display:inline-block;">⭐ Re:Me OPS が代行</div>
               </div>
             </div>
@@ -2072,13 +2109,13 @@
               <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">即時</div>
             </div>
 
-            <!-- STEP 4 freee受領 -->
+            <!-- STEP 5 freee受領 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 4</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#2563EB;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
               <div style="border:2px solid #2563EB;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#EFF6FF;">
                 <div style="font-size:26px;margin-bottom:4px;">📒</div>
                 <div style="font-size:12px;font-weight:800;color:#1E40AF;line-height:1.4;margin-bottom:4px;">freeeで費用計上</div>
-                <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:6px;">「支払手数料」等</div>
+                <div style="font-size:10px;color:#3B82F6;line-height:1.5;margin-bottom:6px;">「支払手数料」等で記録</div>
                 <div style="background:#DBEAFE;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#1E40AF;display:inline-block;">📒 freee</div>
               </div>
             </div>
@@ -2088,13 +2125,13 @@
               <div style="font-size:9px;color:#9CA3AF;white-space:nowrap;">月末</div>
             </div>
 
-            <!-- STEP 5 振込 -->
+            <!-- STEP 6 振込 -->
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:130px;">
-              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 5</div>
+              <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#D97706;color:white;border-radius:99px;padding:2px 10px;font-size:10px;font-weight:900;white-space:nowrap;">STEP 6</div>
               <div style="border:2px solid #D97706;border-radius:12px;padding:14px 8px 10px;width:100%;margin-top:8px;background:#FEF3C7;">
                 <div style="font-size:26px;margin-bottom:4px;">💸</div>
                 <div style="font-size:12px;font-weight:800;color:#92400E;line-height:1.4;margin-bottom:4px;">パートナーへ振込</div>
-                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">管理画面でリスト確認→振込</div>
+                <div style="font-size:10px;color:#B45309;line-height:1.5;margin-bottom:6px;">管理画面のリスト確認→振込実行</div>
                 <div style="background:#FDE68A;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;color:#92400E;display:inline-block;">✋ 担当者</div>
               </div>
             </div>
@@ -2103,7 +2140,12 @@
         </div>
 
         <div style="background:#FEF3C7;border-left:3px solid #D97706;padding:10px 14px;font-size:12px;color:#4B5563;line-height:1.7;margin-top:12px;">
-          💡 <strong>Re:Me OPS導入前は STEP 3 が二度手間</strong>（Excelで計算→freeeに手入力）。今は管理画面に金額を1回入力するだけで、料率計算とfreee記帳が自動。STEP 1（契約締結）は初回のみで、STEP 2-5 が案件ごとに繰り返されます。
+          💡 <strong>Re:Me OPS導入前は STEP 4 が二度手間</strong>（Excelで料率計算→freeeに手入力）。今は管理画面に金額を1回入力するだけで料率計算とfreee記帳が自動。
+        </div>
+
+        <div style="background:#F5F3FF;border-left:3px solid #7C3AED;padding:10px 14px;font-size:12px;color:#4B5563;line-height:1.7;margin-top:8px;">
+          🔗 <strong>STEP 2が STEP 4 の前提条件</strong>：STEP 2 でパートナー情報（料率・振込先口座）を登録しないと、STEP 4 の自動計算が動きません。新規パートナーが増えた時は必ず先に STEP 2 をやる。<br>
+          📝 <strong>STEP 1 の契約書PDFは別管理</strong>（GMO/freeeサインのフォルダ等）。Re:Me OPS には「料率」だけ入力する（PDF添付は別）。
         </div>
       </div>
 
