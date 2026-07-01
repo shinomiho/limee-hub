@@ -19,7 +19,7 @@
       --text-sub: #6B7280;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background: var(--bg); color: var(--text); }
+    body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background-color: var(--bg); background-image: radial-gradient(circle, rgba(79, 70, 229, 0.05) 1.2px, transparent 1.4px); background-size: 22px 22px; color: var(--text); line-height: 1.7; }
 
     /* ログイン */
     #login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
@@ -39,16 +39,18 @@
     .top-bar span { color: rgba(255,255,255,0.7); font-size: 13px; }
     .logout-btn { background: rgba(255,255,255,0.15); color: white; border: none; border-radius: 6px; padding: 6px 14px; font-size: 12px; cursor: pointer; }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 44px 24px; }
 
     /* セクション */
-    .section { margin-bottom: 40px; }
+    .section { margin-bottom: 56px; }
+    .section h2 { margin-bottom: 20px; }
+    .section h3 { margin: 24px 0 12px; }
     .section-title { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
     .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     /* カードグリッド */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-    .card { background: white; border-radius: 12px; padding: 20px; border: 1px solid var(--border); transition: box-shadow 0.2s; }
+    .card { background: white; border-radius: 12px; padding: 26px 28px; border: 1px solid var(--border); transition: box-shadow 0.2s; line-height: 1.85; }
     .card:hover { box-shadow: 0 4px 16px rgba(79,70,229,0.1); }
     .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
     .card-icon { font-size: 22px; }
